@@ -33,6 +33,8 @@ Then open http://localhost:3001. `npm test` runs the tests, which make no live A
 
 A **component** is what the drone maker buys at tier 1 (motors, battery cells, flight controller chip, camera sensor, radio). Sub-parts are deeper tiers of it: magnets are tier 2 of `motors`, cell materials are tier 2 of `battery cells`. Write an `unmapped` record for every tier you searched and found nothing, so "searched, not found" differs from "not researched".
 
+Every record is checked on load. If any record is malformed (wrong field type, `tier` below 1, unknown `confidence`, or a mapped link with no supplier or no http(s) `source_url`), the whole file is rejected: the API returns 500 naming each bad record, so nothing is silently skipped.
+
 A link's `id` in API responses is its position in the array. The file is re-read on every request, so new batches show up without a restart.
 
 ## Risk API

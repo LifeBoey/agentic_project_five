@@ -70,7 +70,7 @@ export async function handle(req, res) {
   }
 
   let links;
-  try { links = await loadLinks(); } catch (e) { return send(res, 500, { error: `links.json unreadable: ${e.message}` }); }
+  try { links = await loadLinks(); } catch (e) { return send(res, 500, { error: `links.json rejected: ${e.message}` }); }
   // /api/<resource>/<name>/<view>/<component>, e.g. /api/models/Falcon X/chain/motors or /api/cutoff/CN
   const [, resource, name, view, component] = parts;
   const found = v => (v == null ? send(res, 404, { error: 'not found' }) : send(res, 200, v));

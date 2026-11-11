@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { loadLinks, getModels, getModelRisk, getChain, simulateCutoff } from '../src/risk.js';
+import { loadLinks, parseLinks, getModels, getModelRisk, getChain, simulateCutoff } from '../src/risk.js';
 
 const links = await loadLinks();
 
@@ -63,7 +63,7 @@ test('unknown components carry their unmapped record ids', () => {
 
 // Small inline datasets for edge cases the shared fake data doesn't cover.
 const L = (over) => ({ model: 'M', component: 'c', supplier: 'S', supplier_country: 'CN', tier: 1, source_url: 'https://x', confidence: 'high', conflict: false, ...over });
-const withIds = arr => arr.map((l, id) => ({ id, ...l }));
+const withIds = parseLinks; // same validation and id rule as the server
 
 test('conflict ignores unmapped records', () => {
   const data = withIds([
@@ -141,4 +141,26 @@ test('an unmapped tier above the deepest mapped tier does not flag unknown', () 
     L({ tier: 2, supplier: 'A', supplier_country: 'CN' }),
   ]);
   assert.ok(!getModelRisk(data, 'M').flagged[0].reasons.includes('unknown'));
+});
+
+test('bad records are rejected with their record number and reason', () => {
+  assert.throws(() => parseLinks({}), /must be an array/);
+  assert.throws(() => parseLinks([L({ tier: 0 })]), /record 0 \(M \/ c\): tier must be a whole number/);
+  assert.throws(() => parseLinks([L(), L({ confidence: 'medium' })]), /record 1 .*confidence must be one of high, low, unmapped/);
+  assert.throws(() => parseLinks([L({ conflict: 'no' })]), /conflict must be true or false/);
+  assert.throws(() => parseLinks([L({ model: ' ' })]), /model must be a non-empty string/);
+  const { supplier, ...noSupplier } = L();
+  assert.throws(() => parseLinks([noSupplier]), /supplier must be a string/);
+  assert.throws(() => parseLinks([null]), /record 0: must be an object/);
+});
+
+test('a mapped link needs a supplier and an http(s) source; an unmapped one does not', () => {
+  assert.throws(() => parseLinks([L({ supplier: '' })]), /a mapped link needs a supplier/);
+  assert.throws(() => parseLinks([L({ confidence: 'low', source_url: '' })]), /needs an http\(s\) source_url/);
+  assert.doesNotThrow(() => parseLinks([L({ confidence: 'unmapped', supplier: '', supplier_country: '', source_url: '' })]));
+});
+
+test('the error lists at most 10 problems and counts the rest', () => {
+  const bad = Array.from({ length: 12 }, () => L({ tier: 0 }));
+  assert.throws(() => parseLinks(bad), /\(and 2 more\)$/);
 });

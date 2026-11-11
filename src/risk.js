@@ -3,10 +3,39 @@ import { readFile } from 'node:fs/promises';
 
 const LINKS_PATH = new URL('../data/links.json', import.meta.url);
 
-export async function loadLinks() {
-  const raw = JSON.parse(await readFile(LINKS_PATH, 'utf8'));
-  if (!Array.isArray(raw)) throw new Error('links.json must be an array');
+export const loadLinks = async () => parseLinks(JSON.parse(await readFile(LINKS_PATH, 'utf8')));
+
+const CONFIDENCE = ['high', 'low', 'unmapped'];
+const MAX_REPORTED = 10;
+
+// Rejects the whole file on any bad record: skipping one could silently make a component look safe.
+export function parseLinks(raw) {
+  if (!Array.isArray(raw)) throw new Error('links.json must be an array of records');
+  const problems = raw.flatMap((l, i) => recordProblems(l).map(p => `record ${i}${where(l)}: ${p}`));
+  if (problems.length) {
+    const more = problems.length > MAX_REPORTED ? ` (and ${problems.length - MAX_REPORTED} more)` : '';
+    throw new Error(`${problems.slice(0, MAX_REPORTED).join('; ')}${more}`);
+  }
   return raw.map((l, id) => ({ id, ...l }));
+}
+
+const where = l => (l && typeof l === 'object' && l.model ? ` (${l.model} / ${l.component})` : '');
+const isText = v => typeof v === 'string';
+
+function recordProblems(l) {
+  if (!l || typeof l !== 'object' || Array.isArray(l)) return ['must be an object'];
+  const p = [];
+  for (const k of ['model', 'component']) if (!isText(l[k]) || !l[k].trim()) p.push(`${k} must be a non-empty string`);
+  for (const k of ['supplier', 'supplier_country', 'source_url']) if (!isText(l[k])) p.push(`${k} must be a string`);
+  if (!Number.isInteger(l.tier) || l.tier < 1) p.push('tier must be a whole number from 1');
+  if (!CONFIDENCE.includes(l.confidence)) p.push(`confidence must be one of ${CONFIDENCE.join(', ')}`);
+  if (typeof l.conflict !== 'boolean') p.push('conflict must be true or false');
+  // A mapped link is a claim, so it needs a supplier and a source a reader can open.
+  if (l.confidence === 'high' || l.confidence === 'low') {
+    if (isText(l.supplier) && !l.supplier.trim()) p.push('a mapped link needs a supplier');
+    if (isText(l.source_url) && !/^https?:\/\//i.test(l.source_url)) p.push('a mapped link needs an http(s) source_url');
+  }
+  return p;
 }
 
 const isMapped = l => l.confidence !== 'unmapped';

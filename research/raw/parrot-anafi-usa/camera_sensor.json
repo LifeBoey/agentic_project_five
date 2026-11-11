@@ -1,0 +1,263 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "camera_sensor",
+  "component": "camera sensor",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "IR image chain — Sensor: FLIR BOSON"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+          "quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "IR image chain — Sensor: FLIR BOSON"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+          "quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode."
+        }
+      ],
+      "notes": "Parrot's own ANAFI USA spec page confirms the thermal sensor is a FLIR Boson (and the visible chain is two 1/2.4\" 21MP sensors), but it does not name the visible-spectrum sensor vendor; the Sony IMX230 identification comes from Wikipedia's account of the base Anafi, which uses the same 1/2.4\" 21MP camera, so it is not USA-model-specific. No public teardown or filing I opened identified the Anafi USA's visible sensor, and I found no source stating where either sensor is fabricated, so tier 2 is empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown camera sensor image sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA thermal camera FLIR Boson visible sensor Sony"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" FLIR Boson 320 thermal sensor Parrot press release"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA 21MP Sony IMX sensor 4K camera specification"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.prnewswire.com/news-releases/parrot-launches-anafi-usa-a-drone-designed-for-first-responders-and-enterprise-professionals-301086070.html"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/en/newsroom/anafi-usa-embarque-une-camera-thermique-flir-boson-320"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi camera sensor \"IMX\" 21MP 1/2.4 CMOS Sony"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" teardown FCC internal photos camera module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi \"IMX230\" sensor camera"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://govtribe.com/file/government-file/anafi-usa-white-paper-en-dot-pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA camera \"Sony\" sensor Ambarella 21MP zoom module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson 320 microbolometer made in Goleta fabricated detector Teledyne FLIR"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" camera sensor Sony IMX forum parrot pilots which sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA sensor \"Sony\" image sensor supplier NDAA"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.wikipedia.org/wiki/Parrot_Anafi"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" \"IMX230\""
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" review \"Sony\" image sensor 21MP camera specs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson microbolometer fabricated Goleta California wafer 12 micron"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/en-gb/products/boson/"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://forum.developer.parrot.com/t/sensor-size-camera-intrinsics-matrix-for-all-parrot-models/18909"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "IR image chain — Sensor: FLIR BOSON",
+          "confidence": "unmapped",
+          "evidence_quote": "Sensor: FLIR BOSON",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the IR sensor for Anafi USA, but does not name Teledyne FLIR or state the supplier's country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+          "quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode.",
+          "confidence": "low",
+          "evidence_quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode.",
+          "reason": "The page names Sony as sensor supplier only for the original Anafi, not the Anafi USA, and gives no country for Sony.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+      "quote": "IR image chain — Sensor: FLIR BOSON",
+      "confidence": "unmapped",
+      "evidence_quote": "Sensor: FLIR BOSON",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the IR sensor for Anafi USA, but does not name Teledyne FLIR or state the supplier's country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+      "quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode.",
+      "confidence": "low",
+      "evidence_quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode.",
+      "reason": "The page names Sony as sensor supplier only for the original Anafi, not the Anafi USA, and gives no country for Sony.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Parrot's own ANAFI USA spec page confirms the thermal sensor is a FLIR Boson (and the visible chain is two 1/2.4\" 21MP sensors), but it does not name the visible-spectrum sensor vendor; the Sony IMX230 identification comes from Wikipedia's account of the base Anafi, which uses the same 1/2.4\" 21MP camera, so it is not USA-model-specific. No public teardown or filing I opened identified the Anafi USA's visible sensor, and I found no source stating where either sensor is fabricated, so tier 2 is empty.",
+  "when": "2026-11-11T06:31:08+00:00"
+}

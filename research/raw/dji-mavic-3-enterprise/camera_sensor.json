@@ -1,0 +1,165 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "camera_sensor",
+  "component": "camera sensor",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "Searches surfaced general spec pages (DJI Mavic 3 Enterprise specs, DPReview) confirming a 20MP Four Thirds CMOS wide camera and a 640x512 thermal camera, but no page I could open named the image-sensor maker or its fab for this model. Teardown leads (TechInsights Mavic 3 Pro deep dive, iFixit, Chinese-language sensor-ID threads) were paywalled, video-only, or blocked (Zhihu 403), so no supplier claim could be sourced.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise camera sensor teardown Sony IMX"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 Enterprise thermal sensor 640x512 supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" Hasselblad 4/3 sensor \"Sony\" IMX 20MP sensor supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3T thermal camera sensor made by InfiRay Raytron Guide Sensmart"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3T thermal sensor supplier InfiRay OR \"Guide Sensmart\" OR Raytron DJI"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "techinsights teardown DJI Mavic 3 camera image sensor Sony"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.techinsights.com/blog/dji-mavic-3-pro-dji-rc-deep-dive-teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 拆解 图像传感器 IMX CMOS 索尼 4/3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.zhihu.com/question/496787611"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"IMX472\" DJI Mavic 3 sensor confirmed"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3T\" thermal camera \"InfiRay\" sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 camera 20MP 4/3 CMOS \"IMX272\" teardown chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3T 红外热成像 传感器 供应商 国产 探测器"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 御3 哈苏 4/3 CMOS 索尼 传感器 IMX 拆解 芯片"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" IMX sensor \"Sony\" 4/3 drone camera which sensor mavicpilots"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3T teardown thermal module chip \"640\" infrared detector part number"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"IMX272\" 御3 大疆 哈苏 4/3 传感器"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 thermal sensor supplier Chinese infrared detector maker report 2022"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Sony image sensors DJI supplier drone cameras report Nikkei"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3T\" thermal infrared detector \"Raytron\" OR \"睿创\" 大疆 供应"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"IMX272\" mavic"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "御3 云台相机 拆解 CMOS 型号 传感器"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "Searches surfaced general spec pages (DJI Mavic 3 Enterprise specs, DPReview) confirming a 20MP Four Thirds CMOS wide camera and a 640x512 thermal camera, but no page I could open named the image-sensor maker or its fab for this model. Teardown leads (TechInsights Mavic 3 Pro deep dive, iFixit, Chinese-language sensor-ID threads) were paywalled, video-only, or blocked (Zhihu 403), so no supplier claim could be sourced.",
+  "when": "2026-11-11T06:45:26+00:00"
+}

@@ -1,0 +1,465 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "battery_cells",
+  "component": "battery cells",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Zhuhai CosMX Battery",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.toutiao.com/article/7527605919438389775/",
+          "quote": "合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。"
+        },
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ampace",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://m.36kr.com/p/2552986715479942",
+          "quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。"
+        },
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Amperex Technology Limited",
+          "supplier_country": "HK",
+          "country_basis": "hq",
+          "source_url": "https://www.sohu.com/a/955766145_120966274",
+          "quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。产品以轻量化、高能量密度和稳定性能著称，为多款大疆旗舰无人机提供原装电池。"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Zhuhai CosMX Battery",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.toutiao.com/article/7527605919438389775/",
+          "quote": "合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Ampace",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://m.36kr.com/p/2552986715479942",
+          "quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Amperex Technology Limited",
+          "supplier_country": "HK",
+          "country_basis": "hq",
+          "source_url": "https://www.sohu.com/a/955766145_120966274",
+          "quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。产品以轻量化、高能量密度和稳定性能著称，为多款大疆旗舰无人机提供原装电池。"
+        }
+      ],
+      "notes": "Only drone-industry-roundup/Chinese trade-media pages were found: they name Zhuhai CosMX (Mavic-series pouch cells), Ampace (ATL-CATL JV, described as DJI's largest supplier) and ATL as DJI drone battery suppliers, but none is specific to the Mavic 3 Enterprise pack model or identifies cell brand by teardown. No source was found for cathode material (tier 2) or lithium/cobalt/graphite raw material producers (tier 3) in this chain.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise battery cell supplier teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone battery supplier lithium-ion cell manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 电池 电芯 供应商 宁德新能源 ATL"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 battery teardown cell \"ATL\" OR \"Amperex\" OR \"LG\" OR \"Samsung\""
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://m.36kr.com/p/2552986715479942"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 智能飞行电池 拆解 电芯"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 电池 拆解 电芯 ATL 电池交易网"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 电芯 供应商 新能安 第一大供应商 电池"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "新能安 大疆 无人机 电芯 供应商"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 battery disassembly cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 Mavic 3 智能飞行电池 拆解 电池中国网 电芯"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"DJI\" 无人机 电池 供应商 亿纬锂能 鹏辉 珠海冠宇"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone battery cells supplier Amperex ATL Tianjin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆无人机 电池 电芯 供应商"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.toutiao.com/article/7527605919438389775/"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.sohu.com/a/955766145_120966274"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"BWX260-5000-15.4\" teardown cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 Enterprise battery disassembly \"cells\" pouch LiPo 5000mAh inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "新能安 Ampace 大疆 无人机 电芯 供应商 软包"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"御3\" OR \"Mavic 3\" 电池 拆解 软包电芯 品牌"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "珠海冠宇 大疆 客户 无人机 电池 投资者 互动"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "battery teardown \"Mavic 3\" zhihu 电池交易网 拆解 智能电池 电芯"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Zhuhai CosMX Battery",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.toutiao.com/article/7527605919438389775/",
+          "quote": "合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。",
+          "confidence": "unmapped",
+          "evidence_quote": "珠海冠宇（股票代码：688772）\n合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page links Zhuhai CosMX to DJI consumer drones including the Mavic series generally, but not specifically the Mavic 3 Enterprise, and it does not state the supplier's country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ampace",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://m.36kr.com/p/2552986715479942",
+          "quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。",
+          "confidence": "unmapped",
+          "evidence_quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。",
+          "reason": "evidence quote not found on page (verifier said low: The page names Ampace (新能安) as cell supplier for DJI Power stations and DJI's largest drone supplier generally, but never ties it to the Mavic 3 Enterprise or states its country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Amperex Technology Limited",
+          "supplier_country": "HK",
+          "country_basis": "hq",
+          "source_url": "https://www.sohu.com/a/955766145_120966274",
+          "quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。产品以轻量化、高能量密度和稳定性能著称，为多款大疆旗舰无人机提供原装电池。",
+          "confidence": "unmapped",
+          "evidence_quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。",
+          "reason": "evidence quote not found on page (verifier said low: The page supports ATL as a core DJI battery supplier for multiple flagship DJI drones, but does not mention the Mavic 3 Enterprise or state ATL's country/HQ.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source found that names the Li-ion cell maker inside the Mavic 3 Enterprise (BWX260-5000-15.4) pack, nor any cathode-material, lithium/cobalt/graphite producer linked to those cells. Searches surfaced only generic DJI-supplier roundups and third-party replacement batteries (which cite Samsung cells, not the OEM's), so nothing met the sourcing bar.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 battery teardown cells supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise battery BWX260-5000-15.4Wh cell manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" battery cell \"ATL\" OR \"Amperex\" supplier DJI"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI battery pack supplier lithium cell \"DJI\" drone cells manufacturer Amperex Technology"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 御3 Mavic 3 智能飞行电池 电芯 供应商 拆解"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" battery teardown cell brand 18650 OR \"pouch cell\" manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "CosMX DJI drone battery cell supplier prospectus"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "mavicpilots battery label manufacturer Mavic 3 \"made by\" cell manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"御3\" OR \"Mavic 3\" 电池 电芯 珠海冠宇 OR 新能源科技 OR 力神"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 电芯 供应商 亿纬锂能 OR 珠海冠宇 OR 欣旺达 大疆 电池"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.163.com/dy/article/KTO00MDC05568W0A.html",
+            "focus": "电池"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "御3 电池 拆解 电芯 型号 大疆"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "珠海冠宇 招股说明书 大疆 客户 无人机 聚合物软包"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "COSMX DJI customer drone battery \"DJI\" annual report supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "冠宇 招股说明书 无人机 客户 大疆 消费类 收入 占比"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"大疆\" \"冠宇\" 电池 供应商 无人机 电芯 报道"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" battery \"cells\" \"Amperex\" OR \"ATL\" OR \"CosMX\" teardown disassembly photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "CosMX 冠宇 大疆 无人机 客户 供应 电池 新闻"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Zhuhai CosMX DJI drone customer revenue 2023"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone battery cell supplier Zhuhai CosMX consumer drone batteries market share"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io DJI Mavic 3 battery BWX260 internal photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "欣旺达 大疆 电池 供应商 无人机 电芯 公告"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [
+    {
+      "component": "battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Zhuhai CosMX Battery",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://www.toutiao.com/article/7527605919438389775/",
+      "quote": "合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。",
+      "confidence": "unmapped",
+      "evidence_quote": "珠海冠宇（股票代码：688772）\n合作背景：自2015年起成为大疆主要电池供应商，长期提供聚合物软包锂离子电池，用于消费级无人机（如Phantom、Mavic系列）。",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page links Zhuhai CosMX to DJI consumer drones including the Mavic series generally, but not specifically the Mavic 3 Enterprise, and it does not state the supplier's country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Ampace",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://m.36kr.com/p/2552986715479942",
+      "quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。",
+      "confidence": "unmapped",
+      "evidence_quote": "新能安为宁德时代及ATL的合资公司，新能安一直以来在户储、两轮电动车、无人机领域深入布局，同时也是大疆无人机的第一大供应商。",
+      "reason": "evidence quote not found on page (verifier said low: The page names Ampace (新能安) as cell supplier for DJI Power stations and DJI's largest drone supplier generally, but never ties it to the Mavic 3 Enterprise or states its country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Amperex Technology Limited",
+      "supplier_country": "HK",
+      "country_basis": "hq",
+      "source_url": "https://www.sohu.com/a/955766145_120966274",
+      "quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。产品以轻量化、高能量密度和稳定性能著称，为多款大疆旗舰无人机提供原装电池。",
+      "confidence": "unmapped",
+      "evidence_quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。",
+      "reason": "evidence quote not found on page (verifier said low: The page supports ATL as a core DJI battery supplier for multiple flagship DJI drones, but does not mention the Mavic 3 Enterprise or state ATL's country/HQ.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "No public source found that names the Li-ion cell maker inside the Mavic 3 Enterprise (BWX260-5000-15.4) pack, nor any cathode-material, lithium/cobalt/graphite producer linked to those cells. Searches surfaced only generic DJI-supplier roundups and third-party replacement batteries (which cite Samsung cells, not the OEM's), so nothing met the sourcing bar.",
+  "when": "2026-11-11T06:48:27+00:00"
+}

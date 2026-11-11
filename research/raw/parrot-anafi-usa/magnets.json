@@ -1,0 +1,169 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "magnets",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source opened in this session names the motor, magnet or rare-earth supplier for the Parrot Anafi USA; Parrot's own white paper describes motor covers, 46 W motors and propellers but discloses no supplier, and FCC internal photos only show the airframe. The magnet/rare-earth tiers therefore remain unmapped.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA motor supplier brushless motor teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA NDAA supply chain motors made in USA components"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" motor manufacturer supplier brushless \"Parrot\" teardown motor stator"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown components list iFixit"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot drone motor supplier \"brushless motors\" Parrot contract manufacturer Anafi"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi USA \"made in USA\" motors magnets rare earth Parrot supply chain NEOTech"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi USA motors \"Sunny Sky\" OR \"T-Motor\" OR \"Nidec\" OR \"Johnson Electric\" Parrot motor supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA supply chain analysis Chinese components magnets drones Bard report"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" motor stator \"magnet\" OR \"NdFeB\" analysis components Chinese origin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" FCC ID internal photos motor Parrot Drone SAS"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "RUSI drones decoupling supply chains China Parrot Anafi USA motors magnets"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" Anafi motor \"made by\" OR \"manufactured by\" brushless motor PF070766"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DIU Blue UAS Parrot Anafi USA supply chain disclosure magnets China exemption"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi motor replacement \"motor\" 1811 OR 1806 specifications rcgroups disassembly motor brand"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" Brushless motor manufacturer \"Sunny Sky\" OR \"X-TEAM\" OR \"Hobbymate\" supply Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" \"bill of materials\" OR BOM supply chain component origin report"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi fournisseur moteurs brushless chinois sous-traitant drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot customs import records \"brushless motor\" supplier shipments drone Panjiva ImportGenius"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.jaredwatkins.com/research/robotics/aerial-drones/parrot/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://static.rusi.org/rp-drone-supply-chains-china-nov-2025.pdf",
+            "focus": "Parrot"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public source opened in this session names the motor, magnet or rare-earth supplier for the Parrot Anafi USA; Parrot's own white paper describes motor covers, 46 W motors and propellers but discloses no supplier, and FCC internal photos only show the airframe. The magnet/rare-earth tiers therefore remain unmapped.",
+  "when": "2026-11-11T06:31:29+00:00"
+}

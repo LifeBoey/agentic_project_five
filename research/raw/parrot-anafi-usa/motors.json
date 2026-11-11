@@ -1,0 +1,170 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "motors",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source I opened names the motor supplier for the Parrot Anafi USA. Parrot's own pages and resellers only describe the Anafi's motors as Parrot-branded brushless units sold as spare-part kits (PF070766), and FCC internal-photo filings for the Anafi USA (2AG6IANAFIM3) do not identify a motor vendor; general reporting that most Blue UAS drones use China-sourced motors does not name Parrot's supplier.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA brushless motor supplier teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi motor manufacturer supplier brushless motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" FCC ID internal photos teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi motor \"made in\" brushless motor OEM manufacturer France"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" drone teardown motor \"brushless\" manufacturer markings inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot SA supplier list brushless motors drone components purchasing annual report"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" Anafi motor OEM supplier Chinese motor manufacturer drone contract"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi USA motor \"Parrot\" part number PF070766 manufacturer specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA supply chain China components motors sourced \"Anafi USA\" DIU Blue sUAS"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://defensescoop.com/2025/11/20/dod-drones-blue-uas-list-chinese-parts-motors/",
+            "focus": "Parrot"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.digdb.net/parrot-anafi-usa/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Parrot",
+            "url": "https://defensescoop.com/2025/11/20/dod-drones-blue-uas-list-chinese-parts-motors/?char=10000"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi moteur brushless fournisseur chinois fabrication"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motors",
+            "url": "https://defensescoop.com/2025/11/20/dod-drones-blue-uas-list-chinese-parts-motors/?focus=motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "importyeti Parrot drone motors supplier China shipment"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" \"motors\" Parrot supply chain domestic content US made components list"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi motor 1724 brushless PF070766 replacement specification KV"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi iFixit teardown motor identification"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" motor supplier \"Shenzhen\" OR \"SunnySky\" OR \"T-Motor\" OR \"Xing\" brushless Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" motor \"FC\" OR \"marking\" forum brushless replaced third party motor compatible"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://dronehub.ai/blog/european-drone-supply-chain-components-2026",
+            "focus": "Parrot"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public source I opened names the motor supplier for the Parrot Anafi USA. Parrot's own pages and resellers only describe the Anafi's motors as Parrot-branded brushless units sold as spare-part kits (PF070766), and FCC internal-photo filings for the Anafi USA (2AG6IANAFIM3) do not identify a motor vendor; general reporting that most Blue UAS drones use China-sourced motors does not name Parrot's supplier.",
+  "when": "2026-11-11T06:30:38+00:00"
+}

@@ -1,0 +1,167 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "battery_cells",
+  "component": "battery cells",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "I found no public source identifying the cell maker inside the Parrot ANAFI USA battery pack, and nothing tracing cathode/anode material or raw-material suppliers for it. Searches surfaced only retailer spec pages (3400 mAh LiPo, part PF070333), a blocked parrotpilots.com rebuild thread, and generic Parrot disassembly guides that show battery removal but not cell markings - so no tier could be sourced honestly.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA battery pack teardown cells manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA battery Bebop 2 battery cell supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" drone battery cells supplier lithium polymer France \"Parrot\" battery pack manufacturer partnership"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown iFixit battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery FCC ID lithium ion cell model"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" battery pack supplier Panjiva import shipments drone battery Shenzhen"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" battery teardown inside cells \"ATL\" OR \"LG\" OR \"Samsung SDI\" OR \"Murata\" drone battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot battery pack supplier \"Brighe\" OR \"Bren-Tronics\" OR \"Ansmann\" drone lithium Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Saft battery drone partnership lithium"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://dronehub.ai/blog/european-drone-supply-chain-components-2026",
+            "focus": "Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot Drones\" import record battery pack supplier customs \"Parrot Drones SAS\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi battery inside \"3400 mAh\" cell markings teardown review disassembly battery cells"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://parrotpilots.com/threads/reverse-engineering-the-anafis-battery-to-get-usable-batteries-and-refurbish-them-properly.5864/",
+            "focus": "cell"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" battery \"made in\" origin country manufactured battery pack"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery \"PF070333\" cell manufacturer specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io Parrot battery pack ANAFI \"battery\" internal photos 2AG6I"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery UN38.3 test summary MSDS PDF cell manufacturer lithium"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" batterie fournisseur cellules lithium drones sous-traitant fabrication"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "volza OR importgenius \"Parrot Drones\" battery imports supplier list"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot\" \"Anafi\" battery cells \"Murata\" OR \"Molicel\" OR \"Lishen\" OR \"BAK\" OR \"ATL\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "reddit Anafi battery pack opened cells replacement which cells inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" akku zellen hersteller drone batterie zerlegt"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "I found no public source identifying the cell maker inside the Parrot ANAFI USA battery pack, and nothing tracing cathode/anode material or raw-material suppliers for it. Searches surfaced only retailer spec pages (3400 mAh LiPo, part PF070333), a blocked parrotpilots.com rebuild thread, and generic Parrot disassembly guides that show battery removal but not cell markings - so no tier could be sourced honestly.",
+  "when": "2026-11-11T06:31:29+00:00"
+}

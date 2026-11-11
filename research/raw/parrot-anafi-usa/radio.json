@@ -1,0 +1,265 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "radio",
+  "component": "radio",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-product-sheet.pdf",
+          "quote": "AES 256 encrypted Microhard radio\ncommunication system"
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.microhardcorp.com/pDDL1800.php",
+          "quote": "pDDL1800 - 1.8 GHz OEM Ethernet & Serial Digital Data Link"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-product-sheet.pdf",
+          "quote": "AES 256 encrypted Microhard radio\ncommunication system"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.microhardcorp.com/pDDL1800.php",
+          "quote": "pDDL1800 - 1.8 GHz OEM Ethernet & Serial Digital Data Link"
+        }
+      ],
+      "notes": "Parrot's own product sheet confirms that the ANAFI USA MIL variant uses an AES-256 encrypted Microhard radio communication system (Microhard pDDL1800 1.8 GHz data link, Microhard Systems of Calgary, Canada); the standard Anafi USA appears to use Parrot's own Wi-Fi link, documented only via FCC filings (2AG6IANAFIM3) with confidential block diagrams/schematics. No public source identified the RF/radio chipset inside the module, so tier 2 is empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown radio module datalink"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi USA FCC filing Parrot radio WiFi module"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" teardown inside chips WiFi module Parrot drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi WiFi chipset Qualcomm Atheros module teardown photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit Parrot Anafi teardown board chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" Parrot firmware \"88W\" OR \"QCA\" OR \"BCM\" wifi chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" teardown component analysis supply chain report chips"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929.pdf"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.spyshopeurope.com/upload/ANAFI-USA-product-sheet.pdf",
+            "focus": "Microhard"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Microhard pDDL1800 Anafi USA Parrot radio module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi 拆解 主板 芯片 wifi"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.microhardcorp.com/pDDL1800.php"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-product-sheet.pdf",
+            "focus": "Microhard"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Microhard pDDL1800 FCC internal photos chipset Atheros"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot Anafi\" wifi module \"Marvell\" OR \"Broadcom\" OR \"Realtek\" chip datasheet"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA white paper Wi-Fi link radio communication system security"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi firmware ath10k OR brcmfmac OR \"iwlwifi\" wifi driver hacking"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI\" drone teardown \"Wi-Fi\" module Murata OR SparkLAN OR \"Redpine\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" teardown internals Wi-Fi chip \"Qualcomm\" drone board photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA supply chain components report chips American made \"Anafi USA\" DHS"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-product-sheet.pdf",
+          "quote": "AES 256 encrypted Microhard radio\ncommunication system",
+          "confidence": "low",
+          "evidence_quote": "• Radio: Microhard pDDL1800 1.8 GHz",
+          "reason": "capped at low: country is HQ-based or not on page. The product sheet explicitly names a Microhard radio for the ANAFI USA MIL but does not state Microhard's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.microhardcorp.com/pDDL1800.php",
+          "quote": "pDDL1800 - 1.8 GHz OEM Ethernet & Serial Digital Data Link",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page describes Microhard's pDDL1800 data link but never mentions Parrot, the Anafi USA drone, or that this part is used in it.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Microhard Systems",
+      "supplier_country": "CA",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-product-sheet.pdf",
+      "quote": "AES 256 encrypted Microhard radio\ncommunication system",
+      "confidence": "low",
+      "evidence_quote": "• Radio: Microhard pDDL1800 1.8 GHz",
+      "reason": "capped at low: country is HQ-based or not on page. The product sheet explicitly names a Microhard radio for the ANAFI USA MIL but does not state Microhard's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Microhard Systems",
+      "supplier_country": "CA",
+      "country_basis": "hq",
+      "source_url": "https://www.microhardcorp.com/pDDL1800.php",
+      "quote": "pDDL1800 - 1.8 GHz OEM Ethernet & Serial Digital Data Link",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page describes Microhard's pDDL1800 data link but never mentions Parrot, the Anafi USA drone, or that this part is used in it.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Parrot's own product sheet confirms that the ANAFI USA MIL variant uses an AES-256 encrypted Microhard radio communication system (Microhard pDDL1800 1.8 GHz data link, Microhard Systems of Calgary, Canada); the standard Anafi USA appears to use Parrot's own Wi-Fi link, documented only via FCC filings (2AG6IANAFIM3) with confidential block diagrams/schematics. No public source identified the RF/radio chipset inside the module, so tier 2 is empty.",
+  "when": "2026-11-11T06:31:17+00:00"
+}

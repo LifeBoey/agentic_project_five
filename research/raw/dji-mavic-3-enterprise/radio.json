@@ -1,0 +1,314 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "radio",
+  "component": "radio",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3. This includes Enterprise models and ground based DJI wireless products such as DJI Transmission."
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1,S1 and S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link."
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
+          "quote": "The new Mavic 3 again uses the P1 craft side, we know the RC-N1 that's used on the Mini2, Air 2/sand the M3 is based on the S1 however and is classed as Ocusync 2."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3. This includes Enterprise models and ground based DJI wireless products such as DJI Transmission."
+        },
+        {
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1,S1 and S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link."
+        },
+        {
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
+          "quote": "The new Mavic 3 again uses the P1 craft side, we know the RC-N1 that's used on the Mini2, Air 2/sand the M3 is based on the S1 however and is classed as Ocusync 2."
+        }
+      ],
+      "notes": "No Mavic 3 Enterprise-specific teardown or chip-level source exists that I could open; the FCC internal photos (SS3-M3E2206) show boards but label no chips. The best evidence is that DJI's OcuSync link, including in Enterprise models and the Mavic 3 platform, runs on DJI's own custom P1/S-series ASIC modem, so both the module and its RF/radio chipset are in-house DJI (China). iFixit's Mavic 3 Pro chip ID hints at Maxscend LNAs and Skyworks front-end modules but only as 'likely' and for a different model, so I did not use it.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise FCC filing radio module teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 teardown RF chipset OcuSync 3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" FCC ID OcuSync 3 antenna module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io DJI Mavic 3 Enterprise M3E FCC filing internal photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Leadcore IE1000 RF transceiver DJI OcuSync"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit \"Mavic 3 Enterprise\" teardown chip ID main board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI OcuSync 3 Enterprise transmission system developed by DJI"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.dji.com/media-center/announcements/dji-enables-next-generation-flights-for-professional-drone-operators-with-a-new-generation-of-enterprise-drone-systems",
+            "focus": "OcuSync 3 Enterprise"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown Leadcore IE1000 芯片 拆解"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "OcuSync",
+            "url": "https://enterprise.dji.com/mavic-3-enterprise/specs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" teardown main board chip RF front-end module Skyworks"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238874.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Leadcore Technology IE1000 RF transceiver chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" 拆解 芯片 射频 主板"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "OcuSync",
+            "url": "https://www.ifixit.com/Device/DJI_Mavic_3_Enterprise"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit \"Mavic 3\" chip ID teardown \"Maxscend\" OR \"Leadcore\" OR \"Skyworks\" radio"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Mavic 3",
+            "url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" DJI enterprise \"OcuSync 3 Enterprise\" DJI-developed proprietary transmission"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" 拆机 主板 芯片 识别 RF 功放"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise launch press release \"OcuSync 3 Enterprise\" \"DJI O3 Enterprise\""
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3. This includes Enterprise models and ground based DJI wireless products such as DJI Transmission.",
+          "confidence": "low",
+          "evidence_quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3.",
+          "reason": "The page links DJI's custom Ocusync P1 radio chipset to DJI enterprise/Ocusync drones up to Mavic 3, but it does not name the Mavic 3 Enterprise specifically or state DJI's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "The P1,S1 and S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link.",
+          "confidence": "low",
+          "evidence_quote": "The P1,S1 & S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link.",
+          "reason": "The page supports DJI RF chipsets in DJI Ocusync drones, including Enterprise models generally, but does not specifically name the Mavic 3 Enterprise or state DJI's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "DJI",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
+          "quote": "The new Mavic 3 again uses the P1 craft side, we know the RC-N1 that's used on the Mini2, Air 2/sand the M3 is based on the S1 however and is classed as Ocusync 2.",
+          "confidence": "low",
+          "evidence_quote": "What is interesting in all of this is the DJI Digital FPV system appears to have been a testbed for the custom P1 platform and it’s clearly been a success as DJI have continued to use it in their products including the new Mavic 3.",
+          "reason": "The page says DJI's custom P1/S1 radio SOC is used in the Mavic 3, but it never mentions the Mavic 3 Enterprise variant or DJI's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "DJI",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+      "quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3. This includes Enterprise models and ground based DJI wireless products such as DJI Transmission.",
+      "confidence": "low",
+      "evidence_quote": "The P1 supported carriers up to 40Mhz, dual antennas and onboard video decoding and has been used in most DJI drones with Ocusync 2 and Ocusync 3.",
+      "reason": "The page links DJI's custom Ocusync P1 radio chipset to DJI enterprise/Ocusync drones up to Mavic 3, but it does not name the Mavic 3 Enterprise specifically or state DJI's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": "Radio chip",
+      "tier": 2,
+      "supplier": "DJI",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+      "quote": "The P1,S1 and S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link.",
+      "confidence": "low",
+      "evidence_quote": "The P1,S1 & S2 Chipsets are custom Asics used by DJI in their Ocusync based drones that are the basis for their Ocusync RF Wireless Link.",
+      "reason": "The page supports DJI RF chipsets in DJI Ocusync drones, including Enterprise models generally, but does not specifically name the Mavic 3 Enterprise or state DJI's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": "Radio chip",
+      "tier": 2,
+      "supplier": "DJI",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
+      "quote": "The new Mavic 3 again uses the P1 craft side, we know the RC-N1 that's used on the Mini2, Air 2/sand the M3 is based on the S1 however and is classed as Ocusync 2.",
+      "confidence": "low",
+      "evidence_quote": "What is interesting in all of this is the DJI Digital FPV system appears to have been a testbed for the custom P1 platform and it’s clearly been a success as DJI have continued to use it in their products including the new Mavic 3.",
+      "reason": "The page says DJI's custom P1/S1 radio SOC is used in the Mavic 3, but it never mentions the Mavic 3 Enterprise variant or DJI's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "No Mavic 3 Enterprise-specific teardown or chip-level source exists that I could open; the FCC internal photos (SS3-M3E2206) show boards but label no chips. The best evidence is that DJI's OcuSync link, including in Enterprise models and the Mavic 3 platform, runs on DJI's own custom P1/S-series ASIC modem, so both the module and its RF/radio chipset are in-house DJI (China). iFixit's Mavic 3 Pro chip ID hints at Maxscend LNAs and Skyworks front-end modules but only as 'likely' and for a different model, so I did not use it.",
+  "when": "2026-11-11T06:45:04+00:00"
+}

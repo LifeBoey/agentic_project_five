@@ -1,0 +1,263 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "flight_controller_chip",
+  "component": "flight controller chip",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore H6MN applications processor"
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "Just to explain about Leadcore , they are a Chinese foundry-less chip designer that makes SOC for tablets, phones and smart devices."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore H6MN applications processor"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "Just to explain about Leadcore , they are a Chinese foundry-less chip designer that makes SOC for tablets, phones and smart devices."
+        }
+      ],
+      "notes": "The only published chip-ID teardown in this family is iFixit's Mavic 3 Pro main-board identification, which flags a 'likely Leadcore H6MN' applications processor plus Leadcore E2B/P1 and an HDSC HC32F176 MCU; no Mavic 3 Enterprise-specific chip identification was found. No source names the foundry for that processor, and the one source describing Leadcore calls it a fabless ('foundry-less') designer, so no Tier 2 fabrication entry could be sourced.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 teardown flight controller chip processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise teardown FCC internal photos processor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise mainboard \"flight controller\" chip Leadcore"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit \"Mavic 3\" chip ID teardown Leadcore H6MN ESC"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" teardown chip Leadcore \"H6M\" OR \"P1\" OR \"MCU\" mainboard"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" iFixit teardown \"chip ID\" main board Side A"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 flight controller STM32 microcontroller identified"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "o-gs dji-hardware-schematics flight controller STM32 Mavic"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-hardware-schematics"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 拆解 主板 飞控 芯片 型号"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "ifixit \"Mavic 3 Classic\" OR \"Mavic 3 Enterprise\" chip ID teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" ESC board chip \"STM32\" OR \"GD32\" OR \"TI\" flight control identified teardown photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"HC32F176\" DJI Mavic"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 行业版 拆解 芯片 飞控 主控"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Leadcore\" DJI main board \"H6M\" OR \"E2B\" OR \"P1\" chip teardown Mavic 3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ifixit.com/Device/DJI_Mavic_3"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Leadcore Technology fabless chip designer Datang subsidiary foundry TSMC"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone chip foundry SMIC \"DJI\" processor manufactured 2022 teardown"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.arenaphysica.com/publications/dji-teardown"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.zhihu.com/en/answer/2729160634"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore H6MN applications processor",
+          "confidence": "low",
+          "evidence_quote": "Likely Leadcore H6MN applications processor",
+          "reason": "The page names Leadcore only as a likely component supplier in the Mavic 3 Pro, not as the flight controller chip supplier for the Mavic 3 Enterprise, and it does not state China.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+          "quote": "Just to explain about Leadcore , they are a Chinese foundry-less chip designer that makes SOC for tablets, phones and smart devices.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page describes Leadcore as a Chinese chip designer used in older DJI Ocusync systems, but does not state Leadcore supplies a flight controller chip for the Mavic 3 Enterprise; it says P1 replaced Leadcore.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Leadcore Technology",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+      "quote": "Likely Leadcore H6MN applications processor",
+      "confidence": "low",
+      "evidence_quote": "Likely Leadcore H6MN applications processor",
+      "reason": "The page names Leadcore only as a likely component supplier in the Mavic 3 Pro, not as the flight controller chip supplier for the Mavic 3 Enterprise, and it does not state China.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Leadcore Technology",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://fpvwiki.co.uk/dji-ocusync-p1-soc",
+      "quote": "Just to explain about Leadcore , they are a Chinese foundry-less chip designer that makes SOC for tablets, phones and smart devices.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page describes Leadcore as a Chinese chip designer used in older DJI Ocusync systems, but does not state Leadcore supplies a flight controller chip for the Mavic 3 Enterprise; it says P1 replaced Leadcore.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "The only published chip-ID teardown in this family is iFixit's Mavic 3 Pro main-board identification, which flags a 'likely Leadcore H6MN' applications processor plus Leadcore E2B/P1 and an HDSC HC32F176 MCU; no Mavic 3 Enterprise-specific chip identification was found. No source names the foundry for that processor, and the one source describing Leadcore calls it a fabless ('foundry-less') designer, so no Tier 2 fabrication entry could be sourced.",
+  "when": "2026-11-11T06:41:50+00:00"
+}

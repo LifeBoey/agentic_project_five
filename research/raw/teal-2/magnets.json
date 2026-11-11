@@ -1,0 +1,169 @@
+{
+  "model": "Teal 2",
+  "category": "magnets",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public teardown, FCC filing, or datasheet names the motor or magnet supplier for the Teal 2; Red Cat's Feb 2025 release confirms it buys motors from Unusual Machines for one of its platforms (not explicitly the Teal 2), and trade coverage says the NdFeB magnets in those US-made motors still come largely from China, but no specific magnet maker (Tier 2) or rare-earth producer (Tier 3) is identified in any source I could open.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone motors supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 motor manufacturer brushless"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone motor 2207 brushless"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 teardown components"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 NDAA compliant motors supplier domestic"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone \"motor\" spec specifications thrust"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.newswire.com/view/content/red-cat-becomes-first-u-s-based-drone-manufacturer-to-source-motors-22525900"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Unusual Machines drone motors magnet supplier neodymium"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Unusual Machines\" motors platform"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.techtimes.com/articles/324566/20260815/drone-tariff-rally-hits-engineering-wall-magnets-batteries-stay-china-made.htm"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone motor \"T-Motor\" OR \"SunnySky\" OR \"Brotherhobby\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone огляд двигун розбірка"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://redcataerial.com/solutions/teal-2/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone specifications motors \"propulsion\" Red Cat datasheet"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" replacement motor part number drone spare parts buy"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 operator manual pdf motor maintenance"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://manuals.plus/m/e21050cb22b2158bf9a2d234dc01654974538110ab37086215119e1236ab2e86"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 Blue UAS framework critical components list motor supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Unusual Machines magnet sourcing agreement rare earth magnets drone motors 2026"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat rare earth magnet supply agreement Teal motors NdFeB"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public teardown, FCC filing, or datasheet names the motor or magnet supplier for the Teal 2; Red Cat's Feb 2025 release confirms it buys motors from Unusual Machines for one of its platforms (not explicitly the Teal 2), and trade coverage says the NdFeB magnets in those US-made motors still come largely from China, but no specific magnet maker (Tier 2) or rare-earth producer (Tier 3) is identified in any source I could open.",
+  "when": "2026-11-11T06:35:18+00:00"
+}

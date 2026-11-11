@@ -1,0 +1,220 @@
+{
+  "model": "Teal 2",
+  "category": "motors",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Unusual Machines",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2958/rl143005.pdf",
+          "quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Unusual Machines",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2958/rl143005.pdf",
+          "quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications."
+        }
+      ],
+      "notes": "The only model-relevant motor-supply finding is a Feb 2025 Unusual Machines press release announcing Red Cat as a motor customer with initial orders, but it says the motors are for 'one of its platforms' and never names the Teal 2, so attribution to this drone is unconfirmed. No teardown, FCC internal-photo set, operator manual page, or Red Cat statement names the specific brushless motor manufacturer for the Teal 2.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone brushless motors supplier teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 components supplier motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone motor specification brushless 2306"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 FCC filing internal photos motor Red Cat"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone teardown bill of materials Chinese components"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 \"motors\" press release propulsion supplier"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.barchart.com/story/news/31123461/red-cat-becomes-first-us-based-drone-manufacturer-to-source-motors-from-unusual-machines"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://dronestrike.com/drone/teal-2"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2958/rl143005.pdf",
+            "focus": "Teal 2"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Unusual Machines\" Red Cat motors \"Teal 2\" NDAA motors supply agreement"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" motor \"KDE Direct\" OR \"SunnySky\" OR \"Hobbywing\" OR \"T-Motor\" NDAA drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 motor spare part \"motor\" buy replacement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://redcataerial.com/solutions/teal-2/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Blue UAS framework cleared components list motors Red Cat Teal 2 motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone supply chain motors Taiwan \"Made in\" components investigation"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://github.com/DroneWuKong/drone-integration-handbook/blob/main/platforms/blue-uas/teal-2.md"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone review specs \"motors\" propeller size mm quadcopter"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat 10-K \"Teal 2\" motors supplier \"NDAA\" components list KDE SunnySky motors single source"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"motors\" redcataerial spare parts repair kit motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://support.redcataerial.com/teal-2/manuals/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 operator manual pdf \"motor\" section propellers removal replace Red Cat"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Unusual Machines",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2958/rl143005.pdf",
+          "quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications.",
+          "confidence": "low",
+          "evidence_quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications.",
+          "reason": "The page confirms Unusual Machines supplies motors to Red Cat but does not identify the Teal 2 as the platform.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "motors",
+      "part": null,
+      "tier": 1,
+      "supplier": "Unusual Machines",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2958/rl143005.pdf",
+      "quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications.",
+      "confidence": "low",
+      "evidence_quote": "Red Cat will use three motor variants from Unusual Machines for one of its platforms designed for government and commercial applications.",
+      "reason": "The page confirms Unusual Machines supplies motors to Red Cat but does not identify the Teal 2 as the platform.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "The only model-relevant motor-supply finding is a Feb 2025 Unusual Machines press release announcing Red Cat as a motor customer with initial orders, but it says the motors are for 'one of its platforms' and never names the Teal 2, so attribution to this drone is unconfirmed. No teardown, FCC internal-photo set, operator manual page, or Red Cat statement names the specific brushless motor manufacturer for the Teal 2.",
+  "when": "2026-11-11T06:35:44+00:00"
+}

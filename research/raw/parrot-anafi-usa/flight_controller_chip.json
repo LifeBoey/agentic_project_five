@@ -1,0 +1,471 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "flight_controller_chip",
+  "component": "flight controller chip",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera."
+        },
+        {
+          "component": "flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/",
+          "quote": "Currently, the substantial majority of our SoCs are supplied by Samsung Electronics Corporation (Samsung) in facilities located in Austin, Texas and South Korea, from whom we have the option to purchase both fully-assembled and tested products as well as tested die in wafer form for assembly."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera."
+        },
+        {
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/",
+          "quote": "Currently, the substantial majority of our SoCs are supplied by Samsung Electronics Corporation (Samsung) in facilities located in Austin, Texas and South Korea, from whom we have the option to purchase both fully-assembled and tested products as well as tested die in wafer form for assembly."
+        }
+      ],
+      "notes": "Parrot's own ANAFI USA white paper confirms the flight controller runs on an Ambarella H22 SoC; Ambarella's 10-K states the substantial majority of its SoCs are fabricated by Samsung (Austin, Texas and South Korea). No source found tying the specific 14nm H22 die to a named foundry, so the foundry claim is Ambarella-level, not H22-level.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown flight controller processor chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA FCC filing internal photos processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi teardown Ambarella processor main board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA \"Snapdragon\" OR \"Ambarella\" OR \"NVIDIA\" SoC"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" drone processor \"Qualcomm\" chip board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown internal photos board chips fccid 2AG6IANAFIM3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi main chip \"Ambarella\" H22 teardown drone"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://parrotpilots.com/threads/anafi-technical-whitepaper.3984/",
+            "focus": "Ambarella"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+            "focus": "processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella foundry TSMC 10-K \"Taiwan Semiconductor\" fabricate wafers"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella H22 28nm Samsung foundry process"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "foundr",
+            "url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella 10-K \"Samsung\" foundry \"we rely\" wafer fabrication H22 28nm"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "foundries",
+            "url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Ambarella\" H22 \"28nm\" process node specification"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ambarella.com/news/ambarella-introduces-h22-a-4k-ultra-hd-soc-for-the-next-generation-of-drones-and-sports-cameras/",
+            "focus": "nm"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella 10-K fiscal 2019 \"Samsung\" \"14 nm\" foundry substantially all SoCs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Ambarella\" \"Samsung\" 14nm foundry H2 H22 production 2017"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella 10-K 2018 \"Samsung Electronics\" foundry \"substantial majority\" SoCs"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://www.sec.gov/Archives/edgar/data/1280263/000128026318000019/amba10k-fy2018.htm"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera.",
+          "confidence": "low",
+          "evidence_quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera.",
+          "reason": "capped at low: country is HQ-based or not on page. The white paper explicitly names Ambarella's H22 as the processor in the Anafi USA flight controller, but gives no country for Ambarella.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/",
+          "quote": "Currently, the substantial majority of our SoCs are supplied by Samsung Electronics Corporation (Samsung) in facilities located in Austin, Texas and South Korea, from whom we have the option to purchase both fully-assembled and tested products as well as tested die in wafer form for assembly.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page is an Ambarella 10-K about its own chip suppliers and does not mention Parrot or the Anafi USA drone.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2021-02/anafi-usa-product-sheet-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2021-02/anafi-usa-product-sheet-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera."
+        }
+      ],
+      "notes": "Parrot's own ANAFI USA white paper (v1.5.2) explicitly names the Ambarella H22 as the flight-controller processor, confirming the Tier 1 chip vendor. No public source found stating which foundry fabricates the H22, so the Tier 2 fabrication entry is left empty; Ambarella's US country is on an HQ basis and was not independently re-verified from an opened page in this session.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown flight controller chip Ambarella"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi USA processor Ambarella H22 Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io Parrot ANAFI USA internal photos \"ANAFI USA\" FCC ID"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://parrotpilots.com/threads/anafi-video-processor.1817/"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" flight controller PX4 \"STM32\" OR \"Ambarella\" SoC main board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" Ambarella chip processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella H22 Anafi teardown chip \"Ambarella\" board photo"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Wikipedia Parrot Anafi Ambarella processor flight controller"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://govtribe.com/file/government-file/anafi-usa-white-paper-en-dot-pdf",
+            "focus": "Ambarella"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+            "focus": "Ambarella"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown \"flight controller\" board photos chip markings"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" \"Ambarella\" SoC processor Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA firmware analysis processor \"H22\" OR \"S2E\" chip"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://korthosrobotics.com/data/supply-chain-intelligence/parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" teardown disassembly photos motherboard \"Parrot\" chip identification drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" \"H22\" Ambarella"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "forum.developer.parrot.com Anafi USA SoC processor Ambarella"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Ambarella",
+            "url": "https://www.parrot.com/assets/s3fs-public/2021-02/anafi-usa-product-sheet-white-paper-en.pdf"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://forum.developer.parrot.com/t/airsdk-for-anafi/17176",
+            "focus": "Ambarella"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella H22 14nm Samsung foundry fabrication"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Ambarella fabless \"Samsung\" foundry manufactures wafers 10-K"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Ambarella",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2021-02/anafi-usa-product-sheet-white-paper-en.pdf",
+          "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera.",
+          "confidence": "low",
+          "evidence_quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera.",
+          "reason": "The page explicitly names Ambarella H22 in the Anafi USA flight controller but does not state Ambarella's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Ambarella",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/assets/s3fs-public/2023-02/ANAFI-USA-white-paper-en.pdf",
+      "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera.",
+      "confidence": "low",
+      "evidence_quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonic sensor, a barometer and a vertical camera.",
+      "reason": "capped at low: country is HQ-based or not on page. The white paper explicitly names Ambarella's H22 as the processor in the Anafi USA flight controller, but gives no country for Ambarella.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": "Chip fabrication",
+      "tier": 2,
+      "supplier": "Samsung Electronics",
+      "supplier_country": "KR",
+      "country_basis": "hq",
+      "source_url": "https://companiesmarketcap.com/ambarella/sec-reports-10k/0001193125-26-119321/",
+      "quote": "Currently, the substantial majority of our SoCs are supplied by Samsung Electronics Corporation (Samsung) in facilities located in Austin, Texas and South Korea, from whom we have the option to purchase both fully-assembled and tested products as well as tested die in wafer form for assembly.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page is an Ambarella 10-K about its own chip suppliers and does not mention Parrot or the Anafi USA drone.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Ambarella",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/assets/s3fs-public/2021-02/anafi-usa-product-sheet-white-paper-en.pdf",
+      "quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera.",
+      "confidence": "low",
+      "evidence_quote": "ANAFI USA’s flight controller uses an Ambarella H22 processor, an MPU-6000 Invensense IMU, an AK8963 AKM magnetometer, an UBX-M8030U-BLOX GPS, an ultrasonar, a barometer and a vertical camera.",
+      "reason": "The page explicitly names Ambarella H22 in the Anafi USA flight controller but does not state Ambarella's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Parrot's own ANAFI USA white paper (v1.5.2) explicitly names the Ambarella H22 as the flight-controller processor, confirming the Tier 1 chip vendor. No public source found stating which foundry fabricates the H22, so the Tier 2 fabrication entry is left empty; Ambarella's US country is on an HQ basis and was not independently re-verified from an opened page in this session.",
+  "when": "2026-11-11T06:35:51+00:00"
+}

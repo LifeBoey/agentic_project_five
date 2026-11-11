@@ -1,0 +1,168 @@
+{
+  "model": "Teal 2",
+  "category": "battery_cells",
+  "component": "battery cells",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "Searched for Teal 2 battery pack specifications, FCC filings/teardowns, Teal/Red Cat press releases, the Red Cat 10-K, and US cell makers (Badland Batteries/Packet Digital), but no public page I opened names the lithium-ion cell manufacturer for the Teal 2's 'Teal Performance Battery Pack' — only that it is a Teal-proprietary lithium-ion pack. With no Tier 1 identification, no Tier 2 cathode or Tier 3 raw-material supplier could be sourced either.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone battery pack cells supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 battery specifications lithium"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" battery 6S Li-ion cell 18650 pack voltage capacity"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones battery pack manufacturer partner \"battery\" Red Cat"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://tealdrones.com/wp-content/uploads/2023/09/60083-MK1.5-Operator-Manual-REV-B.pdf",
+            "focus": "battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" battery \"mAh\" pack 4S OR 6S specifications weight"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones battery pack cells \"Panasonic\" OR \"LG Energy\" OR \"Molicel\" OR \"Samsung SDI\" drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" teardown FCC internal photos battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal Performance Battery\" pack manufacturer drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Holdings battery supplier partnership press release drone batteries domestic"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal\" drone battery \"Made in USA\" cells NDAA compliant lithium pack supplier Teal Drones"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://manuals.plus/red-cat/golden-eagle-teal-air-control-battery-and-charger-manual",
+            "focus": "battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Badland Batteries\" Teal OR \"Red Cat\" drone cells partnership"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.badlandbatteries.com/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 datasheet battery \"Wh\" endurance 30 minutes battery pack voltage"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" battery pack \"21700\" OR \"18650\" cells drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Holdings 10-K \"battery\" supplier single source risk Teal Drones"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones news battery pack \"Teal 2\" \"battery\" production partner announcement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "battery",
+            "url": "https://companiesmarketcap.com/inr/red-cat-holdings/sec-reports-10k/0001628280-26-019861/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"battery\" cell origin declaration NDAA section 848 component list drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal\" \"Performance Battery\" pack specifications voltage mAh drone storefront"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone battery 4S 14.8V 6200mAh replacement"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "Searched for Teal 2 battery pack specifications, FCC filings/teardowns, Teal/Red Cat press releases, the Red Cat 10-K, and US cell makers (Badland Batteries/Packet Digital), but no public page I opened names the lithium-ion cell manufacturer for the Teal 2's 'Teal Performance Battery Pack' — only that it is a Teal-proprietary lithium-ion pack. With no Tier 1 identification, no Tier 2 cathode or Tier 3 raw-material supplier could be sourced either.",
+  "when": "2026-11-11T06:35:23+00:00"
+}

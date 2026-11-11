@@ -1,0 +1,169 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "motors",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source found naming the motor supplier for the DJI Mavic 3 Enterprise. Teardown coverage (iFixit guides, mavicpilots thread blocked by Cloudflare, EE Times/Teknarie Mavic 3 Pro and 4 Pro teardown) describes the flight motors and even notes Chinese-made motor MCUs/drivers but never identifies the motor manufacturer; DJI sells the motors only as its own DJI-branded replacement parts.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise motor supplier teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" brushless motor manufacturer supplier"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://mavicpilots.com/threads/mavic-3-teardown-see-whats-inside.118276/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI supply chain motor supplier who makes DJI drone motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 电机 供应商 无刷电机 代工"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 motor markings \"2312\" motor replacement DJI original"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.aibangfly.com/a/4990",
+            "focus": "大疆"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 电机 供应商 上市公司 无人机 电机 主要客户 大疆"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 teardown Fomalhaut Nikkei parts cost motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 分解 モーター メーカー 供給"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Fomalhaut Techno Solutions DJI Mavic 3 Enterprise teardown report parts suppliers"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Nidec DJI drone motor supplier Mavic"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 拆解 电机 供应商 日经"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://eetimes.itmedia.co.jp/ee/articles/2511/27/news060_2.html",
+            "focus": "モーター"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"大疆\" 电机 供应商 客户 \"无人机\" 无刷电机 供货 御3"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "拓邦股份 大疆 无人机 电机 客户"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://zhuanlan.zhihu.com/p/8871925264",
+            "focus": "电机"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 电机 供应商 \"鸣志\" OR \"信质\" OR \"步进\" 大疆电机"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 电机 自研 自产 无人机 电机 大疆自家生产"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 motor manufacturer \"made by\" stator windings teardown analysis which company"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.suasnews.com/2024/07/made-in-china-flown-everywhere-will-djis-drone-empire-crumble-without-western-parts/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" motor \"Sunny\" OR \"Nidec\" OR \"Minebea\" OR \"Topband\" supplier drone motors DJI"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public source found naming the motor supplier for the DJI Mavic 3 Enterprise. Teardown coverage (iFixit guides, mavicpilots thread blocked by Cloudflare, EE Times/Teknarie Mavic 3 Pro and 4 Pro teardown) describes the flight motors and even notes Chinese-made motor MCUs/drivers but never identifies the motor manufacturer; DJI sells the motors only as its own DJI-branded replacement parts.",
+  "when": "2026-11-11T06:40:06+00:00"
+}

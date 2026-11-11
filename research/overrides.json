@@ -1,0 +1,16 @@
+[
+  {
+    "model": "Parrot Anafi USA",
+    "category": "camera_sensor",
+    "source_url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+    "confidence": "unmapped",
+    "reason": "Hand check: the quote describes the original Parrot Anafi (Sony IMX230), not the Anafi USA."
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "category": "flight_controller_chip",
+    "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+    "confidence": "unmapped",
+    "reason": "Hand check: the teardown is of the Mavic 3 Pro and says 'Likely Leadcore', a guess about a different model."
+  }
+]

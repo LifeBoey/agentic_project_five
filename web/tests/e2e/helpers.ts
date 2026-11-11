@@ -2,7 +2,9 @@ import { readFileSync } from 'node:fs';
 import { expect, type Page, type Route } from '@playwright/test';
 // Role 2's real engine: the stub answers exactly as the server would for the fixture data.
 import { getChain, getModelRisk, getModels, parseLinks, simulateCutoff } from '../../../src/risk.js';
-import { NO_DATA_ANSWER } from '../../src/api/types';
+import { NO_DATA_ANSWER, type Chain, type ModelRisk } from '../../src/api/types';
+import { buildGraph } from '../../src/lib/graph';
+import { buildRows } from '../../src/lib/rows';
 
 export const REAL = process.env.E2E_API === 'real';
 export const FALCON = 'Falcon X';
@@ -33,6 +35,13 @@ export async function stubApi(page: Page, { askDelayMs = 400 } = {}) {
   });
 }
 
+/** The graph the page builds from the fixture data, for checking what the page shows. */
+export const fixtureGraph = () => buildGraph((getModels(links) as string[]).map(model => {
+  const risk = getModelRisk(links, model) as ModelRisk;
+  const chains = risk.components.map(c => getChain(links, model, c) as Chain);
+  return { model, risk, chains, rows: buildRows(risk, chains) };
+}));
+
 /** What the real engine says for a fixture model, for tests that alter a response. */
 export const riskOf = (model: string) => getModelRisk(links, model);
 
@@ -52,9 +61,15 @@ export function watchForBreakage(page: Page): string[] {
   return problems;
 }
 
-export async function openAndListModels(page: Page): Promise<string[]> {
+/** Opens the page on the List view, where every component is a row. The Graph view is the default. */
+export async function goHome(page: Page) {
   await page.goto('/');
   await expect(page.getByLabel('Drone model')).toBeVisible();
+  await page.getByRole('tab', { name: 'Chains and list' }).click();
+}
+
+export async function openAndListModels(page: Page): Promise<string[]> {
+  await goHome(page);
   return page.getByLabel('Drone model').locator('option').allTextContents();
 }
 

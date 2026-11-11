@@ -10,7 +10,13 @@ export default defineConfig({
   testDir: './tests/e2e',
   outputDir: './test-results/artifacts',
   reporter: [['list'], ['json', { outputFile: 'test-results/report.json' }]],
-  use: { baseURL: `http://localhost:${WEB_PORT}`, trace: 'retain-on-failure', screenshot: 'only-on-failure' },
+  use: {
+    baseURL: `http://localhost:${WEB_PORT}`,
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    // The 3D view needs WebGL; headless Chromium has no GPU, so use the software renderer.
+    launchOptions: { args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] },
+  },
   webServer: [
     ...(real ? [{
       command: 'node src/server.js',

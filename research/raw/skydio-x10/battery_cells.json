@@ -1,0 +1,217 @@
+{
+  "model": "Skydio X10",
+  "category": "battery_cells",
+  "component": "Battery cells",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "Battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Dongguan Poweramp Technology Ltd. (subsidiary of TDK Corporation)",
+          "supplier_country": "CN",
+          "country_basis": "made",
+          "source_url": "https://crucibeljournal.com/the-battery-wars/",
+          "quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Dongguan Poweramp Technology Ltd. (subsidiary of TDK Corporation)",
+          "supplier_country": "CN",
+          "country_basis": "made",
+          "source_url": "https://crucibeljournal.com/the-battery-wars/",
+          "quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio."
+        }
+      ],
+      "notes": "Skydio's drone batteries (including the X10/X10D packs) were historically sourced from a single Chinese pack/cell provider, Dongguan Poweramp (a TDK subsidiary), per a supply-chain article; I could not find a teardown, FCC filing, or datasheet naming the specific lithium-ion cell maker inside the X10 pack, and found no public sourcing for cathode/anode material or raw-material tiers.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 battery cells supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 battery pack teardown cell manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 battery \"21700\" OR \"18650\" cells lithium-ion polymer pack"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio battery pack manufacturing partner contract manufacturer cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" battery cell supplier Molicel OR \"LG Energy\" OR Samsung SDI OR \"Murata\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 battery teardown inside cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 battery safety data sheet UN38.3 lithium ion polymer 154 Wh"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 FCC filing battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio battery partner silicon anode Amprius OR \"Group1\" OR Zenlabs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio battery supplier \"made in USA\" cells NDAA compliant drone battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "import records Skydio Inc lithium ion battery shipment supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" battery cells \"Amprius\" OR \"silicon anode\" partnership"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.importyeti.com/company/skydio-inc"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 flight battery \"cell\" specification manufacturer label photo review"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://importkey.com/i/skydio-inc"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "importyeti Skydio lithium ion battery HS 8507 supplier China"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" \"Simplo\" OR \"Dynapack\" OR \"Celxpert\" OR \"Highpower\" battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio battery pack supplier lithium ion battery \"Skydio\" customs HS 850760"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://crucibeljournal.com/the-battery-wars/",
+            "focus": "Skydio"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.trademo.com/companies/skydio-incorporated/3490021"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Dongguan Poweramp Skydio battery TDK supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio battery supplier China sanctions \"Poweramp\" Reuters"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Dongguan Poweramp Technology Ltd. (subsidiary of TDK Corporation)",
+          "supplier_country": "CN",
+          "country_basis": "made",
+          "source_url": "https://crucibeljournal.com/the-battery-wars/",
+          "quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio.",
+          "confidence": "low",
+          "evidence_quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio.",
+          "reason": "The page names Poweramp/TDK as Skydio's sole battery supplier and says batteries were made in China, but it does not tie the supplier specifically to the X10 model.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "Battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Dongguan Poweramp Technology Ltd. (subsidiary of TDK Corporation)",
+      "supplier_country": "CN",
+      "country_basis": "made",
+      "source_url": "https://crucibeljournal.com/the-battery-wars/",
+      "quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio.",
+      "confidence": "low",
+      "evidence_quote": "Within hours, Chinese authorities ordered Dongguan Poweramp, a subsidiary of Japan’s TDK Corporation that manufactured batteries in China, to sever all ties with Skydio.",
+      "reason": "The page names Poweramp/TDK as Skydio's sole battery supplier and says batteries were made in China, but it does not tie the supplier specifically to the X10 model.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Skydio's drone batteries (including the X10/X10D packs) were historically sourced from a single Chinese pack/cell provider, Dongguan Poweramp (a TDK subsidiary), per a supply-chain article; I could not find a teardown, FCC filing, or datasheet naming the specific lithium-ion cell maker inside the X10 pack, and found no public sourcing for cathode/anode material or raw-material tiers.",
+  "when": "2026-11-11T06:07:15+00:00"
+}

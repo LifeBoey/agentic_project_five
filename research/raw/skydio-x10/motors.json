@@ -1,0 +1,242 @@
+{
+  "model": "Skydio X10",
+  "category": "motors",
+  "component": "Motors",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation (Nidec America Corporation)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf",
+          "quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone \"Skydio X10\" which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors."
+        },
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.sekorm.com/news/527741347.html",
+          "quote": "Our motors used in the Skydio X10 are propulsion motors and gimbal camera angle adjustment motors"
+        },
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/en/corporate/about/outline/",
+          "quote": "Location\n\t\n338 Kuzetonoshiro-cho, Minami-ku, Kyoto 601-8205, JAPAN"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation (Nidec America Corporation)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf",
+          "quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone \"Skydio X10\" which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.sekorm.com/news/527741347.html",
+          "quote": "Our motors used in the Skydio X10 are propulsion motors and gimbal camera angle adjustment motors"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/en/corporate/about/outline/",
+          "quote": "Location\n\t\n338 Kuzetonoshiro-cho, Minami-ku, Kyoto 601-8205, JAPAN"
+        }
+      ],
+      "notes": "Nidec's own July 2024 press release states its motors are used for the Skydio X10's four propulsion motors (and three gimbal motors); Nidec is headquartered in Kyoto, Japan. No public source specifies which country/plant manufactures these X10 motors, so country basis is HQ; no teardown or alternate motor supplier was found.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 motor supplier brushless motors teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 FCC filing motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 motors \"motor\" supplier partnership brushless propulsion"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" motor supplier drone motors American made supply chain"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.sekorm.com/news/527741347.html"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Nidec Skydio X10 propulsion motor Gimbal motor press release"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Nidec drone propulsion motor manufacturing plant Skydio made in"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Nidec Corporation headquarters Kyoto Japan company profile"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Nidec Corporation\" headquartered Kyoto Japan about company"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.nidec.com/en/corporate/about/outline/",
+            "focus": "Kyoto"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation (Nidec America Corporation)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf",
+          "quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone \"Skydio X10\" which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+          "confidence": "low",
+          "evidence_quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone “Skydio X10” which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+          "reason": "capped at low: country is HQ-based or not on page. The page explicitly states Nidec motors are used in the Skydio X10's propulsion and gimbal motors, but it does not state Nidec's country or headquarters.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://en.sekorm.com/news/527741347.html",
+          "quote": "Our motors used in the Skydio X10 are propulsion motors and gimbal camera angle adjustment motors",
+          "confidence": "low",
+          "evidence_quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone “Skydio X10” which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+          "reason": "capped at low: country is HQ-based or not on page. The page explicitly states Nidec motors are used in the Skydio X10, but it does not state Nidec's country or where the motors are made.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Motors",
+          "part": null,
+          "tier": 1,
+          "supplier": "Nidec Corporation",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/en/corporate/about/outline/",
+          "quote": "Location\n\t\n338 Kuzetonoshiro-cho, Minami-ku, Kyoto 601-8205, JAPAN",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The Nidec corporate profile confirms Nidec is a Japanese motor maker but never mentions Skydio or the X10 drone, so it does not support the supplier-for-this-drone claim.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "Motors",
+      "part": null,
+      "tier": 1,
+      "supplier": "Nidec Corporation (Nidec America Corporation)",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf",
+      "quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone \"Skydio X10\" which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+      "confidence": "low",
+      "evidence_quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone “Skydio X10” which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+      "reason": "capped at low: country is HQ-based or not on page. The page explicitly states Nidec motors are used in the Skydio X10's propulsion and gimbal motors, but it does not state Nidec's country or headquarters.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Motors",
+      "part": null,
+      "tier": 1,
+      "supplier": "Nidec Corporation",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://en.sekorm.com/news/527741347.html",
+      "quote": "Our motors used in the Skydio X10 are propulsion motors and gimbal camera angle adjustment motors",
+      "confidence": "low",
+      "evidence_quote": "US drone manufacturer, Skydio, Inc.（HQ in CA, USA, CEO: Adam Bry, Skydio）released a new autonomous flying drone “Skydio X10” which uses Nidec motors in propulsion motors and gimbal camera angle adjustment motors.",
+      "reason": "capped at low: country is HQ-based or not on page. The page explicitly states Nidec motors are used in the Skydio X10, but it does not state Nidec's country or where the motors are made.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Motors",
+      "part": null,
+      "tier": 1,
+      "supplier": "Nidec Corporation",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://www.nidec.com/en/corporate/about/outline/",
+      "quote": "Location\n\t\n338 Kuzetonoshiro-cho, Minami-ku, Kyoto 601-8205, JAPAN",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The Nidec corporate profile confirms Nidec is a Japanese motor maker but never mentions Skydio or the X10 drone, so it does not support the supplier-for-this-drone claim.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Nidec's own July 2024 press release states its motors are used for the Skydio X10's four propulsion motors (and three gimbal motors); Nidec is headquartered in Kyoto, Japan. No public source specifies which country/plant manufactures these X10 motors, so country basis is HQ; no teardown or alternate motor supplier was found.",
+  "when": "2026-11-11T06:05:47+00:00"
+}

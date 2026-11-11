@@ -1,0 +1,636 @@
+{
+  "model": "Skydio X10",
+  "category": "flight_controller_chip",
+  "component": "Flight controller chip",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10",
+          "quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time."
+        },
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+          "quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models."
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://kurnal-insights.com/en/dieshot/nvidia-orin-x/",
+          "quote": "FOUNDRY Samsung"
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://chip.computer/chips/nvidia/jetson-orin-nano",
+          "quote": "Process Node Samsung 8nm"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10",
+          "quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+          "quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models."
+        },
+        {
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://kurnal-insights.com/en/dieshot/nvidia-orin-x/",
+          "quote": "FOUNDRY Samsung"
+        },
+        {
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://chip.computer/chips/nvidia/jetson-orin-nano",
+          "quote": "Process Node Samsung 8nm"
+        }
+      ],
+      "notes": "Skydio's own X10 page and a Nidec (motor supplier) release both confirm the NVIDIA Jetson Orin SoC as the X10's main processor, running autonomy/flight compute; NVIDIA is US-HQ'd with no stated chip manufacturing country. Tier-2 was harder: TechPowerUp and topcpu pages were blocked, so I relied on a die-shot database and a chip-spec site stating the Orin die is fabricated by Samsung on its 8nm process. No FCC teardown of the X10 confirming board-level chip layout was found.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown flight controller processor NVIDIA Jetson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 processor autonomy chip FCC filing"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+            "focus": "Jetson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "NVIDIA Orin SoC Samsung 8nm process manufactured foundry Jetson Orin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Orin\" NVIDIA Samsung foundry 8nm process manufactured report"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 \"Jetson Orin\" autonomy processor Skydio press release"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://kurnal-insights.com/en/dieshot/nvidia-orin-x/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "WikiChip Jetson AGX Orin Samsung 8N process"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Wikipedia \"Jetson Orin\" \"Samsung\" 8 nm SoC"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "TechInsights NVIDIA Orin die fabricated Samsung 8nm teardown"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Foundry",
+            "url": "https://www.techpowerup.com/gpu-specs/jetson-orin-nx-8-gb.c4081"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Jetson Orin",
+            "url": "https://pages.skydio.com/rs/784-TUF-591/images/Technical+White+Paper+-+Skydio+X10D_+Small,+Smart,+Survivable.pdf?version=0"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Jetson Orin",
+            "url": "https://www.skydio.com/x10"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "AnandTech NVIDIA Orin \"Samsung\" 8nm Jetson AGX Orin announcement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Orin Samsung",
+            "url": "https://en.wikipedia.org/wiki/Tegra"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://chip.computer/chips/nvidia/jetson-orin-nano"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/gtcf21/jetson-orin/nvidia-jetson-agx-orin-technical-brief.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Jetson\" \"Orin\" \"fabbed\" OR \"fabricated\" \"Samsung\" 8nm Samsung Foundry Nvidia Orin silicon"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung 8",
+            "url": "https://en.wikipedia.org/wiki/Nvidia_Jetson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Orin\" Nvidia \"Samsung Foundry\" mass production 8nm 2021 report Korean"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://www.topcpu.net/en/cpu/Jetson-Orin-Nano-8-GB"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "wiki.chipsandcheese OR wikichip \"Orin\" SoC Samsung 8nm Nvidia GA10B die"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10",
+          "quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time.",
+          "confidence": "low",
+          "evidence_quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time.",
+          "reason": "The page names NVIDIA as supplying the onboard Jetson Orin GPU, but does not state it supplies the flight controller chip or give NVIDIA's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+          "quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models.",
+          "confidence": "low",
+          "evidence_quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models.",
+          "reason": "The page names NVIDIA as supplying the X10's main processor SoC, but never identifies it as a flight controller chip nor states NVIDIA's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://kurnal-insights.com/en/dieshot/nvidia-orin-x/",
+          "quote": "FOUNDRY Samsung",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page only covers the NVIDIA Orin X die shot and its Samsung foundry, with no mention of Skydio, the X10, or its flight controller chip.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry (Samsung Electronics)",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://chip.computer/chips/nvidia/jetson-orin-nano",
+          "quote": "Process Node Samsung 8nm",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page is about the NVIDIA Jetson Orin Nano and never mentions Skydio, the X10, flight controller chips, or Samsung Foundry as a supplier to Skydio.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA (Jetson Orin GPU/SoC)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+          "quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces."
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.automotiveworld.com/news/samsung-bets-on-mature-8nm-node-for-automotive-and-robots/",
+          "quote": "Samsung's 8nm node already has an automotive track record, since Nvidia's Drive Orin is built on it."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA (Jetson Orin GPU/SoC)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+          "quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces."
+        },
+        {
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.automotiveworld.com/news/samsung-bets-on-mature-8nm-node-for-automotive-and-robots/",
+          "quote": "Samsung's 8nm node already has an automotive track record, since Nvidia's Drive Orin is built on it."
+        }
+      ],
+      "notes": "Skydio's own X10 FAQ confirms the NVIDIA Jetson Orin GPU/SoC as the onboard compute running flight autonomy. No X10-specific teardown or FCC internal-photo evidence naming the silicon was found, and the tier-2 source covers NVIDIA's Orin family (Drive Orin) on Samsung 8nm rather than a Jetson Orin-specific fabrication disclosure, so the foundry link is the same-family Orin node, not a model-specific confirmation.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown processor SoC flight controller"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 NVIDIA Jetson Orin processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 FCC filing internal photos chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 \"Jetson\" Orin announcement"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" Qualcomm chip onboard compute"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown \"Skydio\" processor Ambarella OR Qualcomm OR NVIDIA datasheet"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+            "focus": "Jetson Orin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "NVIDIA Orin SoC fabricated Samsung 8nm process foundry"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Samsung foundry NVIDIA Orin 8nm process Samsung newsroom automotive"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Orin\" NVIDIA \"Samsung\" 8nm \"Ampere\" fabrication Jetson AGX Orin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Jetson AGX Orin\" \"Samsung\" 8nm teardown die analysis TechInsights"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "NVIDIA Orin \"manufactured\" \"Samsung\" foundry 8nm Reuters"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.automotiveworld.com/news/samsung-bets-on-mature-8nm-node-for-automotive-and-robots/",
+            "focus": "Orin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Samsung newsroom \"Orin\" NVIDIA foundry 8nm production automotive chip"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Jetson Orin processor",
+            "url": "https://pages.skydio.com/rs/784-TUF-591/images/Technical+White+Paper+-+Skydio+X10D_+Small,+Smart,+Survivable.pdf?version=0"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "elinux Jetson AGX Orin \"Samsung 8nm\" module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "wikichip NVIDIA Orin \"Samsung\" 8N process die"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Jetson Orin\" chip \"Samsung\" \"8 nm\" manufactured"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://www.techpowerup.com/gpu-specs/nvidia-ga10b.g1053"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://www.techpowerup.com/gpu-specs/jetson-orin-nx-8-gb.c4081"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://en.wikipedia.org/wiki/Nvidia_Jetson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "NVIDIA Orin SoC \"Samsung Foundry\" 8nm Ampere wikipedia Tegra Orin"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "AnandTech Jetson AGX Orin \"Samsung\" 8nm Ampere GA10B"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Tegra Orin\" wikipedia \"Samsung\" 8 nm production"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "NVIDIA (Jetson Orin GPU/SoC)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+          "quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces.",
+          "confidence": "low",
+          "evidence_quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces.",
+          "reason": "The page names NVIDIA's Jetson Orin GPU in the Skydio X10 but does not identify it as the flight controller chip or state NVIDIA's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Foundry",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.automotiveworld.com/news/samsung-bets-on-mature-8nm-node-for-automotive-and-robots/",
+          "quote": "Samsung's 8nm node already has an automotive track record, since Nvidia's Drive Orin is built on it.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page discusses Samsung Foundry's 8nm automotive/robotics process but never mentions Skydio, the X10 drone, or flight controller chips.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "Flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "NVIDIA",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.skydio.com/x10",
+      "quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time.",
+      "confidence": "low",
+      "evidence_quote": "Backed by an onboard NVIDIA Jetson Orin GPU, the X10 harnesses unrivaled computing power to make the right decisions in real-time.",
+      "reason": "The page names NVIDIA as supplying the onboard Jetson Orin GPU, but does not state it supplies the flight controller chip or give NVIDIA's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "NVIDIA",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+      "quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models.",
+      "confidence": "low",
+      "evidence_quote": "Equipped with the NVIDIA Jetson Orin SoC as the main processor, the Skydio X10 achieves a computing processing performance that is more than 10 times that of previous Skydio drone models.",
+      "reason": "The page names NVIDIA as supplying the X10's main processor SoC, but never identifies it as a flight controller chip nor states NVIDIA's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Flight controller chip",
+      "part": "Chip fabrication",
+      "tier": 2,
+      "supplier": "Samsung Foundry (Samsung Electronics)",
+      "supplier_country": "KR",
+      "country_basis": "made",
+      "source_url": "https://kurnal-insights.com/en/dieshot/nvidia-orin-x/",
+      "quote": "FOUNDRY Samsung",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page only covers the NVIDIA Orin X die shot and its Samsung foundry, with no mention of Skydio, the X10, or its flight controller chip.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Flight controller chip",
+      "part": "Chip fabrication",
+      "tier": 2,
+      "supplier": "Samsung Foundry (Samsung Electronics)",
+      "supplier_country": "KR",
+      "country_basis": "made",
+      "source_url": "https://chip.computer/chips/nvidia/jetson-orin-nano",
+      "quote": "Process Node Samsung 8nm",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page is about the NVIDIA Jetson Orin Nano and never mentions Skydio, the X10, flight controller chips, or Samsung Foundry as a supplier to Skydio.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "NVIDIA (Jetson Orin GPU/SoC)",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+      "quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces.",
+      "confidence": "low",
+      "evidence_quote": "Powered by the NVIDIA Jetson Orin GPU, Skydio X10 has 10x the onboard processing of previous drones, enabling more advanced perception and navigation through complex spaces.",
+      "reason": "The page names NVIDIA's Jetson Orin GPU in the Skydio X10 but does not identify it as the flight controller chip or state NVIDIA's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Flight controller chip",
+      "part": "Chip fabrication",
+      "tier": 2,
+      "supplier": "Samsung Foundry",
+      "supplier_country": "KR",
+      "country_basis": "hq",
+      "source_url": "https://www.automotiveworld.com/news/samsung-bets-on-mature-8nm-node-for-automotive-and-robots/",
+      "quote": "Samsung's 8nm node already has an automotive track record, since Nvidia's Drive Orin is built on it.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page discusses Samsung Foundry's 8nm automotive/robotics process but never mentions Skydio, the X10 drone, or flight controller chips.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Skydio's own X10 FAQ confirms the NVIDIA Jetson Orin GPU/SoC as the onboard compute running flight autonomy. No X10-specific teardown or FCC internal-photo evidence naming the silicon was found, and the tier-2 source covers NVIDIA's Orin family (Drive Orin) on Samsung 8nm rather than a Jetson Orin-specific fabrication disclosure, so the foundry link is the same-family Orin node, not a model-specific confirmation.",
+  "when": "2026-11-11T06:12:26+00:00"
+}

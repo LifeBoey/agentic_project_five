@@ -6,7 +6,7 @@ For each drone model × category (motors, magnets, battery cells, flight control
 1. **Research agent**: searches the web and returns up to 3 sourced candidates per (part, tier).
 2. **Verifier agent**: opens each `source_url` and rates the claim `high`, `low` or `unmapped`. Code then checks that the verifier's evidence quote really appears on the page, and caps claims based on HQ country at `low`.
 3. **Retry**: if every source was rejected, the research runs once more with those URLs excluded.
-4. **Merge**: drops rejected links, flags `conflict`, adds an `unmapped` record for each empty model × component, and writes `data/links.json` and `research/coverage.md`.
+4. **Merge**: drops rejected links, folds supplier spellings into one, flags `conflict`, and adds an `unmapped` record for every tier that was searched with no result. Records already in `data/links.json` keep their positions (ids), and new ones are appended. It also writes `research/coverage.md`, keeping its hand-written "Known gaps" section.
 
 LLM calls go through the OpenCode gateway, using deepseek-v4.1-flash, falling back to glm-5.3-flash, then claude-sonnet-5-5. Search uses Tavily, falling back to the `ddgs` package (no key needed). Pages are fetched with Jina Reader, falling back to plain HTTP. A run stops at `--budget` dollars (default $5), and a later run resumes where it stopped.
 

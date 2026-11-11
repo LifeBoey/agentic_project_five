@@ -1,79 +1,124 @@
-from pipeline.merge import build_links, flag_conflicts, norm_supplier, single_country_components
+from pipeline.merge import (build_links, canonical_names, clean_supplier, flag_conflicts, norm_supplier,
+                            single_country_components)
+
+CATS = [
+    {"key": "motors", "component": "motors", "parts": [(None, 1)]},
+    {"key": "magnets", "component": "motors", "parts": [("Magnets", 2)]},
+    {"key": "radio", "component": "radio", "parts": [(None, 1), ("Radio chip", 2)]},
+]
 
 
-def cand(supplier, country, url, conf="high", component="Motors", part=None, tier=1):
-    return {"component": component, "part": part, "tier": tier, "supplier": supplier,
-            "supplier_country": country, "source_url": url, "confidence": conf}
+def cand(supplier, country, url, conf="high", part=None, tier=1):
+    return {"part": part, "tier": tier, "supplier": supplier, "supplier_country": country,
+            "source_url": url, "confidence": conf}
 
 
-def test_unmapped_filled_for_every_model_component():
-    recs = build_links([], ["A", "B"], ["Motors", "Radio"])
-    assert len(recs) == 4
-    assert all(r["confidence"] == "unmapped" and r["supplier"] == "" and r["tier"] == 1 for r in recs)
-    assert "part" not in recs[0]
+def job(category, *verified, model="A", error=None):
+    j = {"model": model, "category": category, "verified": list(verified)}
+    if error:
+        j["error"] = error
+    return j
 
 
-def test_rejected_candidates_dropped_and_component_unmapped():
-    jobs = [{"model": "A", "verified": [cand("X", "US", "https://a", conf="unmapped")]}]
-    recs = build_links(jobs, ["A"], ["Motors"])
-    assert recs == [{"model": "A", "component": "Motors", "supplier": "", "supplier_country": "",
-                     "tier": 1, "source_url": "", "confidence": "unmapped", "conflict": False}]
+def mapped(recs):
+    return [r for r in recs if r["confidence"] != "unmapped"]
 
 
-def test_part_field_and_dedupe():
-    c = cand("Mag Co", "cn", "https://m", component="Motors", part="Magnets", tier=2)
-    recs = build_links([{"model": "A", "verified": [c, dict(c, supplier="Mag Co Ltd.")]}], ["A"], ["Motors"])
-    assert len(recs) == 1
-    assert recs[0]["part"] == "Magnets" and recs[0]["supplier_country"] == "CN"
+def unmapped(recs):
+    return [(r["component"], r.get("part"), r["tier"]) for r in recs if r["confidence"] == "unmapped"]
+
+
+def test_unmapped_record_for_every_tier_searched():
+    recs, _ = build_links([job("motors"), job("magnets"), job("radio")], CATS)
+    assert sorted(unmapped(recs), key=str) == sorted(
+        [("motors", None, 1), ("motors", "Magnets", 2), ("radio", None, 1), ("radio", "Radio chip", 2)], key=str)
+    assert all(r["supplier"] == "" and r["supplier_country"] == "" and not r["conflict"]
+               for r in recs)
+
+
+def test_component_comes_from_config_not_raw_and_unrun_categories_absent():
+    raw = dict(cand("Motor Co", "us", "https://1"), component="Motors")  # old raw file spelling
+    recs, _ = build_links([job("motors", raw)], CATS)
+    assert recs == [{"model": "A", "component": "motors", "supplier": "Motor Co", "supplier_country": "US",
+                     "tier": 1, "source_url": "https://1", "confidence": "high", "conflict": False}]
+
+
+def test_errored_job_leaves_no_records():
+    recs, _ = build_links([job("radio", error="boom")], CATS)
+    assert recs == []
+
+
+def test_rejected_candidate_becomes_unmapped_slot():
+    recs, _ = build_links([job("motors", cand("X", "US", "https://a", conf="unmapped"))], CATS)
+    assert unmapped(recs) == [("motors", None, 1)] and mapped(recs) == []
+
+
+def test_part_field_and_dedupe_of_spelling_variants():
+    c = cand("Mag Co", "cn", "https://m", part="Magnets", tier=2)
+    recs, _ = build_links([job("magnets", c, dict(c, supplier="Mag Co Ltd. (sintered NdFeB)"))], CATS)
+    assert len(recs) == 1 and recs[0]["part"] == "Magnets" and recs[0]["supplier"] == "Mag Co"
 
 
 def test_conflict_when_separate_sources_name_different_suppliers():
-    jobs = [{"model": "A", "verified": [cand("Cell A", "KR", "https://1"), cand("Cell B", "CN", "https://2")]}]
-    recs = build_links(jobs, ["A"], ["Motors"])
-    assert all(r["conflict"] for r in recs)
+    recs, _ = build_links([job("motors", cand("Cell A", "KR", "https://1"), cand("Cell B", "CN", "https://2"))], CATS)
+    assert all(r["conflict"] for r in mapped(recs))
 
 
 def test_no_conflict_when_one_source_lists_both_suppliers():
-    jobs = [{"model": "A", "verified": [cand("Cell A", "KR", "https://1"), cand("Cell B", "CN", "https://1")]}]
-    recs = build_links(jobs, ["A"], ["Motors"])
+    recs, _ = build_links([job("motors", cand("Cell A", "KR", "https://1"), cand("Cell B", "CN", "https://1"))], CATS)
     assert not any(r["conflict"] for r in recs)
 
 
-def test_no_conflict_when_sources_agree():
-    jobs = [{"model": "A", "verified": [cand("Cell A Inc", "KR", "https://1"), cand("cell a", "KR", "https://2")]}]
-    assert not any(r["conflict"] for r in build_links(jobs, ["A"], ["Motors"]))
+def test_no_false_conflict_from_agent_notes_in_names():
+    recs, _ = build_links([job("motors", cand("NVIDIA", "US", "https://1"),
+                               cand("NVIDIA (Jetson Orin GPU/SoC)", "US", "https://2"))], CATS)
+    assert {r["supplier"] for r in recs} == {"NVIDIA"} and not any(r["conflict"] for r in recs)
 
 
 def test_conflict_when_same_supplier_different_country():
-    recs = [dict(cand("X", "US", "https://1"), model="A"), dict(cand("X", "CN", "https://2"), model="A")]
-    for r in recs:
-        r["conflict"] = False
+    recs = [dict(cand("X", "US", "https://1"), model="A", component="motors", conflict=False),
+            dict(cand("X", "CN", "https://2"), model="A", component="motors", conflict=False)]
     flag_conflicts(recs)
     assert all(r["conflict"] for r in recs)
 
 
 def test_different_tiers_do_not_conflict():
-    jobs = [{"model": "A", "verified": [cand("Motor Co", "US", "https://1"),
-                                        cand("Mag Co", "CN", "https://2", part="Magnets", tier=2)]}]
-    assert not any(r["conflict"] for r in build_links(jobs, ["A"], ["Motors"]))
+    recs, _ = build_links([job("motors", cand("Motor Co", "US", "https://1")),
+                           job("magnets", cand("Mag Co", "CN", "https://2", part="Magnets", tier=2))], CATS)
+    assert not any(r["conflict"] for r in recs)
 
 
 def test_single_country_uses_deepest_tier():
-    jobs = [{"model": "A", "verified": [cand("Motor Co", "US", "https://1"),
-                                        cand("Mag Co", "CN", "https://2", part="Magnets", tier=2)]}]
-    recs = build_links(jobs, ["A"], ["Motors", "Radio"])
-    assert single_country_components(recs, "A") == {"Motors": "CN"}
+    recs, _ = build_links([job("motors", cand("Motor Co", "US", "https://1")),
+                           job("magnets", cand("Mag Co", "CN", "https://2", part="Magnets", tier=2))], CATS)
+    assert single_country_components(recs, "A") == {"motors": "CN"}
+
+
+def test_existing_records_keep_position_and_new_ones_append():
+    first, _ = build_links([job("motors", cand("Motor Co", "US", "https://1"))], CATS)
+    second, dropped = build_links([job("motors", cand("Motor Co", "US", "https://1")),
+                                   job("motors", cand("Motor Co", "US", "https://1"), model="B")],
+                                  CATS, existing=first)
+    assert second[0] == first[0] and second[1]["model"] == "B" and dropped == []
+
+
+def test_removed_records_are_reported():
+    old = [{"model": "Fake", "component": "motors", "supplier": "F", "supplier_country": "US", "tier": 1,
+            "source_url": "https://f", "confidence": "high", "conflict": False}]
+    recs, dropped = build_links([job("motors", cand("Motor Co", "US", "https://1"))], CATS, existing=old)
+    assert dropped == old and recs[0]["supplier"] == "Motor Co"
+
+
+def test_existing_spelling_wins():
+    names = canonical_names(["Sony Semiconductor Solutions Corp", "Sony (imaging)"], preferred=["Sony Group"])
+    assert set(names.values()) == {"Sony Group"}
+
+
+def test_clean_supplier():
+    assert clean_supplier("Sony (Sony Semiconductor Solutions) — IMX686 narrow") == "Sony"
+    assert clean_supplier("Skydio, Inc.") == "Skydio, Inc."
+    assert clean_supplier("Teledyne FLIR - Boson+") == "Teledyne FLIR"
 
 
 def test_norm_supplier():
     assert norm_supplier("Sony Semiconductor Solutions Corp.") == "sony semiconductor solutions"
-
-
-def test_required_part_gets_own_unmapped_record():
-    jobs = [{"model": "A", "verified": [cand("Motor Co", "US", "https://1")]}]
-    recs = build_links(jobs, ["A"], ["Motors"], [("Motors", "Magnets", 2)])
-    gap = [r for r in recs if r["confidence"] == "unmapped"]
-    assert gap == [{"model": "A", "component": "Motors", "part": "Magnets", "supplier": "",
-                    "supplier_country": "", "tier": 2, "source_url": "", "confidence": "unmapped",
-                    "conflict": False}]
-    assert single_country_components(recs, "A") == {"Motors": "US"}

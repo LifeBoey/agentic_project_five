@@ -14,7 +14,7 @@ def c(**kw):
 
 def test_keeps_allowed_pair_and_normalises_part_name():
     out = clean_candidates([c(part="magnets")], MAGNETS, [])
-    assert out[0]["part"] == "Magnets" and out[0]["component"] == "Motors" and out[0]["supplier_country"] == "CN"
+    assert out[0]["part"] == "Magnets" and out[0]["component"] == "motors" and out[0]["supplier_country"] == "CN"
 
 
 def test_drops_bad_pairs_urls_and_excluded():

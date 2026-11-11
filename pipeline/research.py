@@ -6,6 +6,7 @@ import re
 
 from . import config
 from .llm import message_to_dict, parse_json
+from .merge import clean_supplier
 from .tools import fetch_page, web_search
 
 TOOLS = [
@@ -34,6 +35,7 @@ opened with fetch_page in this session and that states the claim.
 nothing is found.
 - supplier_country: ISO 3166 alpha-2 code. Use where the part is MADE if a source says so \
 (country_basis "made"); otherwise the supplier's headquarters (country_basis "hq").
+- supplier: the plain company name only (e.g. "Sony", "Nidec Corporation"), no notes or brackets.
 - quote: a sentence copied exactly from the page that supports the claim.
 - Be efficient: a handful of searches, open the most promising pages, then answer.
 
@@ -111,7 +113,7 @@ def clean_candidates(raw: list, cat: dict, exclude_urls: list[str]) -> list[dict
             part_in = ""
         key = (part_in, tier)
         url = (c.get("source_url") or "").strip()
-        supplier = (c.get("supplier") or "").strip()
+        supplier = clean_supplier(c.get("supplier") or "")
         country = country_code(c.get("supplier_country"))
         if (key not in allowed or not supplier or not country
                 or not re.match(r"^https?://", url) or url in exclude_urls):

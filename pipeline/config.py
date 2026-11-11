@@ -20,13 +20,13 @@ DRONE_MODELS = [
 RESEARCH_CATEGORIES = [
     {
         "key": "motors",
-        "component": "Motors",
+        "component": "motors",
         "parts": [(None, 1)],
         "guidance": "Tier 1: the company that makes the brushless propulsion motors used in the drone.",
     },
     {
         "key": "magnets",
-        "component": "Motors",
+        "component": "motors",
         "parts": [("Magnets", 2), ("Rare-earth material", 3)],
         "guidance": (
             "Tier 2: the maker of the permanent magnets (usually NdFeB) inside the drone's motors. "
@@ -36,7 +36,7 @@ RESEARCH_CATEGORIES = [
     },
     {
         "key": "battery_cells",
-        "component": "Battery cells",
+        "component": "battery cells",
         "parts": [(None, 1), ("Cathode material", 2), ("Battery raw material", 3)],
         "guidance": (
             "Tier 1: the maker of the lithium-ion/LiPo cells in the drone's battery pack. "
@@ -46,7 +46,7 @@ RESEARCH_CATEGORIES = [
     },
     {
         "key": "flight_controller_chip",
-        "component": "Flight controller chip",
+        "component": "flight controller chip",
         "parts": [(None, 1), ("Chip fabrication", 2)],
         "guidance": (
             "Tier 1: the company whose processor/SoC runs the drone's flight control or autonomy "
@@ -55,7 +55,7 @@ RESEARCH_CATEGORIES = [
     },
     {
         "key": "camera_sensor",
-        "component": "Camera sensor",
+        "component": "camera sensor",
         "parts": [(None, 1), ("Sensor fabrication", 2)],
         "guidance": (
             "Tier 1: the maker of the image sensor(s) in the drone's camera (visible and/or thermal). "
@@ -64,7 +64,7 @@ RESEARCH_CATEGORIES = [
     },
     {
         "key": "radio",
-        "component": "Radio",
+        "component": "radio",
         "parts": [(None, 1), ("Radio chip", 2)],
         "guidance": (
             "Tier 1: the maker of the drone's datalink/radio module. "

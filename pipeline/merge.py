@@ -50,37 +50,82 @@ def flag_conflicts(records: list[dict]) -> None:
                 r["conflict"] = True
 
 
-def build_links(jobs: list[dict], model_names: list[str], components: list[str],
-                required_parts=()) -> list[dict]:
-    """jobs: raw job dicts with `model` and `verified` (candidates + verifier confidence).
-    required_parts: (component, part, tier) slots that get their own unmapped record when empty."""
-    records, seen = [], set()
+def clean_supplier(s: str) -> str:
+    """Strip agent notes from a supplier name: '(...)', '[...]' and anything after a dash separator."""
+    s = re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", s or "")
+    s = re.split(r"\s[—–-]\s|—|–", s)[0]
+    return " ".join(s.split()).strip(" ,;:")
+
+
+def canonical_names(spellings: list[str], preferred: list[str] = ()) -> dict[str, str]:
+    """Map every spelling to one canonical spelling per supplier.
+    Same supplier = same normalised name, or one normalised name is a word-prefix of the other
+    ('samsung' / 'samsung foundry'). `preferred` spellings (already in links.json) win, so ids'
+    meaning never changes; otherwise the shortest cleaned spelling wins."""
+    cleaned = {s: clean_supplier(s) for s in [*preferred, *spellings]}
+    keys = sorted({norm_supplier(c) for c in cleaned.values() if norm_supplier(c)}, key=lambda k: (len(k.split()), k))
+    root: dict[str, str] = {}
+    for k in keys:
+        toks = k.split()
+        root[k] = next((r for r in root.values() if r.split() == toks[:len(r.split())]), k)
+    best: dict[str, str] = {}
+    for s in preferred:
+        best.setdefault(root.get(norm_supplier(cleaned[s]), ""), cleaned[s])
+    pinned = set(best)
+    for s in spellings:
+        r = root.get(norm_supplier(cleaned[s]), "")
+        if r not in best or (r not in pinned and len(cleaned[s]) < len(best[r])):
+            best[r] = cleaned[s]
+    return {s: best.get(root.get(norm_supplier(c), ""), c) for s, c in cleaned.items()}
+
+
+def record_key(r: dict) -> tuple:
+    """Identity of a link: same key = same link, so it keeps its position (= its id for Role 2)."""
+    who = "" if r["confidence"] == "unmapped" else norm_supplier(r["supplier"])
+    return (r["model"], r["component"], r.get("part"), r["tier"], who, r["source_url"])
+
+
+def build_links(jobs: list[dict], categories: list[dict], existing: list[dict] | None = None,
+                model_order: list[str] = ()) -> tuple[list[dict], list[dict]]:
+    """jobs: raw job dicts (`model`, `category`, `verified`). categories: config.RESEARCH_CATEGORIES.
+    existing: the current links.json; its records keep their positions, new records are appended.
+    Returns (records, dropped) where dropped are existing records no longer produced."""
+    existing = [r for r in (existing or []) if isinstance(r, dict)]
+    cat_by_key = {c["key"]: c for c in categories}
+    searched, mapped = set(), []
     for job in jobs:
+        cat = cat_by_key.get(job.get("category"))
+        if job.get("error") or not cat:
+            continue
+        searched.update((job["model"], cat["component"], p, t) for p, t in cat["parts"])
         for c in job.get("verified", []):
-            if c.get("confidence") not in ("high", "low"):
-                continue
-            key = (job["model"], c["component"], c.get("part"), c["tier"],
-                   norm_supplier(c["supplier"]), c["source_url"])
-            if key in seen:
-                continue
-            seen.add(key)
-            records.append(_record(job["model"], c["component"], c.get("part"), int(c["tier"]),
-                                   c["supplier"].strip(), (c.get("supplier_country") or "").strip().upper(),
-                                   c["source_url"], c["confidence"]))
-    flag_conflicts(records)
-    covered = {(r["model"], r["component"]) for r in records}
-    covered_parts = {(r["model"], r["component"], r.get("part")) for r in records}
-    for m in model_names:
-        for comp in components:
-            if (m, comp) not in covered:
-                records.append(unmapped_record(m, comp))
-        for comp, part, tier in required_parts:
-            if (m, comp, part) not in covered_parts:
-                records.append(unmapped_record(m, comp, part, tier))
-    order = {m: i for i, m in enumerate(model_names)}
-    records.sort(key=lambda r: (order.get(r["model"], 99), r["model"], r["component"], r["tier"],
-                                r.get("part") or "", r["supplier"].lower(), r["source_url"]))
-    return records
+            if c.get("confidence") in ("high", "low"):
+                mapped.append(_record(job["model"], cat["component"], c.get("part"), int(c["tier"]),
+                                      c["supplier"], (c.get("supplier_country") or "").strip().upper(),
+                                      c["source_url"], c["confidence"]))
+    names = canonical_names([r["supplier"] for r in mapped],
+                            [r["supplier"] for r in existing if r.get("supplier")])
+    fresh, seen = [], set()
+    for r in mapped:
+        r["supplier"] = names[r["supplier"]]
+        if record_key(r) not in seen:
+            seen.add(record_key(r))
+            fresh.append(r)
+    flag_conflicts(fresh)
+    have = {(r["model"], r["component"], r.get("part"), r["tier"]) for r in fresh}
+    for model, comp, part, tier in sorted(searched, key=lambda s: (s[0], s[1], s[3], s[2] or "")):
+        if (model, comp, part, tier) not in have:
+            fresh.append(unmapped_record(model, comp, part, tier))
+
+    order = {m: i for i, m in enumerate(model_order)}
+    fresh.sort(key=lambda r: (order.get(r["model"], 99), r["model"], r["component"], r["tier"],
+                              r.get("part") or "", r["supplier"].lower(), r["source_url"]))
+    by_key = {record_key(r): r for r in fresh}
+    kept_keys = [record_key(r) for r in existing if record_key(r) in by_key]
+    dropped = [r for r in existing if record_key(r) not in by_key]
+    kept = set(kept_keys)
+    records = [by_key[k] for k in kept_keys] + [r for r in fresh if record_key(r) not in kept]
+    return records, dropped
 
 
 def single_country_components(records: list[dict], model: str) -> dict[str, str]:
@@ -98,7 +143,8 @@ def single_country_components(records: list[dict], model: str) -> dict[str, str]
     return out
 
 
-def coverage_markdown(records, jobs, model_names, components, runs, required_parts=()) -> str:
+def coverage_markdown(records, jobs, model_names, components, runs, required_parts=(), known_gaps="") -> str:
+    """known_gaps: the hand-written section from the previous coverage.md, carried over unchanged."""
     columns = [(comp, comp, None) for comp in components]
     columns += [(f"{comp} › {part}", comp, part) for comp, part, _ in required_parts]
     lines = ["# Coverage and known gaps", "",
@@ -152,5 +198,5 @@ def coverage_markdown(records, jobs, model_names, components, runs, required_par
     lines += ["", "## Runs", "", "| When | Models | Spend (USD) | Calls per model |", "|---|---|---|---|"]
     for r in runs:
         lines.append(f"| {r['when']} | {', '.join(r['models'])} | {r['spent']:.4f} | {r['calls']} |")
-    lines += ["", "## Known gaps (hand-written)", "", "- _fill in after review_", ""]
+    lines += ["", "## Known gaps (hand-written)", "", known_gaps.strip() or "- _fill in after review_", ""]
     return "\n".join(lines)

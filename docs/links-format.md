@@ -1,30 +1,18 @@
-# `links.json` format (proposal for kickoff)
+# `links.json`: how Role 1 writes it
 
-Role 1 → Role 2 interface. Freezes at 0:30; any change needs all three roles to agree.
-
-The file is a JSON **array of records**, one record per sourced supplier link. Example records: [`data/links.fake.json`](../data/links.fake.json).
+The frozen format and the risk rules live in the README on Role 2's branch (`feat/risk-engine`, section "Data format"). This page only records the conventions Role 1's pipeline follows to fit them.
 
 ```json
-{ "model": "Skydio X10", "component": "Motors", "part": "Magnets",
-  "supplier": "", "supplier_country": "CN", "tier": 2,
-  "source_url": "https://...", "confidence": "high|low|unmapped",
-  "conflict": false }
+{ "model": "Skydio X10", "component": "motors", "part": "Magnets",
+  "supplier": "", "supplier_country": "", "tier": 2,
+  "source_url": "", "confidence": "unmapped", "conflict": false }
 ```
 
-| Field | Meaning |
-|---|---|
-| `model` | Drone model name, as in the model list. |
-| `component` | Top-level component: `Motors`, `Battery cells`, `Flight controller chip`, `Camera sensor`, `Radio`. |
-| `part` | **Only proposed addition, optional.** For sub-tiers, what this supplier makes inside the component, e.g. `Magnets` under `Motors`, `Cathode material` under `Battery cells`. Missing at tier 1. Safe to ignore. |
-| `supplier` | Company name. Empty when unmapped. |
-| `supplier_country` | ISO 3166 alpha-2 code. Country where the part is **made** when a source says so, otherwise the supplier's HQ (those are capped at `low`). Empty when unmapped. |
-| `tier` | 1 = supplies the component to the drone maker, 2 = supplies a part inside it, 3 = raw material (magnets and battery cells only). |
-| `source_url` | The page that backs the claim. Empty when unmapped. |
-| `confidence` | `high`: the page states this supplier provides this part for this model or maker. `low`: indirect, old, secondary, or HQ-only country. `unmapped`: no verifiable source found. |
-| `conflict` | `true` on every record when sources disagree on supplier or country for the same model, component, part and tier. Several agreeing suppliers (second sourcing) are **not** a conflict. |
-
-Rules:
-- Every model × component appears at least once. If nothing was found, there is one record with empty `supplier`, `supplier_country` and `source_url`, `tier: 1` and `confidence: "unmapped"`. Show it grey, never as safe.
-- Nothing is guessed. Every non-unmapped record has a `source_url` that a verifier agent opened and checked.
-- Magnets are researched as their own category but recorded as `component: "Motors", part: "Magnets", tier: 2` (rare-earth material at tier 3). If no magnet supplier is verified, there is an extra unmapped record with `part: "Magnets", tier: 2`, so the gap is visible even when the motor maker is known.
-- Differences from the old `data/models/example.json` / README shape: records are flat rather than nested chains, `confidence` can also be `unmapped`, and the component is called `Flight controller chip` rather than `Flight controller`.
+- **Components** are lowercase and are what the drone maker buys at tier 1: `motors`, `battery cells`, `flight controller chip`, `camera sensor`, `radio`. Sub-parts are deeper tiers of the same component: magnets are tier 2 of `motors` (rare-earth material is tier 3), cell materials are tier 2 of `battery cells` (raw materials are tier 3), chip, sensor and radio-chip fabrication are tier 2 of their component.
+- **`part`** is an optional extra label for sub-tier records, e.g. `"Magnets"`. Role 2's loader ignores it, so Role 3 can use it as a display hint.
+- **Unmapped for every tier searched.** Each (component, tier) a research job searched without a verified result gets a record with empty `supplier`, `supplier_country` and `source_url`, and `confidence: "unmapped"`. A component or tier with no record at all was never researched (for example, the job errored).
+- **Countries** are ISO 3166 alpha-2 codes and are never blank on a mapped link. The country is where the part is made if a source says so, otherwise HQ (those links are capped at `low`).
+- **One spelling per supplier** across the whole file. Agent notes in brackets are stripped, and variants such as "Nidec Corporation (Nidec America)" or "Sony Semiconductor Solutions" are folded into one spelling. A spelling already in the file wins.
+- **`conflict: true`** goes only on mapped records, on every side of a disagreement: separate sources naming different suppliers for the same model, component and tier, or the same supplier with different countries. One page listing several suppliers counts as second sourcing, not a conflict.
+- **Append-only.** A link's id is its position. Records already in the file keep their positions and new batches are appended. If a re-run removes a record, the pipeline prints a warning so Role 2 can be told that ids shifted.
+- **Nothing is guessed.** Every mapped link's page was opened by the verifier agent, and code checked that the quoted evidence sentence appears on the page and names the supplier.

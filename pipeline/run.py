@@ -76,12 +76,25 @@ def rebuild_outputs(runs: list[dict]):
     jobs = load_jobs()
     done_models = {j["model"] for j in jobs}
     model_names = [m["name"] for m in config.DRONE_MODELS if m["name"] in done_models]
-    records = build_links([j for j in jobs if not j.get("error")], model_names, config.COMPONENTS,
-                          config.REQUIRED_PARTS)
+    existing = []
+    if config.LINKS_PATH.exists():
+        try:
+            existing = json.loads(config.LINKS_PATH.read_text(encoding="utf-8"))
+        except ValueError:
+            log("warning: existing links.json is not valid JSON; starting a fresh file")
+    records, dropped = build_links(jobs, config.RESEARCH_CATEGORIES, existing,
+                                   [m["name"] for m in config.DRONE_MODELS])
+    if dropped:
+        log(f"WARNING: {len(dropped)} record(s) already in links.json are no longer produced and were "
+            f"removed, so later link ids shift. Tell Role 2. First removed: "
+            f"{[(r.get('model'), r.get('component'), r.get('supplier')) for r in dropped[:3]]}")
     config.LINKS_PATH.write_text(json.dumps(records, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    marker = "## Known gaps (hand-written)"
+    old = config.COVERAGE_PATH.read_text(encoding="utf-8") if config.COVERAGE_PATH.exists() else ""
+    known_gaps = old.split(marker, 1)[1] if marker in old else ""
     config.COVERAGE_PATH.write_text(
-        coverage_markdown(records, jobs, model_names, config.COMPONENTS, runs, config.REQUIRED_PARTS),
-        encoding="utf-8")
+        coverage_markdown(records, jobs, model_names, config.COMPONENTS, runs, config.REQUIRED_PARTS,
+                          known_gaps), encoding="utf-8")
     return records
 
 

@@ -162,5 +162,13 @@
   "verified": [],
   "retried": false,
   "notes": "No public source found naming the NdFeB magnet maker or rare-earth material producer for DJI Mavic 3 Enterprise motors; teardown/repair pages only show generic magnet rings, and rare-earth trade coverage (e.g. Rare Earth Exchanges) discusses DJI's China-based magnet supply chain only in general terms without naming suppliers. An empty list is the honest answer here.",
-  "when": "2026-11-11T06:41:38+00:00"
+  "when": "2026-11-11T06:41:38+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No public source I opened names the NdFeB magnet maker or the rare-earth material producer for the DJI Mavic 3 Enterprise (or DJI's motor supply chain generally); teardowns found cover disassembly only and DJI does not disclose magnet vendors. Only generic industry data was found (e.g., China holds 98% of global magnet manufacturing capacity, UAV supply-chain report), which does not identify a supplier for this drone's motors.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

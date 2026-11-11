@@ -457,9 +457,48 @@
       "evidence_quote": "企业亮点：大疆创新的核心电池供应商之一，在消费级无人机电池市场占据重要份额。",
       "reason": "evidence quote not found on page (verifier said low: The page supports ATL as a core DJI battery supplier for multiple flagship DJI drones, but does not mention the Mavic 3 Enterprise or state ATL's country/HQ.)",
       "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Dongguan Poweramp Technology Limited",
+      "supplier_country": "CN",
+      "country_basis": "made",
+      "source_url": "https://droneshopperth.com.au/wp-content/uploads/2023/05/BWX260-5000-15.4_MSDS_2022-B-000135-Mavic-3.pdf",
+      "quote": "Manufacturer Dongguan Poweramp Technology Limited",
+      "confidence": "low",
+      "evidence_quote": "Manufacturer Dongguan Poweramp Technology Limited",
+      "reason": "The SDS names Poweramp as manufacturer of a lithium-ion battery in Guangdong, but never mentions DJI or the Mavic 3 Enterprise.",
+      "verifier_model": "deepseek-v4.1-flash",
+      "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
     }
   ],
   "retried": true,
   "notes": "No public source found that names the Li-ion cell maker inside the Mavic 3 Enterprise (BWX260-5000-15.4) pack, nor any cathode-material, lithium/cobalt/graphite producer linked to those cells. Searches surfaced only generic DJI-supplier roundups and third-party replacement batteries (which cite Samsung cells, not the OEM's), so nothing met the sourcing bar.",
-  "when": "2026-11-11T06:48:27+00:00"
+  "when": "2026-11-11T06:48:27+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "The DJI Mavic 3 battery (BWX260-5000-15.4) safety data sheet names Dongguan Poweramp Technology Limited (a Dongguan, Guangdong-based pack/cell maker) as the manufacturer, giving a solid Tier 1 answer. No public source found linking specific cathode-material or raw-material suppliers to this pack's cells (only NCM/graphite chemistry is disclosed), so Tier 2 and Tier 3 are left empty.",
+      "error": null,
+      "verified": [
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Dongguan Poweramp Technology Limited",
+          "supplier_country": "CN",
+          "country_basis": "made",
+          "source_url": "https://droneshopperth.com.au/wp-content/uploads/2023/05/BWX260-5000-15.4_MSDS_2022-B-000135-Mavic-3.pdf",
+          "quote": "Manufacturer Dongguan Poweramp Technology Limited",
+          "confidence": "low",
+          "evidence_quote": "Manufacturer Dongguan Poweramp Technology Limited",
+          "reason": "The SDS names Poweramp as manufacturer of a lithium-ion battery in Guangdong, but never mentions DJI or the Mavic 3 Enterprise.",
+          "verifier_model": "deepseek-v4.1-flash",
+          "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+        }
+      ]
+    }
+  ]
 }

@@ -101,10 +101,15 @@ def apply_overrides(jobs: list[dict], overrides: list[dict]) -> int:
 
 
 def build_links(jobs: list[dict], categories: list[dict], existing: list[dict] | None = None,
-                model_order: list[str] = ()) -> tuple[list[dict], list[dict]]:
+                model_order: list[str] = (), aliases: dict[str, str] | None = None) -> tuple[list[dict], list[dict]]:
     """jobs: raw job dicts (`model`, `category`, `verified`). categories: config.RESEARCH_CATEGORIES.
     existing: the current links.json; its records keep their positions, new records are appended.
+    aliases: supplier spelling -> canonical spelling, for variants the automatic folding can't catch
+    (e.g. "SZ DJI Technology Co., Ltd." -> "DJI").
+    An existing unmapped record whose tier has since been mapped stays in place, so later ids don't
+    shift; the risk engine ignores an unmapped record at or above the deepest mapped tier.
     Returns (records, dropped) where dropped are existing records no longer produced."""
+    alias_by_key = {norm_supplier(clean_supplier(k)): v for k, v in (aliases or {}).items()}
     existing = [r for r in (existing or []) if isinstance(r, dict)]
     cat_by_key = {c["key"]: c for c in categories}
     searched, mapped = set(), []
@@ -118,6 +123,8 @@ def build_links(jobs: list[dict], categories: list[dict], existing: list[dict] |
                 mapped.append(_record(job["model"], cat["component"], c.get("part"), int(c["tier"]),
                                       c["supplier"], (c.get("supplier_country") or "").strip().upper(),
                                       c["source_url"], c["confidence"]))
+    for r in mapped:
+        r["supplier"] = alias_by_key.get(norm_supplier(clean_supplier(r["supplier"])), r["supplier"])
     names = canonical_names([r["supplier"] for r in mapped],
                             [r["supplier"] for r in existing if r.get("supplier")])
     fresh, seen = [], set()
@@ -136,10 +143,17 @@ def build_links(jobs: list[dict], categories: list[dict], existing: list[dict] |
     fresh.sort(key=lambda r: (order.get(r["model"], 99), r["model"], r["component"], r["tier"],
                               r.get("part") or "", r["supplier"].lower(), r["source_url"]))
     by_key = {record_key(r): r for r in fresh}
-    kept_keys = [record_key(r) for r in existing if record_key(r) in by_key]
-    dropped = [r for r in existing if record_key(r) not in by_key]
-    kept = set(kept_keys)
-    records = [by_key[k] for k in kept_keys] + [r for r in fresh if record_key(r) not in kept]
+    records, dropped, kept = [], [], set()
+    for r in existing:
+        k = record_key(r)
+        if k in by_key:
+            records.append(by_key[k])
+            kept.add(k)
+        elif r.get("confidence") == "unmapped" and (r["model"], r["component"], r.get("part"), r["tier"]) in searched:
+            records.append(r)  # superseded placeholder: kept so ids don't shift
+        else:
+            dropped.append(r)
+    records += [r for r in fresh if record_key(r) not in kept]
     return records, dropped
 
 

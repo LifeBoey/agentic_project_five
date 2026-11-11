@@ -164,5 +164,13 @@
   "verified": [],
   "retried": false,
   "notes": "Searched for Teal 2 battery pack specifications, FCC filings/teardowns, Teal/Red Cat press releases, the Red Cat 10-K, and US cell makers (Badland Batteries/Packet Digital), but no public page I opened names the lithium-ion cell manufacturer for the Teal 2's 'Teal Performance Battery Pack' — only that it is a Teal-proprietary lithium-ion pack. With no Tier 1 identification, no Tier 2 cathode or Tier 3 raw-material supplier could be sourced either.",
-  "when": "2026-11-11T06:35:23+00:00"
+  "when": "2026-11-11T06:35:23+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "Public sources confirm only that the Teal 2 and its TAC ground station use a shared 'Teal Performance Battery Pack' (lithium-ion, per Teal's operator manual) and that ESAero designed a multi-battery charger — but no page I opened named the cell maker, cathode/anode material supplier, or raw-material producer. Tier 1-3 candidates are therefore left empty.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

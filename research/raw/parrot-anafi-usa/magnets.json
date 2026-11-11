@@ -165,5 +165,13 @@
   "verified": [],
   "retried": false,
   "notes": "No public source opened in this session names the motor, magnet or rare-earth supplier for the Parrot Anafi USA; Parrot's own white paper describes motor covers, 46 W motors and propellers but discloses no supplier, and FCC internal photos only show the airframe. The magnet/rare-earth tiers therefore remain unmapped.",
-  "when": "2026-11-11T06:31:29+00:00"
+  "when": "2026-11-11T06:31:29+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No public source identifies the magnet maker or rare-earth material producer for the Parrot Anafi USA's motors. FCC filings and Parrot documentation cover the airframe/electronics but not motor internals, and supply-chain profiles explicitly state Parrot's BLDC motor and rare-earth magnet suppliers are not publicly disclosed, so Tier 2 and Tier 3 remain empty.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

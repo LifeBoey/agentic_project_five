@@ -2,109 +2,163 @@
 
 <img src="web/public/logo.svg" alt="Drone dependency map logo: a drone seen from above with one red rotor" width="72" align="right">
 
-Shows a procurement officer where a drone model depends on a single country. Full brief: [docs/brief.md](docs/brief.md).
+**See where a drone depends on a single country, before an export control or a disruption shows you.**
 
-## Layout
+Procurement officers can see a drone's first-tier suppliers, but not what sits underneath: the magnets in the motors, the cells in the battery, the fab behind the chip. That sub-tier detail is scattered across teardowns, filings and news, and mapping one model by hand takes weeks. This project uses AI research agents to build a sourced supplier map, a risk engine to flag single-country dependencies, and an interface that shows the whole chain on one screen, with a source link behind every claim.
 
-| Path | What lives there |
-|---|---|
-| `docs/` | Brief and other product docs |
-| `research/` | Riskiest-bet result, coverage note, and `raw/` audit trail of every research and verifier run (Role 1) |
-| `data/links.json` | Supplier links, one flat record each (Role 1 owns). Real data for 4 models (Skydio X10, Parrot Anafi USA, Teal 2, DJI Mavic 3 Enterprise); new batches are appended. Conventions: [docs/links-format.md](docs/links-format.md) |
-| `pipeline/` | Research and verifier agents that build `data/links.json` (Role 1). See [pipeline/README.md](pipeline/README.md) |
-| `src/risk.js` | Graph and risk rules (Role 2) |
-| `src/agent.js` | Query agent behind `ask()` (Role 2) |
-| `src/server.js` | Risk API plus the static viewer, on one port |
-| `web/` | The interface (Role 3): Vite + React + TypeScript, built to `web/dist/` |
-| `web/tests/` | Browser tests (Playwright) and the fixture data they use |
-| `web/scripts/` | `draft-briefs.ts` (risk brief agent) and `data-drop.ts` (data-drop test run) |
+![The interface on Skydio X10: the verdict, the countries it depends on, a cut-off scenario and the supply-chain map from components to country of origin](docs/images/landing.png)
 
-## Run
+## What the map shows today
+
+Four models, 67 supplier records. Every mapped link was checked by a verifier agent, and 4 were overruled by hand after reading the evidence. These figures come from `data/links.json` as of this commit, read through the risk engine:
+
+| Model | Components that depend on a single country | Partly or fully unmapped |
+|---|---|---|
+| Skydio X10 | battery cells (China), flight controller chip (US), motors (Japan), radio (US) | 5 of 5 |
+| Parrot Anafi USA | battery cells (South Korea), camera sensor (US), flight controller chip (US), radio (Canada) | 5 of 5 |
+| Teal 2 | camera sensor (US), flight controller chip (US), motors (US), radio (Singapore) | 5 of 5 |
+| DJI Mavic 3 Enterprise | battery cells (China), camera sensor (Japan), radio (China) | 4 of 5 |
+
+What that means:
+
+- **A China cut-off provably hits 3 components** (Skydio X10 battery cells, DJI Mavic 3 Enterprise battery cells and radio), and **17 more cannot be ruled out** because a tier is unmapped. The tool shows those as unknown, never as safe.
+- **Three suppliers are shared across models**: Teledyne FLIR (Skydio X10, Teal 2, Parrot Anafi USA), Sony and Dongguan Poweramp (both Skydio X10 and DJI Mavic 3 Enterprise). One of them failing hits several drones at once.
+- **Public sources answer "who does the drone maker buy from", not "what is inside the part".** 31 of 67 links are mapped, none at high confidence, and almost every sub-tier (magnets, cell materials, chip fabs) is unmapped. The [riskiest-bet test](research/riskiest-bet.md) failed on sub-tier for this reason. Sub-tier data needs paid teardowns, customs records or vendor questionnaires; the interface says "Ask the vendor" on every gap.
+
+Per-model detail and the research notes behind every gap: [research/coverage.md](research/coverage.md).
+
+## How it works
+
+```mermaid
+flowchart LR
+  subgraph R1 [Role 1: research]
+    RA[Research agent<br/>searches the web] --> VA[Verifier agent<br/>opens each page,<br/>quote checked by code]
+    VA --> M[Merge<br/>conflicts, unmapped gaps,<br/>append-only ids]
+  end
+  M --> L[(data/links.json)]
+  subgraph R2 [Role 2: risk engine]
+    L --> V[Validate every record] --> E[Risk rules<br/>single-country, single-source,<br/>unknown, chokepoints, cut-off]
+    E --> API[Risk API<br/>Node, port 3001]
+    API --> Q[Query agent<br/>tools = the 4 risk functions,<br/>citations enforced in code]
+  end
+  subgraph R3 [Role 3: interface]
+    API --> UI[React interface<br/>verdict, supply-chain map,<br/>cut-off, chain drill-down]
+    Q --> UI
+    API --> B[Brief agent<br/>one paragraph per model,<br/>numbers checked]
+  end
+```
+
+Every supplier claim is a record that links one **component** of one **model** to one **supplier** in one **country** at one **tier**, with the **source** behind it:
+
+```mermaid
+flowchart LR
+  Model -->|buys| Component -->|tier 1| Supplier -->|made in| Country
+  Supplier -->|tier 2, 3: sub-parts| Supplier2[Sub-tier supplier] --> Country2[Country]
+  Supplier2 -.->|nothing verified| Unknown[Unknown origin<br/>never safe]
+```
+
+The rules, the record format and a worked example are in [docs/risk-model.md](docs/risk-model.md). The design decisions behind them are in [docs/architecture.md](docs/architecture.md).
+
+## Quick start
+
+**You need:** Node 22 or newer, and an OpenCode API key for the two AI features (the question box and risk briefs). Python 3 is needed only to run the research pipeline (tested on 3.14).
 
 ```bash
 npm install
-(cd web && npm install && npm run build)   # the interface, once and after each change
+```
+
+```bash
+(cd web && npm install && npm run build)
+```
+
+```bash
+cp .env.example .env
+```
+
+Fill in `OPENCODE_API_KEY` in `.env`, then start the server:
+
+```bash
 npm start
 ```
 
-Then open http://localhost:3001, which redirects to the built interface at `/web/dist/`.
+Open http://localhost:3001. The map, cut-off and drill-down work without a key; only the question box and briefs need it.
 
-While working on the interface, run `npm start` in the root and `npm run dev` in `web/`, then open http://localhost:5173. Vite proxies `/api` to port 3001 (`API_PROXY` overrides it).
+### Configuration (`.env`)
 
-`npm test` runs the tests against `test/fixtures/links.json` (fake data) and also checks that the real `data/links.json` passes validation; no live API calls. `ask()` needs Claude credentials. Copy `.env.example` to `.env` and fill in `OPENCODE_API_KEY` (shared with the research pipeline; `ANTHROPIC_API_KEY` overrides it); `npm start` loads it. Without credentials, `/api/ask` returns 503 and everything else still works.
+| Variable | Used by | Needed for |
+|---|---|---|
+| `OPENCODE_API_KEY` | API server, research pipeline, brief agent | The question box, risk briefs, and running the pipeline |
+| `ANTHROPIC_BASE_URL` | API server | Where Claude requests go. `.env.example` sets OpenCode's Anthropic-compatible endpoint |
+| `ANTHROPIC_API_KEY` | API server | Optional: a separate key for the question box. Leave empty to reuse `OPENCODE_API_KEY` |
+| `TAVILY_API_KEY`, `JINA_API_KEY` | Research pipeline | Optional: better search and page fetching. Without them it falls back to free search and plain HTTP |
+| `PORT` | API server | Optional: defaults to 3001 |
 
-## Data format (`data/links.json`, frozen)
+The server loads `.env` itself and lets it win over the shell, because some shells (Claude Code among them) already set `ANTHROPIC_BASE_URL`.
 
-```json
-{ "model": "", "component": "", "supplier": "", "supplier_country": "",
-  "tier": 1, "source_url": "", "confidence": "high|low|unmapped",
-  "conflict": false }
-```
+## Everyday commands
 
-A **component** is what the drone maker buys at tier 1 (motors, battery cells, flight controller chip, camera sensor, radio). Sub-parts are deeper tiers of it: magnets are tier 2 of `motors`, cell materials are tier 2 of `battery cells`. Write an `unmapped` record for every tier you searched and found nothing, so "searched, not found" differs from "not researched".
-
-Every record is checked on load. If any record is malformed (wrong field type, `tier` below 1, unknown `confidence`, or a mapped link with no supplier or no http(s) `source_url`), the whole file is rejected: the API returns 500 naming each bad record, so nothing is silently skipped.
-
-A link's `id` in API responses is its position in the array. The file is re-read on every request, so new batches show up without a restart.
-
-## Risk API
-
-| Endpoint | Returns |
+| What | Command |
 |---|---|
-| `GET /api/models` | `["Falcon X", ...]` |
-| `GET /api/models/:model/risk` | `{ model, counts: { single_country, single_source, unknown, low_confidence, conflicts }, components: [name, ...], flagged: [{ component, reasons, countries, low_confidence, link_ids }], chokepoints: [{ supplier, models }] }` |
-| `GET /api/models/:model/chain/:component` | `{ model, component, status: "mapped"\|"unknown", tiers: [{ tier, links: [{ id, supplier, supplier_country, source_url, confidence, conflict, part? }] }] }` |
-| `GET /api/cutoff/:country` | `{ country, affected: [{ model, component, link_ids }], fully_blocked: [{ model, component }], unknown: [{ model, component, link_ids }], models_affected }` |
-| `POST /api/ask` `{ question }` | `{ answer, links: [full records] }`, or the fixed refusal "No mapped data to answer that." with `links: []` |
+| Run the app | `npm start`, then open http://localhost:3001 |
+| Work on the interface with live reload | `npm start` here, `npm run dev` in `web/`, then open http://localhost:5173 |
+| Risk engine and API tests | `npm test` |
+| Interface unit tests, type check | `cd web && npm test && npm run typecheck` |
+| Browser tests | `cd web && npm run test:e2e` |
+| Research more models | `python -m pipeline.run --models "Model name" --budget 2` ([details](pipeline/README.md)) |
+| Draft risk briefs | `cd web && npm run briefs` (server running, key set) |
+| Full check after a data drop | `cd web && npm run data-drop` |
 
-`components` lists every component of the model in file order, flagged or not. The interface needs it to show components that nothing flags. It is an addition by Role 3: the interface refuses to render a model whose response lacks it, rather than silently showing only the flagged ones.
+## Repository layout
 
-An unknown model or component returns 404. For an unknown component, `link_ids` and the chain's `tiers` hold its `unmapped` records, so the gap itself can be cited.
+| Path | What lives there | Owner |
+|---|---|---|
+| `data/links.json` | Every supplier record. Append-only: a record's position is its id | Role 1 |
+| `pipeline/` | Research, verifier and merge steps that build `links.json` ([README](pipeline/README.md)) | Role 1 |
+| `research/` | Coverage note, riskiest-bet result, hand-check overrides, and `raw/`: the full audit trail of every agent run | Role 1 |
+| `src/risk.js` | Validation and risk rules: pure functions over `links.json` | Role 2 |
+| `src/agent.js` | The query agent behind `ask()` | Role 2 |
+| `src/server.js` | The Risk API, plus the built interface, on one port | Role 2 |
+| `test/` | Risk engine and agent tests, on fake data in `test/fixtures/` | Role 2 |
+| `web/` | The interface: Vite, React, TypeScript, built to `web/dist/` ([notes](docs/interface.md)) | Role 3 |
+| `web/tests/`, `web/scripts/` | Browser tests, the brief agent and the data-drop check | Role 3 |
+| `docs/` | Brief, architecture, API, risk model, interface, demo script, user test | All |
 
-## Risk rules
+## The team
 
-Every rule reads a component's deepest tier and ignores `unmapped` records.
+| Role | Owns | Agentic part |
+|---|---|---|
+| 1. Research engineer | The dataset and its quality | Research agents per model and component, a verifier agent, a merge step |
+| 2. Platform engineer | The graph, risk rules and API | The query agent: answers only by calling the API, and code enforces its citations |
+| 3. Product engineer | The interface, user test and demo | A browser-test run on every data drop (`data-drop`), and a risk-brief agent |
 
-- **Single-country:** every link at the deepest tier names one country. A link with a blank country blocks the claim. Components whose only evidence is low confidence are still flagged, with `low_confidence: true`.
-- **Single-source:** exactly one distinct supplier at the deepest tier. Supplier names and countries are matched ignoring case and surrounding spaces.
-- **Unknown:** the component has only `unmapped` records, or has an `unmapped` record at a tier deeper than its deepest mapped tier (partly known: its mapped tiers still show). It is never treated as safe.
-- **Conflict:** any of the component's mapped records has `conflict: true`.
-- **Low confidence (count):** a flagged component whose deepest-tier evidence is all `low`.
-- **Chokepoint:** a supplier that appears in 2 or more models, at any tier.
-- **Cut-off:** `affected` means any mapped link is in that country. `fully_blocked` means the deepest tier is only that country. `unknown` lists fully unmapped components, plus partly known ones with no mapped link in that country.
+## Documentation
 
-## Query agent
+| Doc | For |
+|---|---|
+| [docs/brief.md](docs/brief.md) | The product brief: problem, success metric, riskiest bet |
+| [docs/architecture.md](docs/architecture.md) | How the pieces fit, the four agents, where trust is enforced, and why |
+| [docs/risk-model.md](docs/risk-model.md) | The data model, the record format and every risk rule |
+| [docs/api.md](docs/api.md) | Every endpoint, with real responses |
+| [docs/interface.md](docs/interface.md) | What each screen state means, interface checks, risk briefs |
+| [docs/links-format.md](docs/links-format.md) | How Role 1's pipeline writes `links.json` |
+| [docs/demo-script.md](docs/demo-script.md) | A five-minute demo |
+| [docs/user-test.md](docs/user-test.md), [results](docs/user-test-results.md) | The user test protocol and results |
 
-`claude-haiku-5-5` at effort `low`, called through OpenCode (the model enabled on our workspace). Its only tools are the four risk functions. The code keeps only the cited link ids that appeared in a tool result. If none remain, `ask()` returns the fixed refusal.
+## Known limits
 
-## Interface
+- **Sub-tier data is mostly missing**, as above. The map is honest about it but cannot fill it from public sources.
+- **No link is high confidence.** No public page says where a part is made, so most countries are the supplier's headquarters.
+- **Some sources are stale.** Skydio's battery supplier is a former supplier; see the hand-written gaps in [research/coverage.md](research/coverage.md).
+- **The 1-hour target is not measured yet.** The user test is written but not run, and the 2 to 3 weeks manual baseline is unverified.
+- **Risk briefs are snapshots.** Regenerate them after every data drop.
 
-Everything on the page comes from the Risk API; the page computes no risk of its own.
+## Troubleshooting
 
-- **Not researched**: an expected component (`web/src/lib/expected.ts`: motors, battery cells, flight controller chip, camera sensor, radio) that a model has no record for at all. It is shown grey, counted, never safe, and unknown in a cut-off, so it cannot silently disappear. **The expected list is provisional and still to be agreed.** `data-drop` reports the same gaps for the research role.
-- **Unmapped** (`status: "unknown"`): a grey row, counted in the summary, no source, never shown as safe.
-- **Partly unmapped** (`status: "mapped"` with an `unmapped` tier below the known ones): the known tiers and sources show, and the missing tier is a grey card.
-- **Low confidence**: labelled on the row and on the weak source, with the source link visible.
-- **Conflict**: the disagreeing suppliers sit side by side.
-- **Cut-off**: `affected` and `fully_blocked` mark rows; `unknown` is listed separately as "not counted as unaffected".
-- **Question box**: shows a loading state (3 to 10 seconds). "No mapped data to answer that." is shown as a normal answer. A 503 says the question box is not set up on the server.
-
-## Checks
-
-```bash
-cd web
-npm run typecheck
-npm test                          # unit tests: view logic, brief checker, URL guard
-npx playwright install chromium   # once
-npm run test:e2e                  # browser tests on fixture data, answered by the real risk engine
-E2E_API=real npm run test:e2e     # the data-agnostic tests against the real server and data/links.json
-npm run data-drop                 # the real-API run plus a report in docs/test-reports/
-```
-
-`data-drop` writes two lists: UI failures, and data gaps (unmapped, partly unmapped, low confidence, conflicts, components not researched, or a `links.json` the API rejects) to hand to the research role. The real-API run makes one live `ask()` call.
-
-## Risk briefs
-
-With the API running and `.env` filled in, `cd web && npm run briefs` drafts one paragraph per model from the API output into `web/public/briefs/` (gitignored, so each machine generates its own). Each draft is checked: every number must come from the API output, every unmapped or partly unmapped component must be named and described as unmapped, and conflicts must be mentioned. A draft that fails twice is not written, and the interface says no brief has been drafted for that model.
-
-The checker tests numbers and names, not meaning, so read the briefs before presenting them. **Regenerate them after every data drop**: a brief is a snapshot and does not update itself.
+| You see | Do this |
+|---|---|
+| `{"error":"not found"}` at http://localhost:3001 | The interface isn't built. Run `cd web && npm install && npm run build` |
+| The question box says it is not set up (503) | Set `OPENCODE_API_KEY` in `.env` and restart. If the key is set, check that your OpenCode workspace has `claude-haiku-5-5` enabled: a disabled model also shows as 503 |
+| An error naming `links.json rejected: record N …` | A record breaks the format. The message names each bad record and why; fix them in `data/links.json` |
+| Browser tests fail with "Executable doesn't exist" | Run `cd web && npx playwright install chromium-headless-shell` |
+| "No brief has been drafted for this model yet" | Run `cd web && npm run briefs` with the server running and the key set |
+| The page font looks plain | Public Sans loads from Google Fonts. Offline, the page falls back to the system font and works the same |

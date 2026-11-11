@@ -87,7 +87,7 @@ def rebuild_outputs(runs: list[dict]):
         n = apply_overrides(jobs, json.loads(overrides_path.read_text(encoding="utf-8")))
         log(f"applied {n} hand-check override(s) from research/overrides.json")
     records, dropped = build_links(jobs, config.RESEARCH_CATEGORIES, existing,
-                                   [m["name"] for m in config.DRONE_MODELS])
+                                   [m["name"] for m in config.DRONE_MODELS], config.SUPPLIER_ALIASES)
     if dropped:
         log(f"WARNING: {len(dropped)} record(s) already in links.json are no longer produced and were "
             f"removed, so later link ids shift. Tell Role 2. First removed: "

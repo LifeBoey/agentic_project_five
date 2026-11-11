@@ -131,3 +131,17 @@ def test_hand_override_rejects_a_verified_link():
                                 "confidence": "unmapped", "reason": "hand check"}])
     recs, _ = build_links(jobs, CATS)
     assert n == 1 and mapped(recs) == [] and unmapped(recs) == [("motors", None, 1)]
+
+
+def test_aliases_fold_spellings_with_a_different_first_word():
+    recs, _ = build_links([job("motors", cand("SZ DJI Technology Co., Ltd.", "CN", "https://1"),
+                               cand("DJI", "CN", "https://2"))], CATS, aliases={"SZ DJI Technology Co., Ltd.": "DJI"})
+    assert {r["supplier"] for r in recs} == {"DJI"} and not any(r["conflict"] for r in recs)
+
+
+def test_newly_mapped_tier_keeps_old_unmapped_record_in_place():
+    first, _ = build_links([job("motors"), job("radio")], CATS)
+    second, dropped = build_links([job("motors", cand("Motor Co", "US", "https://1")), job("radio")],
+                                  CATS, existing=first)
+    assert dropped == [] and second[:len(first)] == first
+    assert second[len(first)]["supplier"] == "Motor Co"

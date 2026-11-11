@@ -158,8 +158,78 @@
       "verified": []
     }
   ],
-  "verified": [],
+  "verified": [
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+      "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+      "confidence": "low",
+      "evidence_quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+      "reason": "The page states DJI uses Sony image sensors from Japan generally, but does not explicitly tie Sony sensors to the Mavic 3 Enterprise model.",
+      "verifier_model": "deepseek-v4.1-flash",
+      "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+      "quote": "Camera sensors in DJI drones come from Sony.",
+      "confidence": "low",
+      "evidence_quote": "Camera sensors in DJI drones come from Sony.",
+      "reason": "The page names Sony as a camera sensor supplier for DJI drones generally but does not mention the Mavic 3 Enterprise or Sony's country.",
+      "verifier_model": "deepseek-v4.1-flash",
+      "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+    }
+  ],
   "retried": false,
   "notes": "Searches surfaced general spec pages (DJI Mavic 3 Enterprise specs, DPReview) confirming a 20MP Four Thirds CMOS wide camera and a 640x512 thermal camera, but no page I could open named the image-sensor maker or its fab for this model. Teardown leads (TechInsights Mavic 3 Pro deep dive, iFixit, Chinese-language sensor-ID threads) were paywalled, video-only, or blocked (Zhihu 403), so no supplier claim could be sourced.",
-  "when": "2026-11-11T06:45:26+00:00"
+  "when": "2026-11-11T06:45:26+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No Mavic 3 Enterprise (Mavic 3E/3T) specific teardown naming an image-sensor part number was found; only DJI-wide statements that DJI sources image sensors from Sony (Japan) or OmniVision (China), plus confirmation that the 3T thermal camera uses an uncooled VOx microbolometer with no vendor named. No source identified the sensor fabrication site, so tier 2 is empty.",
+      "error": null,
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+          "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+          "confidence": "low",
+          "evidence_quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+          "reason": "The page states DJI uses Sony image sensors from Japan generally, but does not explicitly tie Sony sensors to the Mavic 3 Enterprise model.",
+          "verifier_model": "deepseek-v4.1-flash",
+          "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+          "quote": "Camera sensors in DJI drones come from Sony.",
+          "confidence": "low",
+          "evidence_quote": "Camera sensors in DJI drones come from Sony.",
+          "reason": "The page names Sony as a camera sensor supplier for DJI drones generally but does not mention the Mavic 3 Enterprise or Sony's country.",
+          "verifier_model": "deepseek-v4.1-flash",
+          "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+        }
+      ]
+    }
+  ]
 }

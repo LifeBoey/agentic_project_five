@@ -12,5 +12,19 @@
     "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
     "confidence": "unmapped",
     "reason": "Hand check: the teardown is of the Mavic 3 Pro and says 'Likely Leadcore', a guess about a different model."
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "category": "radio",
+    "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+    "confidence": "unmapped",
+    "reason": "Hand check (PR #8 import): the teardown is of the Mavic 3 Pro and says 'Likely Leadcore', a guess about a different model."
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "category": "battery_cells",
+    "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+    "confidence": "low",
+    "reason": "Hand check (PR #8 import): the supplier's own marketing post; the page does not state where the cells are made, so capped at low."
   }
 ]

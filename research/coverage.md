@@ -7,16 +7,16 @@ Cell legend: `H` high, `L` low confidence links; `unmapped` = no verified source
 | Model | battery cells | camera sensor | flight controller chip | motors | radio | motors › Magnets |
 |---|---|---|---|---|---|---|
 | Skydio X10 | 0H 1L (T1,2,3) | 0H 3L (T1,2) ⚠ | 0H 3L (T1,2) | 0H 2L (T1,2,3) | 0H 1L (T1,2) | unmapped |
-| Parrot Anafi USA | unmapped | unmapped | 0H 2L (T1,2) | unmapped | 0H 1L (T1,2) | unmapped |
-| Teal 2 | unmapped | 0H 2L (T1,2) | unmapped | 0H 1L (T1,2,3) | 0H 1L (T1,2) | unmapped |
-| DJI Mavic 3 Enterprise | unmapped | unmapped | unmapped | unmapped | 0H 3L (T1,2) | unmapped |
+| Parrot Anafi USA | 0H 1L (T1,2,3) | 0H 1L (T1,2) | 0H 4L (T1,2) | unmapped | 0H 1L (T1,2) | unmapped |
+| Teal 2 | unmapped | 0H 2L (T1,2) | 0H 1L (T1,2) | 0H 1L (T1,2,3) | 0H 3L (T1,2) | unmapped |
+| DJI Mavic 3 Enterprise | 0H 1L (T1,2,3) | 0H 2L (T1,2) | unmapped | unmapped | 0H 4L (T1,2) | unmapped |
 
 ## Single-country dependencies (deepest mapped tier)
 
 - **Skydio X10**: battery cells (CN), flight controller chip (US), motors (JP), radio (US)
-- **Parrot Anafi USA**: flight controller chip (US), radio (CA) — 3 component(s) unmapped, so not known to be safe
-- **Teal 2**: camera sensor (US), motors (US), radio (SG) — 2 component(s) unmapped, so not known to be safe
-- **DJI Mavic 3 Enterprise**: radio (CN) — 4 component(s) unmapped, so not known to be safe
+- **Parrot Anafi USA**: battery cells (KR), camera sensor (US), flight controller chip (US), radio (CA) — 1 component(s) unmapped, so not known to be safe
+- **Teal 2**: camera sensor (US), flight controller chip (US), motors (US), radio (SG) — 1 component(s) unmapped, so not known to be safe
+- **DJI Mavic 3 Enterprise**: battery cells (CN), camera sensor (JP), radio (CN) — 2 component(s) unmapped, so not known to be safe
 
 ## Rules used
 
@@ -26,15 +26,15 @@ Cell legend: `H` high, `L` low confidence links; `unmapped` = no verified source
 
 ## Research notes per job
 
-- DJI Mavic 3 Enterprise / battery_cells: 0 kept, 3 rejected, retried. No public source found that names the Li-ion cell maker inside the Mavic 3 Enterprise (BWX260-5000-15.4) pack, nor any cathode-material, lithium/cobalt/graphite producer linked to those cells. Searches surfaced only generic DJI-supplier roundups and third-party replacement batteries (which cite Sams
-- DJI Mavic 3 Enterprise / camera_sensor: 0 kept, 0 rejected. Searches surfaced general spec pages (DJI Mavic 3 Enterprise specs, DPReview) confirming a 20MP Four Thirds CMOS wide camera and a 640x512 thermal camera, but no page I could open named the image-sensor maker or its fab for this model. Teardown leads (TechInsights Mavic 3 Pro deep dive, iFixit, Chin
+- DJI Mavic 3 Enterprise / battery_cells: 1 kept, 3 rejected, retried. No public source found that names the Li-ion cell maker inside the Mavic 3 Enterprise (BWX260-5000-15.4) pack, nor any cathode-material, lithium/cobalt/graphite producer linked to those cells. Searches surfaced only generic DJI-supplier roundups and third-party replacement batteries (which cite Sams
+- DJI Mavic 3 Enterprise / camera_sensor: 2 kept, 0 rejected. Searches surfaced general spec pages (DJI Mavic 3 Enterprise specs, DPReview) confirming a 20MP Four Thirds CMOS wide camera and a 640x512 thermal camera, but no page I could open named the image-sensor maker or its fab for this model. Teardown leads (TechInsights Mavic 3 Pro deep dive, iFixit, Chin
 - DJI Mavic 3 Enterprise / flight_controller_chip: 0 kept, 2 rejected. The only published chip-ID teardown in this family is iFixit's Mavic 3 Pro main-board identification, which flags a 'likely Leadcore H6MN' applications processor plus Leadcore E2B/P1 and an HDSC HC32F176 MCU; no Mavic 3 Enterprise-specific chip identification was found. No source names the foundry f
 - DJI Mavic 3 Enterprise / magnets: 0 kept, 0 rejected. No public source found naming the NdFeB magnet maker or rare-earth material producer for DJI Mavic 3 Enterprise motors; teardown/repair pages only show generic magnet rings, and rare-earth trade coverage (e.g. Rare Earth Exchanges) discusses DJI's China-based magnet supply chain only in general term
 - DJI Mavic 3 Enterprise / motors: 0 kept, 0 rejected. No public source found naming the motor supplier for the DJI Mavic 3 Enterprise. Teardown coverage (iFixit guides, mavicpilots thread blocked by Cloudflare, EE Times/Teknarie Mavic 3 Pro and 4 Pro teardown) describes the flight motors and even notes Chinese-made motor MCUs/drivers but never identifi
-- DJI Mavic 3 Enterprise / radio: 3 kept, 0 rejected. No Mavic 3 Enterprise-specific teardown or chip-level source exists that I could open; the FCC internal photos (SS3-M3E2206) show boards but label no chips. The best evidence is that DJI's OcuSync link, including in Enterprise models and the Mavic 3 platform, runs on DJI's own custom P1/S-series ASI
-- Parrot Anafi USA / battery_cells: 0 kept, 0 rejected. I found no public source identifying the cell maker inside the Parrot ANAFI USA battery pack, and nothing tracing cathode/anode material or raw-material suppliers for it. Searches surfaced only retailer spec pages (3400 mAh LiPo, part PF070333), a blocked parrotpilots.com rebuild thread, and generic
-- Parrot Anafi USA / camera_sensor: 0 kept, 2 rejected. Parrot's own ANAFI USA spec page confirms the thermal sensor is a FLIR Boson (and the visible chain is two 1/2.4" 21MP sensors), but it does not name the visible-spectrum sensor vendor; the Sony IMX230 identification comes from Wikipedia's account of the base Anafi, which uses the same 1/2.4" 21MP c
-- Parrot Anafi USA / flight_controller_chip: 2 kept, 1 rejected, retried. Parrot's own ANAFI USA white paper (v1.5.2) explicitly names the Ambarella H22 as the flight-controller processor, confirming the Tier 1 chip vendor. No public source found stating which foundry fabricates the H22, so the Tier 2 fabrication entry is left empty; Ambarella's US country is on an HQ bas
+- DJI Mavic 3 Enterprise / radio: 4 kept, 2 rejected. No Mavic 3 Enterprise-specific teardown or chip-level source exists that I could open; the FCC internal photos (SS3-M3E2206) show boards but label no chips. The best evidence is that DJI's OcuSync link, including in Enterprise models and the Mavic 3 platform, runs on DJI's own custom P1/S-series ASI
+- Parrot Anafi USA / battery_cells: 1 kept, 0 rejected. I found no public source identifying the cell maker inside the Parrot ANAFI USA battery pack, and nothing tracing cathode/anode material or raw-material suppliers for it. Searches surfaced only retailer spec pages (3400 mAh LiPo, part PF070333), a blocked parrotpilots.com rebuild thread, and generic
+- Parrot Anafi USA / camera_sensor: 1 kept, 3 rejected. Parrot's own ANAFI USA spec page confirms the thermal sensor is a FLIR Boson (and the visible chain is two 1/2.4" 21MP sensors), but it does not name the visible-spectrum sensor vendor; the Sony IMX230 identification comes from Wikipedia's account of the base Anafi, which uses the same 1/2.4" 21MP c
+- Parrot Anafi USA / flight_controller_chip: 5 kept, 3 rejected, retried. Parrot's own ANAFI USA white paper (v1.5.2) explicitly names the Ambarella H22 as the flight-controller processor, confirming the Tier 1 chip vendor. No public source found stating which foundry fabricates the H22, so the Tier 2 fabrication entry is left empty; Ambarella's US country is on an HQ bas
 - Parrot Anafi USA / magnets: 0 kept, 0 rejected. No public source opened in this session names the motor, magnet or rare-earth supplier for the Parrot Anafi USA; Parrot's own white paper describes motor covers, 46 W motors and propellers but discloses no supplier, and FCC internal photos only show the airframe. The magnet/rare-earth tiers therefor
 - Parrot Anafi USA / motors: 0 kept, 0 rejected. No public source I opened names the motor supplier for the Parrot Anafi USA. Parrot's own pages and resellers only describe the Anafi's motors as Parrot-branded brushless units sold as spare-part kits (PF070766), and FCC internal-photo filings for the Anafi USA (2AG6IANAFIM3) do not identify a motor
 - Parrot Anafi USA / radio: 1 kept, 1 rejected. Parrot's own product sheet confirms that the ANAFI USA MIL variant uses an AES-256 encrypted Microhard radio communication system (Microhard pDDL1800 1.8 GHz data link, Microhard Systems of Calgary, Canada); the standard Anafi USA appears to use Parrot's own Wi-Fi link, documented only via FCC filin
@@ -45,11 +45,11 @@ Cell legend: `H` high, `L` low confidence links; `unmapped` = no verified source
 - Skydio X10 / motors: 2 kept, 1 rejected. Nidec's own July 2024 press release states its motors are used for the Skydio X10's four propulsion motors (and three gimbal motors); Nidec is headquartered in Kyoto, Japan. No public source specifies which country/plant manufactures these X10 motors, so country basis is HQ; no teardown or alternate
 - Skydio X10 / radio: 1 kept, 0 rejected. Skydio's FCC filings show the X10's datalink is Skydio's own in-house module, the "SkydioLink Third Generation Radio Module" (FCC ID 2ATQRSMODBV3S, single modular approval, 2.4/5 GHz SDR), used across X10, X10 Controller, Dock for X10 and R10. I could not open the internal photos/block diagram/theor
 - Teal 2 / battery_cells: 0 kept, 0 rejected. Searched for Teal 2 battery pack specifications, FCC filings/teardowns, Teal/Red Cat press releases, the Red Cat 10-K, and US cell makers (Badland Batteries/Packet Digital), but no public page I opened names the lithium-ion cell manufacturer for the Teal 2's 'Teal Performance Battery Pack' — only th
-- Teal 2 / camera_sensor: 2 kept, 4 rejected, retried. Red Cat's Teal 2 page and the Teledyne FLIR Hadron 640R datasheet confirm the drone's camera is the Hadron 640R, whose thermal imager is the Teledyne FLIR Boson 640 core; the visible sensor is a 64MP (9248x6944, 0.7 µm pitch) part but no opened page names its chip vendor, and I could not verify sens
-- Teal 2 / flight_controller_chip: 0 kept, 8 rejected, retried. 
+- Teal 2 / camera_sensor: 3 kept, 5 rejected, retried. Red Cat's Teal 2 page and the Teledyne FLIR Hadron 640R datasheet confirm the drone's camera is the Hadron 640R, whose thermal imager is the Teledyne FLIR Boson 640 core; the visible sensor is a 64MP (9248x6944, 0.7 µm pitch) part but no opened page names its chip vendor, and I could not verify sens
+- Teal 2 / flight_controller_chip: 1 kept, 12 rejected, retried. 
 - Teal 2 / magnets: 0 kept, 0 rejected. No public teardown, FCC filing, or datasheet names the motor or magnet supplier for the Teal 2; Red Cat's Feb 2025 release confirms it buys motors from Unusual Machines for one of its platforms (not explicitly the Teal 2), and trade coverage says the NdFeB magnets in those US-made motors still come 
 - Teal 2 / motors: 1 kept, 0 rejected. The only model-relevant motor-supply finding is a Feb 2025 Unusual Machines press release announcing Red Cat as a motor customer with initial orders, but it says the motors are for 'one of its platforms' and never names the Teal 2, so attribution to this drone is unconfirmed. No teardown, FCC intern
-- Teal 2 / radio: 1 kept, 0 rejected. Red Cat/Teal's own press release confirms Doodle Labs (Helix Mesh Rider) radios are integrated into Teal systems, and FCC records show the Mesh Rider radio module is filed by Doodle Labs (SG) Pte Ltd. No public source found identifying the specific RF/radio chipset inside the Doodle Labs module (an 
+- Teal 2 / radio: 4 kept, 2 rejected. Red Cat/Teal's own press release confirms Doodle Labs (Helix Mesh Rider) radios are integrated into Teal systems, and FCC records show the Mesh Rider radio module is filed by Doodle Labs (SG) Pte Ltd. No public source found identifying the specific RF/radio chipset inside the Doodle Labs module (an 
 
 ## Runs
 
@@ -58,6 +58,7 @@ Cell legend: `H` high, `L` low confidence links; `unmapped` = no verified source
 | 2026-11-11T06:02:31+00:00 | Skydio X10 | 0.0159 | {'deepseek-v4.1-flash': 16} |
 | 2026-11-11T06:12:26+00:00 | Skydio X10 | 0.1383 | {'deepseek-v4.1-flash': 111} |
 | 2026-11-11T06:48:27+00:00 | Parrot Anafi USA, Teal 2, DJI Mavic 3 Enterprise | 0.3685 | {'deepseek-v4.1-flash': 288} |
+| 2026-11-11T06:49:16+00:00 | Parrot Anafi USA (PR #8 import), Teal 2 (PR #8 import), DJI Mavic 3 Enterprise (PR #8 import) | 0.3854 | {'deepseek-v4.1-flash': 302} |
 
 ## Known gaps (hand-written)
 
@@ -66,6 +67,7 @@ Cell legend: `H` high, `L` low confidence links; `unmapped` = no verified source
 - **The battery source is stale.** Dongguan Poweramp was ordered by China to cut ties with Skydio in Oct 2024, so it is the former supplier and the current X10 cell maker is unknown.
 - **The camera sensor `conflict` flags different cameras, not a disagreement.** Sony (visible), Samsung (navigation) and Teledyne FLIR (thermal) are different sensors on the same drone, from separate pages. Kept under the agreed conflict rule.
 - **Parrot Anafi USA, Teal 2 and DJI Mavic 3 Enterprise** (run 2026-11-11, $0.23): 10 mapped tier-1/2 links, all `low`. Motors, battery cells and magnets are unmapped for all three, except Teal 2 motors (Unusual Machines, whose source says "one of its platforms", not Teal 2 by name).
+- **PR #8 import:** a teammate's separate run of the same three models was folded in as extra evidence (`imports` in each raw file). It added 11 links (ids 56–66) and created the first chokepoints: Dongguan Poweramp (Skydio and DJI batteries) and Teledyne FLIR. The Leadcore radio-chip link was rejected by hand, and Enovix (Parrot cells) was capped at low; both are in [overrides.json](overrides.json).
 - **Two links rejected by hand** in [overrides.json](overrides.json): the Anafi USA "Sony sensor" (the source is about the original Anafi) and the Mavic 3 Enterprise "Leadcore chip" (a Mavic 3 Pro teardown saying "likely").
 - **The only sub-tier links in the whole file** are DJI's in-house radio chipset (P1 ASIC, tier 2, CN). Sources describe DJI's OcuSync drones in general, not the Mavic 3 Enterprise by name.
 - **No single-country China dependency is mapped outside DJI.** DJI's radio is CN-only; the US/Blue UAS models map to US, CA, SG, JP suppliers at tier 1, and their deeper tiers are unknown.

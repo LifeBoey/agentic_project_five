@@ -216,5 +216,13 @@
   ],
   "retried": false,
   "notes": "The only model-relevant motor-supply finding is a Feb 2025 Unusual Machines press release announcing Red Cat as a motor customer with initial orders, but it says the motors are for 'one of its platforms' and never names the Teal 2, so attribution to this drone is unconfirmed. No teardown, FCC internal-photo set, operator manual page, or Red Cat statement names the specific brushless motor manufacturer for the Teal 2.",
-  "when": "2026-11-11T06:35:44+00:00"
+  "when": "2026-11-11T06:35:44+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No public source ties a specific motor supplier to the Teal 2. The closest evidence is Red Cat's Feb 2025 motor deal with Unusual Machines (NDAA-compliant motors, three variants, US-made), but the release only says the motors are for \"one of its platforms\" and never names the Teal 2; a later Unusual Machines 10-K confirms Teal Drones component orders (Oct 2025 $0.8M, Jan 2026 $2.1M) without specifying motors. Teal 2 operator's manual and spec pages I could retrieve did not disclose a motor supplier.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

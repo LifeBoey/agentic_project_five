@@ -37,21 +37,24 @@ nothing is found.
 (country_basis "made"); otherwise the supplier's headquarters (country_basis "hq").
 - supplier: the plain company name only (e.g. "Sony", "Nidec Corporation"), no notes or brackets.
 - quote: a sentence copied exactly from the page that supports the claim.
+- For tier 2 and deeper you MAY cite a source about the tier-1 PRODUCT named in the known tier-1 evidence (a chip, sensor, motor, radio or battery model) instead of the drone itself. Then set "parent" to that product name as the evidence names it (e.g. "NVIDIA Jetson Orin"). Otherwise "parent" is null.
 - Be efficient: a handful of searches, open the most promising pages, then answer.
 
 When done, reply with ONLY this JSON (no tool call):
 {{"candidates": [{{"part": <one of the allowed part names, or null for the component itself>, \
 "tier": <int>, "supplier": "...", "supplier_country": "XX", "country_basis": "made|hq", \
-"source_url": "https://...", "quote": "..."}}],
+"source_url": "https://...", "quote": "...", "parent": null}}],
  "notes": "one or two sentences: what you found, what you could not find"}}"""
 
 
-def task_prompt(model: dict, cat: dict, exclude_urls: list[str]) -> str:
+def task_prompt(model: dict, cat: dict, exclude_urls: list[str], context: str | None = None) -> str:
     allowed = "; ".join(f"part={json.dumps(p)} tier={t}" for p, t in cat["parts"])
     s = (f"Drone model: {model['name']} (maker: {model['maker']})\n"
          f"Component: {cat['component']}\n"
          f"What to find: {cat['guidance']}\n"
          f"Allowed (part, tier) pairs: {allowed}\n")
+    if context:
+        s += "\n" + context.strip() + "\n"
     if exclude_urls:
         s += ("\nA previous attempt used these URLs and the verifier rejected them, do NOT use them again:\n"
               + "\n".join(f"- {u}" for u in exclude_urls) + "\n")
@@ -126,15 +129,17 @@ def clean_candidates(raw: list, cat: dict, exclude_urls: list[str]) -> list[dict
             "supplier_country": country,
             "country_basis": "made" if c.get("country_basis") == "made" else "hq",
             "source_url": url, "quote": (c.get("quote") or "")[:500],
+            "parent": (str(c["parent"]).strip()[:120] or None) if c.get("parent") and tier >= 2 else None,
         })
     return out
 
 
-def research_agent(model: dict, cat: dict, llm, exclude_urls: list[str] | None = None) -> dict:
+def research_agent(model: dict, cat: dict, llm, exclude_urls: list[str] | None = None,
+                   context: str | None = None) -> dict:
     exclude_urls = exclude_urls or []
     messages = [
         {"role": "system", "content": SYSTEM.format(max_sources=config.MAX_SOURCES_PER_PART)},
-        {"role": "user", "content": task_prompt(model, cat, exclude_urls)},
+        {"role": "user", "content": task_prompt(model, cat, exclude_urls, context)},
     ]
     used_models, tool_log = [], []
     for turn in range(config.RESEARCH_MAX_TURNS):

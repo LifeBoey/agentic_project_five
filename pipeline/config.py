@@ -7,12 +7,46 @@ CACHE_DIR = ROOT / "research" / "cache"
 LINKS_PATH = ROOT / "data" / "links.json"
 COVERAGE_PATH = ROOT / "research" / "coverage.md"
 
+ROUTES_PATH = ROOT / "data" / "routes.json"
+ROUTES_RAW_DIR = ROOT / "research" / "raw_routes"
+
+# `assembly` = country where the drone is assumed to be finally assembled: the destination of supplier
+# shipments in data/routes.json. Not verified by the pipeline (marked "assumed" in the output).
 DRONE_MODELS = [
-    {"name": "Skydio X10", "maker": "Skydio"},
-    {"name": "Parrot Anafi USA", "maker": "Parrot"},
-    {"name": "Teal 2", "maker": "Teal Drones (Red Cat Holdings)"},
-    {"name": "DJI Mavic 3 Enterprise", "maker": "DJI"},
+    {"name": "Skydio X10", "maker": "Skydio", "assembly": "US"},
+    {"name": "Parrot Anafi USA", "maker": "Parrot", "assembly": "US"},
+    {"name": "Teal 2", "maker": "Teal Drones (Red Cat Holdings)", "assembly": "US"},
+    {"name": "DJI Mavic 3 Enterprise", "maker": "DJI", "assembly": "CN"},
 ]
+
+# Sea chokepoints a route agent may name, with the countries along each (who could stop or delay ships).
+# `keyword` must appear in the evidence quote. Countries along a strait are a geographic fact (see `ref`).
+CHOKEPOINTS = {
+    "Taiwan Strait": {"keyword": "taiwan strait", "countries": ["CN", "TW"],
+                      "ref": "https://en.wikipedia.org/wiki/Taiwan_Strait"},
+    "Luzon Strait": {"keyword": "luzon", "countries": ["TW", "PH"],
+                     "ref": "https://en.wikipedia.org/wiki/Luzon_Strait"},
+    "Strait of Malacca": {"keyword": "malacca", "countries": ["MY", "SG", "ID"],
+                          "ref": "https://en.wikipedia.org/wiki/Strait_of_Malacca"},
+    "Singapore Strait": {"keyword": "singapore strait", "countries": ["SG", "MY", "ID"],
+                         "ref": "https://en.wikipedia.org/wiki/Singapore_Strait"},
+    "Korea Strait": {"keyword": "korea strait", "countries": ["KR", "JP"],
+                     "ref": "https://en.wikipedia.org/wiki/Korea_Strait"},
+    "Lombok Strait": {"keyword": "lombok", "countries": ["ID"],
+                      "ref": "https://en.wikipedia.org/wiki/Lombok_Strait"},
+    "Bab-el-Mandeb": {"keyword": "mandeb", "countries": ["YE", "DJ", "ER"],
+                      "ref": "https://en.wikipedia.org/wiki/Bab-el-Mandeb"},
+    "Suez Canal": {"keyword": "suez", "countries": ["EG"],
+                   "ref": "https://en.wikipedia.org/wiki/Suez_Canal"},
+    "Strait of Gibraltar": {"keyword": "gibraltar", "countries": ["ES", "MA", "GB"],
+                            "ref": "https://en.wikipedia.org/wiki/Strait_of_Gibraltar"},
+    "Panama Canal": {"keyword": "panama", "countries": ["PA"],
+                     "ref": "https://en.wikipedia.org/wiki/Panama_Canal"},
+    "English Channel": {"keyword": "english channel", "countries": ["GB", "FR"],
+                        "ref": "https://en.wikipedia.org/wiki/English_Channel"},
+    "Strait of Hormuz": {"keyword": "hormuz", "countries": ["IR", "OM"],
+                         "ref": "https://en.wikipedia.org/wiki/Strait_of_Hormuz"},
+}
 
 # One research job per drone model x research category.
 # `component` is what ends up in links.json; `parts` lists the (part, tier) pairs

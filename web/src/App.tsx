@@ -3,6 +3,7 @@ import { api } from './api';
 import { useAsync } from './lib/useAsync';
 import { buildRows, isMapped } from './lib/rows';
 import { AskBox } from './components/AskBox';
+import { Logo } from './components/Logo';
 import { ChainDrawer } from './components/ChainDrawer';
 import { ComponentList, type CutoffMarks } from './components/ComponentList';
 import { CutoffToggle } from './components/CutoffToggle';
@@ -61,7 +62,10 @@ export default function App() {
   return (
     <main>
       <header className="top">
-        <h1>Drone dependency map</h1>
+        <h1 className="brand">
+          <Logo />
+          <span>Drone dependency map</span>
+        </h1>
         {models.data && model && <ModelPicker models={models.data} value={model} onChange={pickModel} />}
       </header>
 

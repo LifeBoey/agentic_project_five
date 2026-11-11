@@ -16,6 +16,12 @@
 body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
 main { max-width: 960px; margin: 0 auto; padding: 16px; }
 h1 { font-size: 1.4rem; margin: 0; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 650; letter-spacing: -0.01em; }
+.logo-mark { flex: none; display: block; }
+.logo-ink { stroke: var(--text); }
+.logo-body { fill: var(--text); }
+.logo-risk { fill: var(--risk); }
+.logo-tier { stroke: var(--risk); opacity: 0.55; }
 h2 { font-size: 1.3rem; margin: 0 0 8px; }
 h3 { margin: 0 0 8px; font-size: 1.05rem; }
 h4 { margin: 8px 0 4px; font-size: 0.9rem; color: var(--muted); }

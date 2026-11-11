@@ -75,6 +75,19 @@ test('every model: summary agrees with the rows, and nothing unknown looks safe'
   expect(problems, problems.join('\n')).toEqual([]);
 });
 
+test('header: the name is real text, the logo is decoration, and the favicon is served as an SVG', async ({ page, request }) => {
+  await page.goto('/');
+  const h1 = page.getByRole('heading', { level: 1 });
+  await expect(h1).toHaveText('Drone dependency map');
+  await expect(h1.locator('svg.logo-mark')).toHaveAttribute('aria-hidden', 'true');
+  await expect(h1.locator('svg.logo-mark .logo-risk')).toHaveCount(1);
+
+  const href = await page.locator('link[rel="icon"]').getAttribute('href');
+  const res = await request.get(new URL(href!, page.url()).toString());
+  expect(res.ok()).toBe(true);
+  expect(res.headers()['content-type']).toContain('image/svg+xml');
+});
+
 test('drill-down: a component opens its chain, with a source or an unmapped marker at each tier', async ({ page }) => {
   const problems = watchForBreakage(page);
   await openAndListModels(page);

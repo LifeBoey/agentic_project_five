@@ -87,9 +87,11 @@ test('drill-down: a component opens its chain, with a source or an unmapped mark
   await expect(chain).toBeVisible();
   await expect(chain.locator('h4').first()).toContainText('Tier 1');
   for (const tier of await chain.locator('ol.tiers > li').all()) {
-    const cards = await tier.locator('.card').count();
-    const marked = await tier.locator('a.source-link, .source-missing, [data-testid="unmapped-card"]').count();
-    expect(marked, 'every card has a source link or is an explicit unmapped card').toBe(cards);
+    // A card can merge several sources for the same claim, so check each card rather than counting links.
+    for (const card of await tier.locator('.card').all()) {
+      const marked = await card.locator('a.source-link, .source-missing').count() + (await card.getAttribute('data-testid') === 'unmapped-card' ? 1 : 0);
+      expect(marked, 'every card has a source link or is an explicit unmapped card').toBeGreaterThan(0);
+    }
   }
 
   await chain.getByRole('button', { name: 'Close' }).click();

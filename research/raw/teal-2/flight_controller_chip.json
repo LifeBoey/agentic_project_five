@@ -1,0 +1,576 @@
+{
+  "model": "Teal 2",
+  "category": "flight_controller_chip",
+  "component": "flight controller chip",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+          "quote": "PROCESSOR Main Processor Snapdragon 845"
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+          "quote": "PROCESSOR Main Processor Snapdragon 845"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection."
+        }
+      ],
+      "notes": "Red Cat's own Teal 2 datasheet lists the Snapdragon 845 as the onboard main processor, so Qualcomm (US) is the chip vendor. I could not open a page this session that states which foundry fabricates the Snapdragon 845, so the tier-2 fabrication entry is left empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone flight controller processor chip teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 drone Qualcomm Snapdragon onboard computer"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://korthosrobotics.com/ecosystem/product/teal-2"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" Qualcomm Snapdragon Red Cat press release"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone FCC ID internal photos flight controller"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 \"Snapdragon\" processor onboard"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2A9Z7-TD000/Internal-Photos/Internal-Photos-6485851"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Snapdragon 845\" drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone flight controller MAVLink STM32 processor specifications"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack",
+            "focus": "Snapdragon"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Snapdragon 845 manufactured Samsung 10nm LPP foundry Qualcomm"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Samsung Foundry mass production Qualcomm Snapdragon 845 10nm newsroom"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 \"Athena AI\" Snapdragon 845 onboard compute press release"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://news.samsung.com/global/samsung-starts-mass-production-of-its-2nd-generation-10nm-finfet-process-technology",
+            "focus": "845"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Snapdragon 845\" Samsung Foundry fabricated 10LPP Qualcomm announcement 2017"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Snapdragon",
+            "url": "https://tealdrones.com/press_releases/red-cat-and-athena-ai-announce-breakthrough-artificial-intelligence-and-computer-vision-capabilities-for-teal-2-military-grade-drone/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Samsung newsroom \"Snapdragon 845\" foundry 10nm manufacturing"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Snapdragon 845",
+            "url": "https://www.phonearena.com/news/samsung-yield-on-snapdragon-chips-atrocious_id138616"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Snapdragon 845\" Samsung foundry \"10LPP\" mass production November 2017 Qualcomm Samsung collaboration announcement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Samsung",
+            "url": "https://en.wikipedia.org/wiki/Qualcomm_Snapdragon"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Qualcomm Snapdragon 845 wikipedia Samsung 10 nm LPP FinFET"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+          "quote": "PROCESSOR Main Processor Snapdragon 845",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page lists a Snapdragon 845 processor but never names Qualcomm or states it supplies the flight controller chip.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page mentions a Snapdragon 845 processor for AI apps but never names Qualcomm, nor does it attribute the flight controller chip to any supplier.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+          "quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU."
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.toydronehq.com/products/teal-2-suas-drone-system-2-4-ghz/",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection."
+        },
+        {
+          "component": "flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips",
+          "quote": "10 nm FinFET (Samsung 10LPP)"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+          "quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.toydronehq.com/products/teal-2-suas-drone-system-2-4-ghz/",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection."
+        },
+        {
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips",
+          "quote": "10 nm FinFET (Samsung 10LPP)"
+        }
+      ],
+      "notes": "Reseller/spec pages confirm the Teal 2's main processor is a Qualcomm Snapdragon 845 (SDM845), and Qualcomm's own Snapdragon 845 spec table lists Samsung's 10LPP process as the fab. No teardown or official Red Cat/Qualcomm source explicitly names the flight-controller MCU silicon, and no source states the fabrication country for this specific SoC.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone flight controller processor chip teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone Qualcomm Snapdragon flight controller"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+            "focus": "Snapdragon"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Snapdragon 845 Samsung 10nm LPP fabricated foundry"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.phonearena.com/news/samsung-yield-on-snapdragon-chips-atrocious_id138616",
+            "focus": "Snapdragon 845"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 \"Snapdragon\" press release processor Qualcomm"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "AnandTech Snapdragon 845 Samsung 10LPP second generation 10nm"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.wikipedia.org/wiki/Qualcomm_Snapdragon",
+            "focus": "845 Samsung"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Snapdragon 845\" drone processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "news.samsung.com Snapdragon 845 10LPP mass production Qualcomm foundry"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "845",
+            "url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones \"Teal 2\" press release \"Snapdragon\" Athena AI onboard computer"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "SDM845 Snapdragon 845",
+            "url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Snapdragon",
+            "url": "https://finance.yahoo.com/news/red-cat-officially-launches-teal-120000824.html"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "SDM845",
+            "url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 flight controller Pixhawk MAVLink hardware autopilot Teal Drones"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Snapdragon 845",
+            "url": "https://news.samsung.com/global/samsung-starts-mass-production-of-its-2nd-generation-10nm-finfet-process-technology"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Snapdragon",
+            "url": "https://www.toydronehq.com/products/teal-2-suas-drone-system-2-4-ghz/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" Qualcomm Snapdragon 845 \"Athena AI\" onboard computer specifications article"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal Drones Qualcomm partnership Snapdragon drone processor announcement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Dragonwing QRB5165",
+            "url": "https://www.lantronix.com/newsroom/press-releases/lantronix-solution-powers-u-s-army-approved-teal-drones-a-red-cat-holdings-co-unlocking-secure-edge-ai-growth-opportunity/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone \"Snapdragon\" sUAS news onboard processing"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+          "quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU.",
+          "confidence": "low",
+          "evidence_quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU.",
+          "reason": "The page names Qualcomm as the main processor supplier, not as the flight controller chip supplier, and does not state its country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "flight controller chip",
+          "part": null,
+          "tier": 1,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.toydronehq.com/products/teal-2-suas-drone-system-2-4-ghz/",
+          "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection.",
+          "confidence": "unmapped",
+          "evidence_quote": "MainProcessor\tQualcommSnapdragon 845",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page names Qualcomm as the Snapdragon 845 main processor supplier, not as the flight controller chip supplier, and does not state Qualcomm's country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "flight controller chip",
+          "part": "Chip fabrication",
+          "tier": 2,
+          "supplier": "Samsung Electronics",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips",
+          "quote": "10 nm FinFET (Samsung 10LPP)",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page is a list of Qualcomm Snapdragon SoCs; it never mentions Teal Drones, Teal 2, Red Cat Holdings, or a flight controller chip, and Samsung appears only as a fabrication-process label, not as a supplier for this drone.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Qualcomm",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+      "quote": "PROCESSOR Main Processor Snapdragon 845",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page lists a Snapdragon 845 processor but never names Qualcomm or states it supplies the flight controller chip.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Qualcomm",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack",
+      "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page mentions a Snapdragon 845 processor for AI apps but never names Qualcomm, nor does it attribute the flight controller chip to any supplier.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Qualcomm",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+      "quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU.",
+      "confidence": "low",
+      "evidence_quote": "Teal 2 is powered by a Qualcomm Snapdragon 845 main processor and is equipped with a QCOM Adreno 630 GPU and a QCOM Octa-core Kryo 385 64-bit CPU.",
+      "reason": "The page names Qualcomm as the main processor supplier, not as the flight controller chip supplier, and does not state its country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": null,
+      "tier": 1,
+      "supplier": "Qualcomm",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.toydronehq.com/products/teal-2-suas-drone-system-2-4-ghz/",
+      "quote": "Snapdragon 845 processor with 6 GB RAM runs Athena AI and third-party vision apps for weapons, person, and vehicle detection.",
+      "confidence": "unmapped",
+      "evidence_quote": "MainProcessor\tQualcommSnapdragon 845",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page names Qualcomm as the Snapdragon 845 main processor supplier, not as the flight controller chip supplier, and does not state Qualcomm's country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "flight controller chip",
+      "part": "Chip fabrication",
+      "tier": 2,
+      "supplier": "Samsung Electronics",
+      "supplier_country": "KR",
+      "country_basis": "hq",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips",
+      "quote": "10 nm FinFET (Samsung 10LPP)",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page is a list of Qualcomm Snapdragon SoCs; it never mentions Teal Drones, Teal 2, Red Cat Holdings, or a flight controller chip, and Samsung appears only as a fabrication-process label, not as a supplier for this drone.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Reseller/spec pages confirm the Teal 2's main processor is a Qualcomm Snapdragon 845 (SDM845), and Qualcomm's own Snapdragon 845 spec table lists Samsung's 10LPP process as the fab. No teardown or official Red Cat/Qualcomm source explicitly names the flight-controller MCU silicon, and no source states the fabrication country for this specific SoC.",
+  "when": "2026-11-11T06:40:29+00:00"
+}

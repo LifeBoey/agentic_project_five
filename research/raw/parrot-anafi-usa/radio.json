@@ -1,0 +1,165 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "radio",
+  "component": "radio",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown radio module wireless datalink"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA FCC filing internal photos radio module"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://device.report/parrot/anafim3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown chipset Ambarella Wi-Fi module inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" teardown motherboard Wi-Fi chip \"Skycontroller\" chipset Parrot disassembly board photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" Blue UAS datalink Wi-Fi Parrot \"radio\" supplier supply chain"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit Parrot Anafi teardown mainboard chips"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi Wi-Fi chipset \"88W8887\" OR \"QCA\" OR \"Marvell\" OR \"Broadcom\" drone wifi module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" drone teardown analysis components bill of materials"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi disassembly main board wifi module heatsink photos \"Anafi\" repair motherboard"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Parrot Anafi\" teardown \"Wi-Fi\" chip Marvell inside drone board analysis"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi motherboard \"88W8887\" Marvell wifi"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" démontage carte électronique puce wifi Parrot"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" RCGroups \"main board\" wifi chip identification photo"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi teardown PCB \"Wi-Fi\" chip photos drone dissection article 2018"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skycontroller 3\" FCC internal photos Parrot radio module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Anafi firmware reverse engineering wifi driver brcmfmac OR ath10k OR \"88w8887\" parrot drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" Ambarella H2 teardown main chipset drone"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFI3"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "parrot anafi firmware github \"wifi\" chip wl driver dump analysis"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "",
+  "when": "2026-11-11T06:34:08+00:00"
+}

@@ -1,0 +1,408 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "camera_sensor",
+  "component": "camera sensor",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "Sensor: FLIR BOSON"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "Sensor: FLIR BOSON"
+        }
+      ],
+      "notes": "Parrot's own ANAFI USA technical specifications confirm the thermal imager is the FLIR Boson (Teledyne FLIR, US). No public source identifies the maker of the 21 MP 1/2.4\" visible/tele sensors in the ANAFI USA (Sony IMX230 is documented only for the original 2018 ANAFI), and I found nothing on where any of these sensors are fabricated.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown camera sensor Sony FLIR Boson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA 32x zoom 21MP sensor specification"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA camera module \"IMX\" sensor 21MP Sony"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+            "focus": "sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi teardown camera sensor \"IMX230\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson 320 thermal core microbolometer sensor manufacturer wafer fab"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.wikipedia.org/wiki/Parrot_Anafi",
+            "focus": "Anafi USA"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" sensor \"IMX230\" OR \"Sony\" 21MP wide camera same sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson 320 microbolometer VOx sensor fabricated FLIR Goleta manufacturing"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot ANAFI USA review sensor 1/2.4-inch Sony IMX camera 32x zoom"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA FCC ID internal photos teardown camera module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" \"Sony\" image sensor 21 MP 1/2.4\" camera specification"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" white paper camera sensor \"IMX\" Parrot pdf"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" iFixit teardown flight controller camera sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" \"IMX230\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot ANAFI USA press release camera \"Sony\" sensor 21MP zoom lens supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi Ai\" OR \"Anafi USA\" camera sensor Sony imager Parrot white paper"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR VOx microbolometer detector fabrication facility Goleta California in-house foundry"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "parrotpilots \"Anafi USA\" camera sensor Sony IMX what sensor does the anafi usa use"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/en-gb/products/boson/",
+            "focus": "manufactured"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" white paper pdf camera \"sensor\" 21MP wide rectilinear Parrot 2020"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "Sensor: FLIR BOSON",
+          "confidence": "unmapped",
+          "evidence_quote": "Sensor: FLIR BOSON",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the Anafi USA IR sensor, but it does not mention Teledyne FLIR or state the supplier's country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "FLIR Systems",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+          "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "FLIR Systems",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+          "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera."
+        }
+      ],
+      "notes": "Parrot's ANAFI USA white paper confirms the thermal imager is a FLIR Boson module (FLIR Systems, US HQ). I could not find any accessible source naming the maker of the visible-band CMOS sensors (only community/secondary pages assert Sony IMX230 for the original Anafi, not verified for ANAFI USA), and found no source on where any of the sensors are fabricated.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA teardown camera sensor IMX"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA FLIR Boson 320 thermal camera specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" teardown internal photos FCC camera module omniVision OR Sony sensor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://en.digdb.net/parrot-anafi-usa/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io Parrot ANAFI USA internal photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi 21MP \"IMX230\" sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" sensor \"IMX\" 21MP wide telephoto camera"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson microbolometer fabricated wafer level packaging Goleta foundry"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" FCC ID internal photos Parrot Anafi USA teardown camera sensor chip"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://medias.yolegroup.com/uploads/2017/09/Yole_FLIR_Boson_IR_Camera_Bolometer_System_Plus_Consulting_SP17349_.pdf",
+            "focus": "ISC1406L"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IAU"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid \"Parrot\" \"ANAFI USA\" internal photos 2AG6I"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2AG6IANAFIM3/Internal-Photos/Internal-Photos-4966929"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi USA\" camera \"Sony\" sensor 21MP 1/2.4 inch CMOS"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA white paper camera sensor specifications pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "parrotpilots \"Anafi USA\" camera sensor same as Anafi IMX230 wide telephoto"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR microbolometer fabrication facility Goleta California wafer fab detector"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+            "focus": "sensor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "CMOS",
+            "url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "FLIR Systems",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+          "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+          "confidence": "low",
+          "evidence_quote": "ANAFI USA’s gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+          "reason": "The page identifies a FLIR Boson IR camera in the Anafi USA but does not explicitly name FLIR Systems as the supplier or state its country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+      "quote": "Sensor: FLIR BOSON",
+      "confidence": "unmapped",
+      "evidence_quote": "Sensor: FLIR BOSON",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the Anafi USA IR sensor, but it does not mention Teledyne FLIR or state the supplier's country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "FLIR Systems",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+      "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+      "confidence": "low",
+      "evidence_quote": "ANAFI USA’s gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+      "reason": "The page identifies a FLIR Boson IR camera in the Anafi USA but does not explicitly name FLIR Systems as the supplier or state its country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Parrot's ANAFI USA white paper confirms the thermal imager is a FLIR Boson module (FLIR Systems, US HQ). I could not find any accessible source naming the maker of the visible-band CMOS sensors (only community/secondary pages assert Sony IMX230 for the original Anafi, not verified for ANAFI USA), and found no source on where any of the sensors are fabricated.",
+  "when": "2026-11-11T06:36:53+00:00"
+}

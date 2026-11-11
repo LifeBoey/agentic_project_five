@@ -1,0 +1,216 @@
+{
+  "model": "Parrot Anafi USA",
+  "category": "battery_cells",
+  "component": "battery cells",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Enovix Corporation",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+          "quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Enovix Corporation",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+          "quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications."
+        }
+      ],
+      "notes": "Enovix's own post confirms it supplies TAA-compliant cells for ANAFI USA and that these cells are manufactured in Korea (Enovix's Nonsan, South Korea plant, acquired from SolarEdge). No public source names the cathode/anode material supplier or the lithium/cobalt/graphite raw-material producer tied to the ANAFI USA battery, so tiers 2 and 3 are left empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA battery cell manufacturer teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery cells supplier lithium polymer"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://parrotpilots.com/threads/reverse-engineering-the-anafis-battery-to-get-usable-batteries-and-refurbish-them-properly.5864/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" battery cell \"LiHV\" pouch cell markings manufacturer"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery pack manufacturer \"made in\" cell supplier customs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot drone battery cells supplier lithium company announcement partnership drone battery"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix Parrot ANAFI USA production order TAA-compliant battery cells press release"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.enovix.com/news/enovixs-taa-compliant-battery-manufacturing-strengthens-position-with-u-s-defense-supply-chain"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Anafi\" battery disassembly cell \"3.8V\" markings battery pack teardown inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix Parrot ANAFI USA cells MX-1-B01 drone battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi USA battery pack \"cell\" manufacturer Korea OR China label teardown photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix cathode material supplier NMC agreement"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix Korea factory cell manufacturing partner \"Korea\" anode silicon supplier"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://ir.enovix.com/news-releases/news-release-details/enovix-acquire-korean-battery-cell-facility-bolster/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix Routejade acquisition cathode supplier NMC purchase agreement"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix cathode active material supplier purchase agreement NMC silicon battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Enovix\" Parrot news article battery cells drone ANAFI USA order 2026"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"ANAFI USA\" battery \"cells\" supplier Enovix OR \"LG Energy\" OR \"Samsung SDI\" OR \"Molicel\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Parrot Anafi battery pouch cell maker \"Great Power\" OR \"Highpower\" OR \"Grepow\" OR \"A123\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Enovix 10-K \"cathode\" supplier single source raw materials graphite silicon"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Group14 Technologies Enovix silicon anode supply agreement"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "battery cells",
+          "part": null,
+          "tier": 1,
+          "supplier": "Enovix Corporation",
+          "supplier_country": "KR",
+          "country_basis": "made",
+          "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+          "quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications.",
+          "confidence": "high",
+          "evidence_quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications.",
+          "reason": "The page explicitly states Enovix supplies battery cells for the Parrot ANAFI USA and that its cells are manufactured in Korea.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "battery cells",
+      "part": null,
+      "tier": 1,
+      "supplier": "Enovix Corporation",
+      "supplier_country": "KR",
+      "country_basis": "made",
+      "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+      "quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications.",
+      "confidence": "high",
+      "evidence_quote": "Enovix has received a production order for TAA-compliant battery cells supporting the Parrot ANAFI USA drone platform, a leading choice for public safety and enterprise applications.",
+      "reason": "The page explicitly states Enovix supplies battery cells for the Parrot ANAFI USA and that its cells are manufactured in Korea.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Enovix's own post confirms it supplies TAA-compliant cells for ANAFI USA and that these cells are manufactured in Korea (Enovix's Nonsan, South Korea plant, acquired from SolarEdge). No public source names the cathode/anode material supplier or the lithium/cobalt/graphite raw-material producer tied to the ANAFI USA battery, so tiers 2 and 3 are left empty.",
+  "when": "2026-11-11T06:33:36+00:00"
+}

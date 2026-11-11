@@ -18,5 +18,17 @@
     "calls": {
       "deepseek-v4.1-flash": 111
     }
+  },
+  {
+    "when": "2026-11-11T06:49:16+00:00",
+    "models": [
+      "Parrot Anafi USA",
+      "Teal 2",
+      "DJI Mavic 3 Enterprise"
+    ],
+    "spent": 0.385446,
+    "calls": {
+      "deepseek-v4.1-flash": 302
+    }
   }
 ]

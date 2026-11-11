@@ -1,0 +1,167 @@
+{
+  "model": "Teal 2",
+  "category": "battery_cells",
+  "component": "battery cells",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "Public sources confirm only that the Teal 2 and its TAC ground station use a shared 'Teal Performance Battery Pack' (lithium-ion, per Teal's operator manual) and that ESAero designed a multi-battery charger — but no page I opened named the cell maker, cathode/anode material supplier, or raw-material producer. Tier 1-3 candidates are therefore left empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone battery cell supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 battery pack specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone battery \"lithium\" pack manufacturer Red Cat"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Holdings battery supplier drone lithium-ion cells partnership"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.auvsi.org/news/red-cat-esaero-announce-development-partnership/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal Performance Battery Pack\" Teal 2"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal Drones\" battery supplier \"cells\" NDAA compliant lithium"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 battery pack 6S capacity Wh \"Teal Performance Battery\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal battery \"Bren-Tronics\" OR \"Amprius\" OR \"Spectrum Batteries\" OR \"Lithium Werks\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone battery pack 4S 6000 mAh replacement for sale"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" battery pack teardown cells inside label"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "tealdrones.com battery pack specifications datasheet \"battery\""
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://tealdrones.com/wp-content/uploads/2023/09/60083-MK1.5-Operator-Manual-REV-B.pdf",
+            "focus": "battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 \"battery\" cell supplier domestic \"Made in USA\" 2024 2025"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones storefront \"Teal Performance Battery\" buy pack voltage capacity"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://manuals.plus/m/e21050cb22b2158bf9a2d234dc01654974538110ab37086215119e1236ab2e86.pdf",
+            "focus": "battery"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Amprius battery partnership drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Red Cat\" earnings call battery cell supply chain NDAA non-Chinese cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" OR \"Teal Drones\" battery \"21700\" OR \"18650\" OR \"Molicel\" OR \"Samsung SDI\" OR \"LG Energy\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Holdings press release battery technology partner drone 2025 domestic cells"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" battery \"mAh\" specifications sUAS endurance 30 minutes pack voltage"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal Performance Battery Pack\" UN38.3 test summary cell manufacturer"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "Public sources confirm only that the Teal 2 and its TAC ground station use a shared 'Teal Performance Battery Pack' (lithium-ion, per Teal's operator manual) and that ESAero designed a multi-battery charger — but no page I opened named the cell maker, cathode/anode material supplier, or raw-material producer. Tier 1-3 candidates are therefore left empty.",
+  "when": "2026-11-11T06:38:42+00:00"
+}

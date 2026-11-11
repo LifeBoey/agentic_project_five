@@ -1,0 +1,173 @@
+{
+  "model": "Teal 2",
+  "category": "motors",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source ties a specific motor supplier to the Teal 2. The closest evidence is Red Cat's Feb 2025 motor deal with Unusual Machines (NDAA-compliant motors, three variants, US-made), but the release only says the motors are for \"one of its platforms\" and never names the Teal 2; a later Unusual Machines 10-K confirms Teal Drones component orders (Oct 2025 $0.8M, Jan 2026 $2.1M) without specifying motors. Teal 2 operator's manual and spec pages I could retrieve did not disclose a motor supplier.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone motors supplier brushless"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 teardown components motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone motor \"Made in USA\" component supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Teal 2 drone billet aluminum motors specifications"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://usdronereview.com/manufacturers/teal-drones-teal-2/",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat Holdings Teal 2 motor supplier partnership American made motors"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Teal 2",
+            "url": "https://markets.financialcontent.com/stocks/article/accwirecq-2025-2-26-red-cat-becomes-first-us-based-drone-manufacturer-to-source-motors-from-unusual-machines"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Teal 2 motor",
+            "url": "https://dronexl.co/2025/02/26/unusual-machines-us-drone-motor-contract-red-cat-holdings/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Unusual Machines\" Red Cat Teal 2 motors \"Teal\" drone motor variant"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone replacement motor part number purchase"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone \"motors\" \"Unusual Machines\" 2025 platform"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 motors \"T-Motor\" OR \"Hobbywing\" OR \"KDE\" OR \"Sunnysky\""
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Teal",
+            "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826001730/umac_i10k-123125.htm"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat earnings call \"Teal 2\" motors \"Unusual Machines\" domestic motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" user manual pdf motor brushless specifications Teal Drones"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://marketchameleon.com/articles/b/2025/10/3/unusual-machines-lands-800000-deal-red-cat-us-drones"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://manuals.plus/m/268135a6c6bf901ab3f10e5f2b528bc049a8031aaa9aa9722b595a11b8b5a8fa_optim.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone propulsion \"motors\" specifications 2812 OR 2216 OR brushless motor model"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 \"no Chinese\" components supply chain replaced Chinese motors"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "motor",
+            "url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Teal",
+            "url": "https://www.forbes.com/sites/davidjeans/2025/04/16/silicon-valley-drones-china-problem/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Unusual Machines\" motors which drone platform Teal 2 motors NDAA"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public source ties a specific motor supplier to the Teal 2. The closest evidence is Red Cat's Feb 2025 motor deal with Unusual Machines (NDAA-compliant motors, three variants, US-made), but the release only says the motors are for \"one of its platforms\" and never names the Teal 2; a later Unusual Machines 10-K confirms Teal Drones component orders (Oct 2025 $0.8M, Jan 2026 $2.1M) without specifying motors. Teal 2 operator's manual and spec pages I could retrieve did not disclose a motor supplier.",
+  "when": "2026-11-11T06:36:20+00:00"
+}

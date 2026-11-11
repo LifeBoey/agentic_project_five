@@ -1,0 +1,466 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "radio",
+  "component": "radio",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.dji.com/media-center/announcements/the-new-dji-mavic-3-enterprise-series-sets-ultimate-standard-for-portable-commercial-drones",
+          "quote": "DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability"
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore IE1000 RF transceiver"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.dji.com/media-center/announcements/the-new-dji-mavic-3-enterprise-series-sets-ultimate-standard-for-portable-commercial-drones",
+          "quote": "DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability"
+        },
+        {
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore IE1000 RF transceiver"
+        }
+      ],
+      "notes": "The datalink is DJI's own O3 Enterprise (OcuSync 3) system, so tier 1 is DJI itself; no third-party module vendor exists. The best chip-level evidence comes from the closely related Mavic 3 Pro chip ID (Leadcore IE1000 RF transceiver plus Skyworks front-end modules), which iFixit lists as 'likely' and not for the Enterprise variant specifically — no Mavic 3E-specific teardown naming the RF chipset was found.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise teardown OcuSync 3 radio module FCC"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 FCC filing schematic RF chipset"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io DJI Mavic 3 Enterprise FCC ID internal photos"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/SS3"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown SDR chip OcuSync radio board chip markings"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise \"O3 Enterprise\" transmission DJI developed press release"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+            "focus": "RF"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.techinsights.com/blog/dji-mavic-3-pro-dji-rc-deep-dive-teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" iFixit teardown chip ID radio Leadcore"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone SDR chip Leadcore RF transceiver teardown Mavic"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/SS3-M3E2206"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 Mavic 3E 拆解 射频 芯片 图传 模块"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-hardware-schematics"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 主板 图传 射频 拆解 Leadcore 联芯"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "iFixit \"DJI Mavic 3\" teardown radio board chip ID Leadcore IE1000"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3E\" teardown internal board RF module \"O3 Enterprise\""
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise O3 Enterprise transmission chipset supplier Maxscend Qorvo RF front end module"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/",
+            "focus": "Internal Component"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Leadcore\" DJI drone RF transceiver IE1000 chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" iFixit teardown \"chip ID\" radio \"front-end module\" Skyworks"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.dji.com/media-center/announcements/the-new-dji-mavic-3-enterprise-series-sets-ultimate-standard-for-portable-commercial-drones",
+          "quote": "DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability",
+          "confidence": "unmapped",
+          "evidence_quote": "With a maximum control range of 15 km, DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability, offering pilots greater peace of mind during flight.",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page links DJI and the Mavic 3 Enterprise's radio transmission, but it never names SZ DJI Technology Co., Ltd. as the radio supplier or states China.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Leadcore Technology",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+          "quote": "Likely Leadcore IE1000 RF transceiver",
+          "confidence": "low",
+          "evidence_quote": "Likely Leadcore IE1000 RF transceiver",
+          "reason": "The page only identifies a likely Leadcore RF transceiver in the DJI Mavic 3 Pro, not the Mavic 3 Enterprise, and does not state the supplier's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622",
+          "quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M by SZ DJI TECHNOLOGY CO., LTD"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622",
+          "quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M by SZ DJI TECHNOLOGY CO., LTD"
+        }
+      ],
+      "notes": "The only usable public record I could open was the FCC equipment-authorization filing for the Mavic 3E/3T/3M (FCC ID SS3-M3E2206), which shows the aircraft's radio/datalink is filed by DJI itself; no public teardown identifying the RF silicon inside the O3 Enterprise transmission module was found (iFixit's Mavic 3 Pro chip ID and the TechInsights teardown were paywalled/blocked, and fcc.report PDFs were behind Cloudflare), so no Tier 2 radio-chip candidate could be sourced.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise FCC filing internal photos RF module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 Enterprise teardown radio module chip"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown \"OcuSync\" chip Skyworks OR Qorvo OR \"front-end module\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3 Enterprise\" teardown disassembly photos mainboard"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 SDR chip \"SDR\" transmission module teardown \"Skyworks\" OR \"Analog Devices\" OR \"TI\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "mavicpilots \"Mavic 3\" teardown chip identification OcuSync RF module photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "TechInsights DJI Mavic 3 teardown RF front end module"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.techinsights.com/blog/dji-mavic-3-pro-dji-rc-deep-dive-teardown",
+            "focus": "RF"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI OcuSync 3 module chip \"Skyworks\" front end module teardown drone"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "chip",
+            "url": "https://www.techinsights.com/blog/dji-mavic-3-pro-dji-rc-deep-dive-teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Pro chip ID ifixit teardown \"Skyworks\" OR \"Qorvo\" OR \"Analog Devices\" RF"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Internal-photos-6143093"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"DJI Mavic 3\" chip ID ifixit teardown board chip list"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fcc.report/FCC-ID/SS3-M3E2206/6143071.pdf",
+            "focus": "O3 Enterprise"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown \"Skyworks\" chip inside"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" \"OcuSync\" module part number replacement \"radio\" board eBay"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI O3 transmission developed in-house SDR chip custom DJI interference immunity news"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI O3 air unit teardown chip identification RF transceiver marking"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" transmission module \"SDR\" chip teardown \"Shenzhen\" FCC internal photos chip ID"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise specs \"O3 Enterprise\" transmission system"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "ifixit \"Mavic 3 Pro\" teardown mainboard \"Skyworks\" OR \"RF\" chip"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "SZ DJI Technology Co., Ltd.",
+          "supplier_country": "CN",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622",
+          "quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M by SZ DJI TECHNOLOGY CO., LTD",
+          "confidence": "low",
+          "evidence_quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M\n\nby SZ DJI TECHNOLOGY CO., LTD",
+          "reason": "The FCC page names DJI as applicant for the Mavic 3E and lists radio frequency ranges, but it does not explicitly state that DJI supplies a radio component or its country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "SZ DJI Technology Co., Ltd.",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://www.dji.com/media-center/announcements/the-new-dji-mavic-3-enterprise-series-sets-ultimate-standard-for-portable-commercial-drones",
+      "quote": "DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability",
+      "confidence": "unmapped",
+      "evidence_quote": "With a maximum control range of 15 km, DJI O3 Enterprise Transmission enables the Mavic 3 Enterprise drones to fly further and transmit signals with higher stability, offering pilots greater peace of mind during flight.",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page links DJI and the Mavic 3 Enterprise's radio transmission, but it never names SZ DJI Technology Co., Ltd. as the radio supplier or states China.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": "Radio chip",
+      "tier": 2,
+      "supplier": "Leadcore Technology",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708",
+      "quote": "Likely Leadcore IE1000 RF transceiver",
+      "confidence": "low",
+      "evidence_quote": "Likely Leadcore IE1000 RF transceiver",
+      "reason": "The page only identifies a likely Leadcore RF transceiver in the DJI Mavic 3 Pro, not the Mavic 3 Enterprise, and does not state the supplier's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "SZ DJI Technology Co., Ltd.",
+      "supplier_country": "CN",
+      "country_basis": "hq",
+      "source_url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622",
+      "quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M by SZ DJI TECHNOLOGY CO., LTD",
+      "confidence": "low",
+      "evidence_quote": "DJI Mavic 3E, DJI Mavic 3T, DJI Mavic 3M\n\nby SZ DJI TECHNOLOGY CO., LTD",
+      "reason": "The FCC page names DJI as applicant for the Mavic 3E and lists radio frequency ranges, but it does not explicitly state that DJI supplies a radio component or its country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "The only usable public record I could open was the FCC equipment-authorization filing for the Mavic 3E/3T/3M (FCC ID SS3-M3E2206), which shows the aircraft's radio/datalink is filed by DJI itself; no public teardown identifying the RF silicon inside the O3 Enterprise transmission module was found (iFixit's Mavic 3 Pro chip ID and the TechInsights teardown were paywalled/blocked, and fcc.report PDFs were behind Cloudflare), so no Tier 2 radio-chip candidate could be sourced.",
+  "when": "2026-11-11T06:49:16+00:00"
+}

@@ -1,0 +1,170 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "magnets",
+  "component": "motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public source I opened names the NdFeB magnet maker or the rare-earth material producer for the DJI Mavic 3 Enterprise (or DJI's motor supply chain generally); teardowns found cover disassembly only and DJI does not disclose magnet vendors. Only generic industry data was found (e.g., China holds 98% of global magnet manufacturing capacity, UAV supply-chain report), which does not identify a supplier for this drone's motors.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 motor magnet supplier NdFeB teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone motor magnet supplier rare earth neodymium"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"DJI\" magnet supplier \"JL Mag\" OR \"Zhong Ke San Huan\" OR \"Yantai Zhenghai\""
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI 大疆 电机 磁钢 供应商 钕铁硼"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://aiqicha.baidu.com/details/ugknowledge?id=a6f82f464808eacb808a327a7a8fda6e",
+            "focus": "磁"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "金力永磁 大疆 无人机 客户 磁钢 供应"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 无人机 磁钢 供应商 中科三环 宁波韵升 无人机电机"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" motor manufacturer supplier \"brushless\" made who makes DJI motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"大疆\" 磁材 供应商 无人机 磁钢 龙头企业 客户"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI supplier list rare earth magnet import records Panjiva NdFeB DJI Shenzhen"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"金力永磁\" 大疆 无人机 磁钢 低空经济 供应商 客户"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"中科三环\" 无人机 大疆 磁体 供应"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://datadeep.tech/uav-supply-chain/",
+            "focus": "magnet"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://faxiangongchang.com/reports/china-drone-supply-chain-2026",
+            "focus": "磁"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "磁钢",
+            "url": "https://faxiangongchang.com/reports/china-drone-supply-chain-2026"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "magnet makers JL Mag Sanhuan drone motors",
+            "url": "https://datadeep.tech/uav-supply-chain/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"无人机\" \"磁钢\" 供应商 \"大疆\" 上市公司 互动易 投资者"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"正海磁材\" 无人机 磁体 客户 大疆"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"JL Mag\" DJI drone magnets supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"韵升\" 无人机 磁钢 低空经济 电机 供应"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 供应链 磁钢 核心供应商 A股 名单 无人机电机磁材"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"大疆\" \"钕铁硼\" 供应商"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public source I opened names the NdFeB magnet maker or the rare-earth material producer for the DJI Mavic 3 Enterprise (or DJI's motor supply chain generally); teardowns found cover disassembly only and DJI does not disclose magnet vendors. Only generic industry data was found (e.g., China holds 98% of global magnet manufacturing capacity, UAV supply-chain report), which does not identify a supplier for this drone's motors.",
+  "when": "2026-11-11T06:42:20+00:00"
+}

@@ -1,0 +1,259 @@
+{
+  "model": "Teal 2",
+  "category": "camera_sensor",
+  "component": "camera sensor",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://redcataerial.com/solutions/teal-2/",
+          "quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations."
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "OmniVision",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://docs.modalai.com/voxl2-hadron/",
+          "quote": "J7 — sensormodules com.qti.sensormodule.boson_2.bin and com.qti.sensormodule.ov64b40_3.bin"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://redcataerial.com/solutions/teal-2/",
+          "quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "OmniVision",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://docs.modalai.com/voxl2-hadron/",
+          "quote": "J7 — sensormodules com.qti.sensormodule.boson_2.bin and com.qti.sensormodule.ov64b40_3.bin"
+        }
+      ],
+      "notes": "Teal 2's camera is the Teledyne FLIR Hadron 640R dual EO/IR module (Boson 640 thermal core plus a 64MP-class visible sensor); a third-party integration doc shows the visible imager driven as an OmniVision OV64B (OV64B40). No opened source stated where the Boson microbolometer or the OmniVision sensor is fabricated, so no Tier 2 entry is given; note Red Cat's page lists the EO sensor as 16 MP while FLIR's datasheet specifies 64MP.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone camera thermal sensor specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 640x512 thermal camera FLIR"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://redcataerial.com/solutions/teal-2/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Hadron 640R specifications 16 MP visible sensor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/learn/discover/faq---everything-you-need-to-know-about-hadron-640r/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FLIR Boson microbolometer fabricated Goleta California wafer fab"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR microbolometer manufacturing Goleta California wafer fabrication plant detector"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://groupgets-files.s3.amazonaws.com/Hadron/640R/Hadron+640R+Datasheet.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Hadron 640R teardown visible camera sensor Omnivision 64MP"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://medias.yolegroup.com/uploads/2017/09/Yole_FLIR_Boson_IR_Camera_Bolometer_System_Plus_Consulting_SP17349_.pdf",
+            "focus": "Goleta"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teledyne FLIR\" Goleta facility microbolometer \"in-house\" infrared detector manufacturing expansion"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 FCC ID internal photos camera module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Goleta expansion uncooled microbolometer production capacity press release"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Hadron 640R \"OV64\" OR \"OmniVision\" 64MP visible sensor FLIR"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/about/news/congressman-salud-carbajal-explores-thermal-imaging-innovation-at-teledyne-flir-oem/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Hadron 640R\" visible sensor \"IMX\" OR \"Sony\" OR \"OmniVision\" 64MP 0.7um"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Hadron 640R\" teardown report visible image sensor identification"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"OV64B\" FLIR Hadron 640R"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://docs.modalai.com/voxl2-hadron/",
+            "focus": "OV64B"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 datasheet \"16 MP\" EO sensor Hadron 640R specification pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "OmniVision fabless TSMC manufactures image sensors OV64B"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://redcataerial.com/solutions/teal-2/",
+          "quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations.",
+          "confidence": "low",
+          "evidence_quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations.",
+          "reason": "capped at low: country is HQ-based or not on page. The page explicitly names Teledyne FLIR as supplying the Hadron 640R EO/IR sensor for Teal 2, but does not state Teledyne FLIR's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "OmniVision",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://docs.modalai.com/voxl2-hadron/",
+          "quote": "J7 — sensormodules com.qti.sensormodule.boson_2.bin and com.qti.sensormodule.ov64b40_3.bin",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page is about ModalAI VOXL 2 and FLIR Hadron camera support and does not mention Teal 2, Teal Drones, or OmniVision.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://redcataerial.com/solutions/teal-2/",
+      "quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations.",
+      "confidence": "low",
+      "evidence_quote": "Equipped with the Teledyne FLIR Hadron 640R EO/IR sensor, optimised for nighttime operations.",
+      "reason": "capped at low: country is HQ-based or not on page. The page explicitly names Teledyne FLIR as supplying the Hadron 640R EO/IR sensor for Teal 2, but does not state Teledyne FLIR's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "OmniVision",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://docs.modalai.com/voxl2-hadron/",
+      "quote": "J7 — sensormodules com.qti.sensormodule.boson_2.bin and com.qti.sensormodule.ov64b40_3.bin",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page is about ModalAI VOXL 2 and FLIR Hadron camera support and does not mention Teal 2, Teal Drones, or OmniVision.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Teal 2's camera is the Teledyne FLIR Hadron 640R dual EO/IR module (Boson 640 thermal core plus a 64MP-class visible sensor); a third-party integration doc shows the visible imager driven as an OmniVision OV64B (OV64B40). No opened source stated where the Boson microbolometer or the OmniVision sensor is fabricated, so no Tier 2 entry is given; note Red Cat's page lists the EO sensor as 16 MP while FLIR's datasheet specifies 64MP.",
+  "when": "2026-11-11T06:40:26+00:00"
+}

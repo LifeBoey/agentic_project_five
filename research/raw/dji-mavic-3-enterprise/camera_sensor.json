@@ -1,0 +1,270 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "camera_sensor",
+  "component": "camera sensor",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+          "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s."
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+          "quote": "Camera sensors in DJI drones come from Sony."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+          "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+          "quote": "Camera sensors in DJI drones come from Sony."
+        }
+      ],
+      "notes": "No Mavic 3 Enterprise (Mavic 3E/3T) specific teardown naming an image-sensor part number was found; only DJI-wide statements that DJI sources image sensors from Sony (Japan) or OmniVision (China), plus confirmation that the 3T thermal camera uses an uncooled VOx microbolometer with no vendor named. No source identified the sensor fabrication site, so tier 2 is empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise teardown camera sensor Sony"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 sensor Sony IMX teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3T\" thermal sensor teardown microbolometer supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise 20MP 4/3 CMOS sensor Sony IMX manufacturer"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/",
+            "focus": "sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 thermal camera 640x512 uncooled VOx microbolometer supplier DJI"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "component",
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI thermal camera microbolometer supplier InfiRay Guide Sensmart Mavic 3T"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Sony",
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "TechInsights DJI Mavic 3 camera teardown image sensor Sony IMX"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown \"IMX\" sensor Hasselblad L2D-20c chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise thermal camera \"microbolometer\" chip supplier teardown analysis"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "大疆 御3 行业版 热成像 红外探测器 供应商 CMOS 传感器 索尼"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI drone camera sensor supplier Sony OmniVision DJI Mavic 3 supply chain"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Sony image sensors",
+            "url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "sensors",
+            "url": "https://dronesgator.com/where-are-dji-drones-made"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3T\" OR \"Mavic 3 Thermal\" teardown inside thermal module chip \"640x512\" sensor model"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 Enterprise gimbal camera teardown sensor chip photos iFixit"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "sensor",
+            "url": "https://www.techinsights.com/blog/dji-mavic-3-pro-dji-rc-deep-dive-teardown"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI 热成像 无人机 红外探测器 睿创微纳 供应 大疆"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "sensor",
+            "url": "https://www.dpreview.com/news/0047640267/dji-mavic-3-mavic-3-cine-drones-4-3-cmos-sensor-28x-zoom-and-46-minutes-of-flight-time/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" 4/3 sensor \"IMX272\" OR \"IMX472\" OR \"Sony sensor\" drone"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+          "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+          "confidence": "low",
+          "evidence_quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+          "reason": "The page states DJI uses Sony image sensors from Japan generally, but does not explicitly tie Sony sensors to the Mavic 3 Enterprise model.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+          "quote": "Camera sensors in DJI drones come from Sony.",
+          "confidence": "low",
+          "evidence_quote": "Camera sensors in DJI drones come from Sony.",
+          "reason": "The page names Sony as a camera sensor supplier for DJI drones generally but does not mention the Mavic 3 Enterprise or Sony's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+      "quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+      "confidence": "low",
+      "evidence_quote": "In their cameras and imaging payloads DJI use either Sony image sensors from Japan or Omnivision Image Sensors from China’s.",
+      "reason": "The page states DJI uses Sony image sensors from Japan generally, but does not explicitly tie Sony sensors to the Mavic 3 Enterprise model.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+      "quote": "Camera sensors in DJI drones come from Sony.",
+      "confidence": "low",
+      "evidence_quote": "Camera sensors in DJI drones come from Sony.",
+      "reason": "The page names Sony as a camera sensor supplier for DJI drones generally but does not mention the Mavic 3 Enterprise or Sony's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "No Mavic 3 Enterprise (Mavic 3E/3T) specific teardown naming an image-sensor part number was found; only DJI-wide statements that DJI sources image sensors from Sony (Japan) or OmniVision (China), plus confirmation that the 3T thermal camera uses an uncooled VOx microbolometer with no vendor named. No source identified the sensor fabrication site, so tier 2 is empty.",
+  "when": "2026-11-11T06:44:24+00:00"
+}

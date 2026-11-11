@@ -1,0 +1,569 @@
+{
+  "model": "Teal 2",
+  "category": "radio",
+  "component": "radio",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems Inc.",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+          "quote": "The Microhard settings screen is where to enable/disable the GCS's Microhard radio and to view the signal strength of the GCS and the AV."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems Inc.",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+          "quote": "The Microhard settings screen is where to enable/disable the GCS's Microhard radio and to view the signal strength of the GCS and the AV."
+        }
+      ],
+      "notes": "The Teal 2 operator's manual references \"Microhard Settings\" for enabling the ground station's Microhard radio, pointing to Microhard Systems (Calgary, Canada) as the datalink radio vendor; Doodle Labs radios are documented for Teal's newer Black Widow platform, not the Teal 2 itself. No public source identifies the RF/radio chipset inside the Microhard module (FCC internal photos/schematics for pMDDL2450/Teal 2A9Z7-TD000 are confidential), so tier 2 is empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone datalink radio module supplier"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 teardown components"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 Doodle Labs Mesh Rider radio Red Cat"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "FCC ID Teal 2 drone radio Teal Drones"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2A9Z7-TD000"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://doodlelabs.com/case-studies/teal-drones"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" Microhard radio module"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Doodle Labs Helix Mesh Rider radio chipset RFIC Atheros Qualcomm"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+            "focus": "Microhard"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Microhard pMDDL2450 chipset Atheros AR9 \"digital data link\" FCC internal photos"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://tealdrones.com/wp-content/uploads/2023/09/60083-MK1.5-Operator-Manual-REV-B.pdf",
+            "focus": "Microhard"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://manuals.plus/m/4460f586ee9e3eae136f5c59d97afa8f74800041d7643b3c7388fd6ba31d93e1",
+            "focus": "Microhard"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Microhard",
+            "url": "https://manuals.plus/m/268135a6c6bf901ab3f10e5f2b528bc049a8031aaa9aa9722b595a11b8b5a8fa_optim.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Microhard\" DDL radio operator manual specifications"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone specifications \"Microhard\" 2.4 GHz datalink AES-256"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone \"Doodle Labs\" OR \"Microhard\" datalink which radio 2023"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Microhard",
+            "url": "https://advexure.com/products/teal-2-system-2-4-ghz-1-pack"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" operator manual \"12.2.2\" Microhard settings radio"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Microhard",
+            "url": "https://web.archive.org/web/2024/https://tealdrones.com/wp-content/uploads/2023/09/60083-MK1.5-Operator-Manual-REV-B.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" radio \"pMDDL2450\" OR \"Microhard Systems\" datalink drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" \"Operator's Manual\" pdf tealdrones.com Microhard radio settings"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.microhardcorp.com/pMDDL2450.php"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Microhard Systems Inc.",
+          "supplier_country": "CA",
+          "country_basis": "hq",
+          "source_url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+          "quote": "The Microhard settings screen is where to enable/disable the GCS's Microhard radio and to view the signal strength of the GCS and the AV.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page is a Cloudflare bot-verification wall with no supplier or product content.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations."
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Doodle Labs was founded in 1999 and has offices in the United States and Singapore."
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr",
+          "quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away."
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment",
+          "quote": "The full current lineup of Doodle Labs’ Mesh Rider radios is built on top of Qualcomm chipsets, so developing mesh networking technology to enable beamforming is a natural next step for the Los Angeles-based firm."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Doodle Labs was founded in 1999 and has offices in the United States and Singapore."
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr",
+          "quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away."
+        },
+        {
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment",
+          "quote": "The full current lineup of Doodle Labs’ Mesh Rider radios is built on top of Qualcomm chipsets, so developing mesh networking technology to enable beamforming is a natural next step for the Los Angeles-based firm."
+        }
+      ],
+      "notes": "Red Cat/Teal press releases and Doodle Labs' own material confirm Doodle Labs Helix Mesh Rider radios are the datalink integrated on Teal 2/Teal systems, and Doodle Labs states its Mesh Rider lineup is built on Qualcomm chipsets. No Teal-2-specific teardown naming the exact RF chip inside the radio was found (Teal's own FCC file 2A9Z7-TD000 covers only a 2.4 GHz BLE module).",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone datalink radio module maker"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones Teal 2 \"datalink\" supplier Red Cat"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2A9Z7-TD000"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal 2 drone \"DTC\" BluSDR datalink Teal Drones"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone radio \"DTC\" OR \"BluSDR\" OR \"MicroSDR\" datalink partnership"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teal Drones datalink radio module supplier \"Teal 2\" teardown FCC internal photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone \"Doodle Labs\" mesh rider"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2A9Z7-TD000/Internal-Photos/Internal-Photos-6485851"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://doodlelabs.com/case-studies/teal-drones"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Doodle Labs Mesh Rider radio chipset Qualcomm FCC teardown"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Doodle Labs Mesh Rider \"Qualcomm\" chipset Atheros radio design"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://tealdrones.com/press_releases/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine/"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://storefront.redcat.red/data-sheets/teal2-datasheet.pdf",
+            "focus": "radio"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" drone \"Microhard\" radio OR pMDDL"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.unmannedsystemstechnology.com/2024/05/mesh-radios-integrated-with-suas-for-successful-ew-field-testing/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Red Cat press release May 2024 \"Integrated with Teal 2 systems\" Doodle Labs electronic warfare Ukraine"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2A9Z7"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Teal 2\" sUAS datasheet \"Mesh Rider\" OR \"Doodle Labs\" datalink 5 km radio"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.unmannedsystemstechnology.com/2023/03/doodle-labs-to-develop-beamforming-capabilities-for-mesh-rider-radios/",
+            "focus": "Qualcomm"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+          "confidence": "low",
+          "evidence_quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+          "reason": "capped at low: country is HQ-based or not on page. The page explicitly ties Doodle Labs radios to Teal systems, but only mentions Doodle Labs offices in the US and Singapore, not its headquarters country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+          "quote": "Doodle Labs was founded in 1999 and has offices in the United States and Singapore.",
+          "confidence": "low",
+          "evidence_quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+          "reason": "The page links Doodle Labs radios to Teal systems but not explicitly to the Teal 2 model or to Doodle Labs' Singapore headquarters as its country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Doodle Labs",
+          "supplier_country": "SG",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr",
+          "quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away.",
+          "confidence": "low",
+          "evidence_quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away.",
+          "reason": "The page ties Doodle Labs' radio to Teal's SRR prototype (and only \"potentially\" other Teal platforms), not specifically the Teal 2, though it does mention Singapore offices.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "radio",
+          "part": "Radio chip",
+          "tier": 2,
+          "supplier": "Qualcomm",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment",
+          "quote": "The full current lineup of Doodle Labs’ Mesh Rider radios is built on top of Qualcomm chipsets, so developing mesh networking technology to enable beamforming is a natural next step for the Los Angeles-based firm.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page discusses Doodle Labs mesh radios built on Qualcomm chipsets and never mentions Teal Drones, the Teal 2, or a radio chip supplied for it.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Microhard Systems Inc.",
+      "supplier_country": "CA",
+      "country_basis": "hq",
+      "source_url": "https://www.manualslib.com/manual/3423434/Red-Cat-Teal-2.html",
+      "quote": "The Microhard settings screen is where to enable/disable the GCS's Microhard radio and to view the signal strength of the GCS and the AV.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page is a Cloudflare bot-verification wall with no supplier or product content.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Doodle Labs",
+      "supplier_country": "SG",
+      "country_basis": "hq",
+      "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+      "quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+      "confidence": "low",
+      "evidence_quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+      "reason": "capped at low: country is HQ-based or not on page. The page explicitly ties Doodle Labs radios to Teal systems, but only mentions Doodle Labs offices in the US and Singapore, not its headquarters country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Doodle Labs",
+      "supplier_country": "SG",
+      "country_basis": "hq",
+      "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+      "quote": "Doodle Labs was founded in 1999 and has offices in the United States and Singapore.",
+      "confidence": "low",
+      "evidence_quote": "Teal systems with Doodle Labs frequency-hopping radios can evade jamming attempts and are usable in multi-domain environments for surveillance and swarming operations.",
+      "reason": "The page links Doodle Labs radios to Teal systems but not explicitly to the Teal 2 model or to Doodle Labs' Singapore headquarters as its country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Doodle Labs",
+      "supplier_country": "SG",
+      "country_basis": "hq",
+      "source_url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr",
+      "quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away.",
+      "confidence": "low",
+      "evidence_quote": "By integrating Doodle Labs’ Helix Mesh Rider Radio, Teal’s SRR prototype will be capable of reliably transmitting thermal imagery, AES-256 encrypted video and other high-bandwidth data back to a ground station 3+ miles away.",
+      "reason": "The page ties Doodle Labs' radio to Teal's SRR prototype (and only \"potentially\" other Teal platforms), not specifically the Teal 2, though it does mention Singapore offices.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "radio",
+      "part": "Radio chip",
+      "tier": 2,
+      "supplier": "Qualcomm",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment",
+      "quote": "The full current lineup of Doodle Labs’ Mesh Rider radios is built on top of Qualcomm chipsets, so developing mesh networking technology to enable beamforming is a natural next step for the Los Angeles-based firm.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page discusses Doodle Labs mesh radios built on Qualcomm chipsets and never mentions Teal Drones, the Teal 2, or a radio chip supplied for it.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Red Cat/Teal press releases and Doodle Labs' own material confirm Doodle Labs Helix Mesh Rider radios are the datalink integrated on Teal 2/Teal systems, and Doodle Labs states its Mesh Rider lineup is built on Qualcomm chipsets. No Teal-2-specific teardown naming the exact RF chip inside the radio was found (Teal's own FCC file 2A9Z7-TD000 covers only a 2.4 GHz BLE module).",
+  "when": "2026-11-11T06:41:44+00:00"
+}

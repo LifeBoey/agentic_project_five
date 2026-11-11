@@ -1,0 +1,161 @@
+{
+  "model": "DJI Mavic 3 Enterprise",
+  "category": "flight_controller_chip",
+  "component": "flight controller chip",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "No public teardown identifies the flight-controller/autonomy processor of the Mavic 3 Enterprise (Mavic 3E/3T) specifically; the closest chip-level source (iFixit's Mavic 3 Pro chip ID) lists only 'likely' Leadcore H6MN/E2B/P1 parts for a different model, and the Mavic 3E FCC internal photos/blog analyses do not name the SoC. No source states a foundry for any such chip, so tier 2 is empty as well.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 teardown flight controller processor chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise teardown FCC internal photos main board SoC"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.ifixit.com/Teardown/DJI+Mavic+3+Pro+Chip+ID/161708"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "o-gs dji-hardware-schematics Mavic 3 chip list processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Leadcore\" H6MN DJI Mavic 3 processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 Enterprise teardown chip list \"Mavic 3E\" board processor Leadcore"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-firmware-tools/wiki/WM240-Core-Board"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://mavicpilots.com/threads/mavic-3-bill-of-materials.120178/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "o-gs dji-firmware-tools wiki WM250 Mavic 3 core board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" teardown \"H3\" Eagle Leadcore LC1860C main board chips"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-firmware-tools/wiki/DJI-Hardware"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Mavic 3 Enterprise teardown \"main processor\" chip analysis TechInsights"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://blog.looksei.com/dji-mavic-3e-dji-mavic-3t-by-sz-dji-technology-co-ltd-in-depth-specs-teardown-analysis-fcc-id-ss3-m3e2206/",
+            "focus": "processor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "o-gs dji-firmware-tools wiki \"WM260\" OR \"WM250\" core board Mavic 3 parts"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" main board chip identification teardown \"Myriad\" OR \"Ambarella\" OR \"Novatek\" DJI"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "ifixit \"DJI Mavic 3\" chip ID teardown main board processors"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-firmware-tools/wiki"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Mavic 3\" \"WM270\" OR \"WM265\" o-gs core board DJI firmware tools"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-firmware-tools/wiki/DJI-Hardware",
+            "focus": "Mavic 3"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://github.com/o-gs/dji-firmware-tools/wiki/WM260-Core-Board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "DJI Mavic 3 \"core board\" parts \"LC1860C\" OR \"H6\" OR \"S1\" chip wiki"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "No public teardown identifies the flight-controller/autonomy processor of the Mavic 3 Enterprise (Mavic 3E/3T) specifically; the closest chip-level source (iFixit's Mavic 3 Pro chip ID) lists only 'likely' Leadcore H6MN/E2B/P1 parts for a different model, and the Mavic 3E FCC internal photos/blog analyses do not name the SoC. No source states a foundry for any such chip, so tier 2 is empty as well.",
+  "when": "2026-11-11T06:43:46+00:00"
+}

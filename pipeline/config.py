@@ -73,6 +73,12 @@ RESEARCH_CATEGORIES = [
     },
 ]
 
+# Spelling variants the automatic folding misses (different first word). Variant -> spelling used in links.json.
+SUPPLIER_ALIASES = {
+    "SZ DJI Technology Co., Ltd.": "DJI",
+    "FLIR Systems": "Teledyne FLIR",
+}
+
 COMPONENTS = sorted({c["component"] for c in RESEARCH_CATEGORIES})
 # Sub-tier categories researched on their own (magnets): each gets its own unmapped record
 # when nothing is verified, so the gap stays visible even if the parent component is mapped.

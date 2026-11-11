@@ -255,9 +255,78 @@
       "evidence_quote": "The Anafi has a gimbal-stabilized 21-megapixel camera capable of shooting 4K high-dynamic-range (HDR) video, which features a Sony IMX230 sensor and \"lossless\" digital zoom capable of 1.4× zoom in 4K mode and 2.8× zoom in 1080p mode.",
       "reason": "The page names Sony as sensor supplier only for the original Anafi, not the Anafi USA, and gives no country for Sony.",
       "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+      "quote": "Sensor: FLIR BOSON",
+      "confidence": "unmapped",
+      "evidence_quote": "Sensor: FLIR BOSON",
+      "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the Anafi USA IR sensor, but it does not mention Teledyne FLIR or state the supplier's country.)",
+      "verifier_model": "deepseek-v4.1-flash",
+      "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+    },
+    {
+      "component": "camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "FLIR Systems",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+      "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+      "confidence": "low",
+      "evidence_quote": "ANAFI USA’s gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+      "reason": "The page identifies a FLIR Boson IR camera in the Anafi USA but does not explicitly name FLIR Systems as the supplier or state its country.",
+      "verifier_model": "deepseek-v4.1-flash",
+      "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
     }
   ],
   "retried": false,
   "notes": "Parrot's own ANAFI USA spec page confirms the thermal sensor is a FLIR Boson (and the visible chain is two 1/2.4\" 21MP sensors), but it does not name the visible-spectrum sensor vendor; the Sony IMX230 identification comes from Wikipedia's account of the base Anafi, which uses the same 1/2.4\" 21MP camera, so it is not USA-model-specific. No public teardown or filing I opened identified the Anafi USA's visible sensor, and I found no source stating where either sensor is fabricated, so tier 2 is empty.",
-  "when": "2026-11-11T06:31:08+00:00"
+  "when": "2026-11-11T06:31:08+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "Parrot's ANAFI USA white paper confirms the thermal imager is a FLIR Boson module (FLIR Systems, US HQ). I could not find any accessible source naming the maker of the visible-band CMOS sensors (only community/secondary pages assert Sony IMX230 for the original Anafi, not verified for ANAFI USA), and found no source on where any of the sensors are fabricated.",
+      "error": null,
+      "verified": [
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/en/drones/anafi-usa/technical-specifications",
+          "quote": "Sensor: FLIR BOSON",
+          "confidence": "unmapped",
+          "evidence_quote": "Sensor: FLIR BOSON",
+          "reason": "evidence quote does not name the supplier (verifier said low: The page names FLIR Boson as the Anafi USA IR sensor, but it does not mention Teledyne FLIR or state the supplier's country.)",
+          "verifier_model": "deepseek-v4.1-flash",
+          "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+        },
+        {
+          "component": "camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "FLIR Systems",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+          "quote": "ANAFI USA's gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+          "confidence": "low",
+          "evidence_quote": "ANAFI USA’s gimbal shelters 3 gyrostabilized cameras: a wide angle EO 4K camera, a 32x telephoto EO 4K camera and a Long-Wave IR thermographic FLIR Boson® camera.",
+          "reason": "The page identifies a FLIR Boson IR camera in the Anafi USA but does not explicitly name FLIR Systems as the supplier or state its country.",
+          "verifier_model": "deepseek-v4.1-flash",
+          "imported_from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)"
+        }
+      ]
+    }
+  ]
 }

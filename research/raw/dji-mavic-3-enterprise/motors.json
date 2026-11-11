@@ -165,5 +165,13 @@
   "verified": [],
   "retried": false,
   "notes": "No public source found naming the motor supplier for the DJI Mavic 3 Enterprise. Teardown coverage (iFixit guides, mavicpilots thread blocked by Cloudflare, EE Times/Teknarie Mavic 3 Pro and 4 Pro teardown) describes the flight motors and even notes Chinese-made motor MCUs/drivers but never identifies the motor manufacturer; DJI sells the motors only as its own DJI-branded replacement parts.",
-  "when": "2026-11-11T06:40:06+00:00"
+  "when": "2026-11-11T06:40:06+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No public teardown, FCC filing, DJI statement or trade record found naming the motor manufacturer for the Mavic 3 Enterprise; teardown coverage (iFixit, TechInsights, mavicpilots) is paywalled or shows only that motors are DJI-branded assemblies. The only supplier claims located were unsourced Chinese investor/Q&A posts (e.g. Baidu Zhidao naming Nidec/Maxon historically and DJI's own 2312-series motors) that are not specific to this model and too weak to cite.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

@@ -259,5 +259,13 @@
   ],
   "retried": false,
   "notes": "The only published chip-ID teardown in this family is iFixit's Mavic 3 Pro main-board identification, which flags a 'likely Leadcore H6MN' applications processor plus Leadcore E2B/P1 and an HDSC HC32F176 MCU; no Mavic 3 Enterprise-specific chip identification was found. No source names the foundry for that processor, and the one source describing Leadcore calls it a fabless ('foundry-less') designer, so no Tier 2 fabrication entry could be sourced.",
-  "when": "2026-11-11T06:41:50+00:00"
+  "when": "2026-11-11T06:41:50+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "No public teardown identifies the flight-controller/autonomy processor of the Mavic 3 Enterprise (Mavic 3E/3T) specifically; the closest chip-level source (iFixit's Mavic 3 Pro chip ID) lists only 'likely' Leadcore H6MN/E2B/P1 parts for a different model, and the Mavic 3E FCC internal photos/blog analyses do not name the SoC. No source states a foundry for any such chip, so tier 2 is empty as well.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

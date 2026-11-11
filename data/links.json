@@ -587,5 +587,115 @@
     "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
     "confidence": "low",
     "conflict": false
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "component": "battery cells",
+    "supplier": "Enovix Corporation",
+    "supplier_country": "KR",
+    "tier": 1,
+    "source_url": "https://www.linkedin.com/posts/enovix-drones-uas-share-7470460173279559680-PhkC/",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "component": "camera sensor",
+    "supplier": "Teledyne FLIR",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://www.parrot.com/assets/s3fs-public/2022-01/white-paper-anafi-usa-v1.5.3_en.pdf",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "component": "flight controller chip",
+    "supplier": "Ambarella",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://govtribe.com/file/government-file/anafi-usa-white-paper-en-dot-pdf",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "component": "flight controller chip",
+    "supplier": "Ambarella",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://www.geoinfostore.com/product/Parrot-ANAFI-USA---Thermal-Drone-Kf9py",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Teal 2",
+    "component": "flight controller chip",
+    "supplier": "Qualcomm",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://toughstump.com/2023/09/27/exploring-the-pinnacle-of-drone-technology-teal-2/",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Teal 2",
+    "component": "radio",
+    "supplier": "Doodle Labs",
+    "supplier_country": "SG",
+    "tier": 1,
+    "source_url": "https://doodlelabs.com/news/teal-drones-partnership-us-army-srr",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Teal 2",
+    "component": "radio",
+    "supplier": "Doodle Labs",
+    "supplier_country": "SG",
+    "tier": 1,
+    "source_url": "https://ir.redcatholdings.com/news-events/press-releases/detail/141/red-cat-successfully-passes-field-testing-with-doodle-labs-against-electronic-warfare-technology-in-ukraine",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "component": "battery cells",
+    "supplier": "Dongguan Poweramp Technology Ltd.",
+    "supplier_country": "CN",
+    "tier": 1,
+    "source_url": "https://droneshopperth.com.au/wp-content/uploads/2023/05/BWX260-5000-15.4_MSDS_2022-B-000135-Mavic-3.pdf",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "component": "camera sensor",
+    "supplier": "Sony",
+    "supplier_country": "JP",
+    "tier": 1,
+    "source_url": "https://dronesgator.com/where-are-dji-drones-made",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "component": "camera sensor",
+    "supplier": "Sony",
+    "supplier_country": "JP",
+    "tier": 1,
+    "source_url": "https://fpvwiki.co.uk/dji-reliance-on-western-component-supply-to-manufacture-drones-truth-or-myth",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "component": "radio",
+    "supplier": "DJI",
+    "supplier_country": "CN",
+    "tier": 1,
+    "source_url": "https://fccid.io/SS3-M3E2206/Internal-Photos/Product-Internal-M3M-6238622",
+    "confidence": "low",
+    "conflict": false
   }
 ]

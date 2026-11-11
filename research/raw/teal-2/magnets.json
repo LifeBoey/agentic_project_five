@@ -165,5 +165,13 @@
   "verified": [],
   "retried": false,
   "notes": "No public teardown, FCC filing, or datasheet names the motor or magnet supplier for the Teal 2; Red Cat's Feb 2025 release confirms it buys motors from Unusual Machines for one of its platforms (not explicitly the Teal 2), and trade coverage says the NdFeB magnets in those US-made motors still come largely from China, but no specific magnet maker (Tier 2) or rare-earth producer (Tier 3) is identified in any source I could open.",
-  "when": "2026-11-11T06:35:18+00:00"
+  "when": "2026-11-11T06:35:18+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "Found that Red Cat (Teal Drones' parent) began sourcing motors from Unusual Machines in 2025, but no public source names the magnet maker (Tier 2) or the rare-earth material producer (Tier 3) behind the Teal 2's motors; general reporting only notes ~90% of drone-motor NdFeB magnets come from China, without a company-level link to this drone. Empty list is the honest answer.",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

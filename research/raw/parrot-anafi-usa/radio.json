@@ -261,5 +261,13 @@
   ],
   "retried": false,
   "notes": "Parrot's own product sheet confirms that the ANAFI USA MIL variant uses an AES-256 encrypted Microhard radio communication system (Microhard pDDL1800 1.8 GHz data link, Microhard Systems of Calgary, Canada); the standard Anafi USA appears to use Parrot's own Wi-Fi link, documented only via FCC filings (2AG6IANAFIM3) with confidential block diagrams/schematics. No public source identified the RF/radio chipset inside the module, so tier 2 is empty.",
-  "when": "2026-11-11T06:31:17+00:00"
+  "when": "2026-11-11T06:31:17+00:00",
+  "imports": [
+    {
+      "from": "PR #8 (separate run of the same pipeline, 2026-11-11T06:49Z)",
+      "notes": "",
+      "error": null,
+      "verified": []
+    }
+  ]
 }

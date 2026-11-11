@@ -35,7 +35,7 @@ Rules:
 - Write exactly one plain paragraph of at most 120 words. No headings, lists or markdown.
 - Use plain words, never the status names from the JSON (write "not researched", not "not_researched").
 - Write every number as digits, and use only numbers that appear in the JSON.
-- Say how many components depend on a single country and name them with their country. A component's country is where its deepest mapped tier is, so say which tier when it is not tier 1.
+- Say how many components depend on a single country and name them with their country. A component's country is where its deepest mapped tier is, so say which tier when it is not tier 1. A tier's "part" says what it is (for example magnets): use it when you name a deeper tier.
 - Name every component whose status is "unmapped", "partly_unmapped" or "not_researched". Say no reliable source was found (for partly unmapped, for the deeper tier), or for "not_researched" that no research record exists yet. Never describe these as safe or low risk.
 - Mention low-confidence evidence and conflicting sources if the counts are above zero.
 - Finish with what a cut-off of each country in "cutoffs" would affect, and say that "unknown" and "not_researched" components could not be assessed.`;

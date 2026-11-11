@@ -37,7 +37,7 @@ test('red rows show the supplier behind the verdict with its source', async ({ p
   await expect(motors.locator('.card')).toHaveCount(1);
   await expect(motors.locator('.card')).toContainText('NdMag Ltd');
   // A sub-tier supplier is labelled as such, so it is not read as the motor maker.
-  await expect(motors.locator('.card')).toContainText('Tier 2');
+  await expect(motors.locator('.card')).toContainText('Tier 2 · Magnets');
   await expect(motors.getByRole('link', { name: /Source/ })).toHaveAttribute('href', 'https://example.com/fixture/ndmag-falcon');
 });
 
@@ -54,7 +54,7 @@ test('partly unmapped keeps the known tier and greys out the missing one', async
   await expect(radio).toContainText('Partly unmapped');
   await expect(radio).toContainText('RadioWorks');
   await expect(radio.getByRole('link', { name: /Source/ })).toHaveAttribute('href', 'https://example.com/fixture/radioworks-falcon');
-  await expect(radio.getByTestId('unmapped-card')).toContainText('Tier 2: unmapped');
+  await expect(radio.getByTestId('unmapped-card')).toContainText('Tier 2 · Antenna: unmapped');
 
   await radio.getByRole('button', { name: 'Radio' }).click();
   const chain = page.getByTestId('chain');

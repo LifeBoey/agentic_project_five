@@ -1,13 +1,13 @@
 [
   { "model": "Falcon X", "component": "motors", "supplier": "AeroMotor Inc", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fixture/aeromotor-falcon", "confidence": "high", "conflict": false },
-  { "model": "Falcon X", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "source_url": "https://example.com/fixture/ndmag-falcon", "confidence": "high", "conflict": false },
+  { "model": "Falcon X", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "part": "Magnets", "source_url": "https://example.com/fixture/ndmag-falcon", "confidence": "high", "conflict": false },
   { "model": "Falcon X", "component": "battery cells", "supplier": "CellCorp", "supplier_country": "KR", "tier": 1, "source_url": "https://example.com/fixture/cellcorp", "confidence": "high", "conflict": true },
   { "model": "Falcon X", "component": "battery cells", "supplier": "LiPower", "supplier_country": "CN", "tier": 1, "source_url": "https://example.com/fixture/lipower", "confidence": "low", "conflict": true },
   { "model": "Falcon X", "component": "camera sensor", "supplier": "", "supplier_country": "", "tier": 1, "source_url": "", "confidence": "unmapped", "conflict": false },
   { "model": "Falcon X", "component": "flight controller chip", "supplier": "ChipFab", "supplier_country": "TW", "tier": 1, "source_url": "https://example.com/fixture/chipfab", "confidence": "high", "conflict": false },
   { "model": "Falcon X", "component": "flight controller chip", "supplier": "SiliCo", "supplier_country": "DE", "tier": 1, "source_url": "https://example.com/fixture/silico", "confidence": "high", "conflict": false },
   { "model": "Falcon X", "component": "radio", "supplier": "RadioWorks", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fixture/radioworks-falcon", "confidence": "high", "conflict": false },
-  { "model": "Falcon X", "component": "radio", "supplier": "", "supplier_country": "", "tier": 2, "source_url": "", "confidence": "unmapped", "conflict": false },
+  { "model": "Falcon X", "component": "radio", "supplier": "", "supplier_country": "", "tier": 2, "part": "Antenna", "source_url": "", "confidence": "unmapped", "conflict": false },
 
   { "model": "Hawk 2", "component": "motors", "supplier": "AeroMotor Inc", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fixture/aeromotor-hawk", "confidence": "high", "conflict": false },
   { "model": "Hawk 2", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "source_url": "https://example.com/fixture/ndmag-hawk", "confidence": "low", "conflict": false },

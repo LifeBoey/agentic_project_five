@@ -30,7 +30,7 @@ describe('buildRows (Falcon X)', () => {
   });
 
   it('keeps the known tiers of a partly unknown component and records the gap tier', () => {
-    expect(rows['radio']).toMatchObject({ partlyUnknown: true, gapTiers: [2] });
+    expect(rows['radio']).toMatchObject({ partlyUnknown: true, gaps: [{ tier: 2, part: 'Antenna' }] });
     expect(rows['radio'].shown.map(l => l.supplier)).toEqual(['RadioWorks']);
     expect(rows['radio'].state).not.toBe('unknown');
   });
@@ -57,7 +57,7 @@ describe('buildRows: expected components with no record', () => {
 
   it('shows them as not researched, after the components the API lists', () => {
     expect(Object.keys(rows)).toEqual(['motors', 'flight controller chip', 'radio', 'battery cells', 'camera sensor']);
-    expect(rows['battery cells']).toMatchObject({ state: 'not_researched', shown: [], gapTiers: [], conflict: false });
+    expect(rows['battery cells']).toMatchObject({ state: 'not_researched', shown: [], gaps: [], conflict: false });
     expect(rows['camera sensor'].state).toBe('not_researched');
   });
 

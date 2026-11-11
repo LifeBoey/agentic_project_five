@@ -11,6 +11,8 @@ export interface ChainLink {
   source_url: string;
   confidence: Confidence;
   conflict: boolean;
+  /** Role 1's optional sub-tier label, e.g. "Magnets". Absent when not given. */
+  part?: string;
 }
 
 /** A full links.json record plus its id, as ask() cites it. */

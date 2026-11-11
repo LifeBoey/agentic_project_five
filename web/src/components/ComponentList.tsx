@@ -52,7 +52,7 @@ export function ComponentList({ rows, selected, onSelect, cutoff }: Props) {
             ) : (
               <div className="cards">
                 <SupplierCards links={r.shown} tier={deepestTier} />
-                {r.gapTiers.map(t => <UnmappedCard key={t} tier={t} />)}
+                {r.gaps.map(g => <UnmappedCard key={g.tier} tier={g.tier} part={g.part} />)}
               </div>
             )}
           </li>

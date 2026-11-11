@@ -14,7 +14,7 @@ export interface BriefFacts {
     reasons: Reason[];
     countries: string[];
     low_confidence: boolean;
-    tiers: { tier: number; suppliers: string[]; unmapped: boolean }[];
+    tiers: { tier: number; part?: string; suppliers: string[]; unmapped: boolean }[];
   }[];
   shared_suppliers: { supplier: string; also_in: string[] }[];
   cutoffs: { country: string; affected: string[]; fully_blocked: string[]; unknown: string[] }[];
@@ -35,6 +35,7 @@ export function buildFacts(risk: ModelRisk, chains: Chain[], cutoffs: Cutoff[]):
       low_confidence: r.lowConfidence,
       tiers: r.chain.tiers.map(t => ({
         tier: t.tier,
+        part: t.links.find(l => l.part)?.part,
         suppliers: t.links.filter(l => l.confidence !== 'unmapped').map(l => `${l.supplier} (${l.supplier_country})`),
         unmapped: t.links.some(l => l.confidence === 'unmapped'),
       })),

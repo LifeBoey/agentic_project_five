@@ -13,7 +13,8 @@ export interface Row {
   state: RowState;
   /** Mapped upper tiers plus an unmapped deeper tier: show what is known and grey out the gap. */
   partlyUnknown: boolean;
-  gapTiers: number[];
+  /** Unmapped tiers below the known ones, with Role 1's label when there is one. */
+  gaps: { tier: number; part?: string }[];
   singleSource: boolean;
   conflict: boolean;
   lowConfidence: boolean;
@@ -33,7 +34,7 @@ export function buildRows(risk: ModelRisk, chains: Chain[]): Row[] {
     const reasons = flag?.reasons ?? [];
 
     const mappedTiers = chain.tiers.filter(t => t.links.some(isMapped));
-    const gapTiers = chain.tiers.filter(t => t.links.some(l => !isMapped(l))).map(t => t.tier);
+    const gaps = chain.tiers.filter(t => t.links.some(l => !isMapped(l))).map(t => ({ tier: t.tier, part: t.links.find(l => !isMapped(l))?.part }));
     // A chain that claims to be mapped but holds no mapped link is treated as unknown, never as fine.
     const fullyUnknown = chain.status === 'unknown' || mappedTiers.length === 0;
 
@@ -43,8 +44,8 @@ export function buildRows(risk: ModelRisk, chains: Chain[]): Row[] {
     return {
       name,
       state: fullyUnknown ? 'unknown' : reasons.includes('single_country') ? 'red' : 'ok',
-      partlyUnknown: !fullyUnknown && (gapTiers.length > 0 || reasons.includes('unknown')),
-      gapTiers,
+      partlyUnknown: !fullyUnknown && (gaps.length > 0 || reasons.includes('unknown')),
+      gaps,
       singleSource: reasons.includes('single_source'),
       conflict: reasons.includes('conflict') || deepest.some(l => l.conflict),
       lowConfidence: flag?.low_confidence ?? false,
@@ -60,7 +61,7 @@ export function buildRows(risk: ModelRisk, chains: Chain[]): Row[] {
     name,
     state: 'not_researched' as const,
     partlyUnknown: false,
-    gapTiers: [],
+    gaps: [],
     singleSource: false,
     conflict: false,
     lowConfidence: false,

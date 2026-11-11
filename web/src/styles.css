@@ -209,3 +209,58 @@ a { color: var(--link); }
 .g-click:hover rect { stroke: var(--link); }
 .g-dim { opacity: 0.18; }
 @media (prefers-reduced-motion: reduce) { .g-edge, .g-node { transition: none; } }
+
+/* ── Graph view ─────────────────────────────────────────────────────────────
+   A dark stage on the light sheet. Red means one thing: the path to a single-country dependency. */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--rule); margin: 8px 0 16px; }
+.tabs [role="tab"] { border: 0; border-bottom: 3px solid transparent; border-radius: 4px 4px 0 0; background: none; padding: 8px 18px; font-weight: 600; color: var(--muted); }
+.tabs [role="tab"]:hover:not(:disabled) { background: none; color: var(--ink); }
+.tabs [role="tab"][aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+
+.graph-panel { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; }
+@media (min-width: 900px) { .graph-panel { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; } }
+
+.stage {
+  position: relative;
+  height: clamp(460px, 68vh, 720px);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1d2835;
+  background:
+    radial-gradient(#1b2735 1px, transparent 1.2px) 0 0 / 22px 22px,
+    radial-gradient(ellipse at 50% 38%, #172433 0%, #0f1720 64%);
+  color: #dbe3ee;
+}
+.stage-canvas { position: absolute; inset: 0; }
+.stage-canvas canvas { display: block; }
+.stage-note { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: #9fb0c4; }
+.stage-hint { position: absolute; left: 14px; bottom: 10px; margin: 0; font-size: 0.8rem; color: #9fb0c4; pointer-events: none; }
+
+.stage-toolbar { position: absolute; z-index: 2; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; gap: 8px; pointer-events: none; }
+.seg { display: inline-flex; pointer-events: auto; background: rgba(15, 23, 32, 0.82); border: 1px solid #263446; border-radius: 8px; backdrop-filter: blur(6px); }
+.seg button { border: 0; background: none; color: #dbe3ee; padding: 6px 12px; border-radius: 0; font-size: 0.85rem; font-weight: 500; min-width: 36px; }
+.seg button:first-child { border-radius: 7px 0 0 7px; }
+.seg button:last-child { border-radius: 0 7px 7px 0; }
+.seg button + button { border-left: 1px solid #263446; }
+.seg button:hover:not(:disabled) { background: rgba(127, 156, 192, 0.2); color: #fff; }
+.seg button[aria-pressed="true"] { background: rgba(127, 156, 192, 0.32); font-weight: 600; }
+.stage :focus-visible { outline-color: #8ab4ff; }
+
+.inspector { display: grid; gap: 12px; align-content: start; }
+.find label { display: block; font-weight: 600; margin-bottom: 4px; }
+.find input { width: 100%; }
+.find-results { list-style: none; margin: 6px 0 0; padding: 0; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--sheet); }
+.find-results li + li { border-top: 1px solid var(--rule); }
+.find-results button { display: flex; flex-direction: column; align-items: flex-start; width: 100%; border: 0; border-radius: 0; background: var(--sheet); color: var(--ink); text-align: left; padding: 8px 10px; font-weight: 600; }
+.find-results button:hover:not(:disabled) { background: var(--paper); color: var(--ink); }
+.find-results small { color: var(--muted); font-weight: 400; }
+.source-list { margin: 4px 0 0; padding-left: 18px; }
+.source-list li { margin-bottom: 6px; }
+button.primary { background: var(--ink); color: var(--sheet); margin-top: 8px; }
+button.primary:hover:not(:disabled) { background: var(--link); border-color: var(--link); }
+
+.graph-key { border: 1px solid var(--rule); border-radius: 6px; padding: 10px 14px; background: var(--sheet); }
+.graph-key h4 { margin: 0 0 6px; }
+.graph-key ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 0.85rem; }
+.graph-key li { display: flex; align-items: center; gap: 8px; }
+.graph-key svg { flex: none; background: #0f1720; border-radius: 4px; }

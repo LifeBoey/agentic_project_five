@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 // In dev, /api is proxied to it (default port 3001, or API_PROXY).
 export default defineConfig({
   base: './',
+  // The 3D view (Three.js) is its own chunk, loaded only when someone switches to 3D, so its size is expected.
+  build: { chunkSizeWarningLimit: 1500 },
   plugins: [react()],
   server: { proxy: { '/api': process.env.API_PROXY ?? 'http://localhost:3001' } },
   // Unit tests are *.spec.ts, not *.test.ts: Node's built-in runner (Role 2's `npm test`) would pick up *.test.ts.

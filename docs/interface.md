@@ -4,6 +4,21 @@ The interface lives in `web/`: Vite, React and TypeScript, built to `web/dist/` 
 
 Everything on the page comes from the Risk API; the page computes no risk of its own.
 
+## Views
+
+The page opens on the **Graph** tab. **Chains and list** is the other: one model's tiers drawn left to right, then every component as a row with its sources. Both read the same API data, and the summary, cut-off and brief above them are shared.
+
+### Graph
+
+A force-directed network of every model, in the manner of Obsidian's graph. Built with `react-force-graph` (d3-force layout; canvas for 2D, Three.js for 3D). `web/src/lib/graph.ts` builds the nodes and links from the API data and is covered by unit tests.
+
+- **Nodes:** a drone model is a hub, a component a ring, a supplier a dot, a country a square, and an unmapped tier a dashed ring. A supplier shared by several models is one node, so models are joined through it. Size follows how connected a node is.
+- **Colour:** red marks only the path from a model to a single-country dependency, and the country itself. Amber rings mark low confidence or disagreeing sources. Shape, not colour, says what a node is.
+- **Navigate:** drag to pan, scroll to zoom, hover a node to light up its neighbours, drag a node to move it. Fit, zoom buttons and a search box (any supplier, component or country) are in the panel. Clicking a node opens its sources; a component opens the same chain as the list. A country offers "What if it is cut off?".
+- **Cut-off:** with the toggle on, rings mark what depends on the country (red) and what cannot be told (grey).
+- **2D / 3D:** 2D is the default. 3D loads only when selected.
+- **Without a mouse:** the stage is a canvas, so the search box and the Chains and list tab are the keyboard route to every component.
+
 ## What each state means
 
 - **Not researched**: an expected component (`web/src/lib/expected.ts`: motors, battery cells, flight controller chip, camera sensor, radio) that a model has no record for at all. It is shown grey, counted, never safe, and unknown in a cut-off, so it cannot silently disappear. **The expected list is provisional and still to be agreed.** `data-drop` reports the same gaps for the research role.

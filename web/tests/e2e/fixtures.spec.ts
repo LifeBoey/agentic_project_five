@@ -2,13 +2,13 @@
 // They only run in the default mode, since real data changes with every drop.
 import { readFile } from 'node:fs/promises';
 import { expect, test, type Page } from '@playwright/test';
-import { FALCON, HAWK, REAL, record, riskOf, rows, stubApi, watchForBreakage } from './helpers';
+import { FALCON, HAWK, REAL, goHome, record, riskOf, rows, stubApi, watchForBreakage } from './helpers';
 
 test.skip(REAL, 'Fixture-specific: runs only against the fixture data');
 
 test.beforeEach(async ({ page }) => {
   await stubApi(page);
-  await page.goto('/');
+  await goHome(page);
   await expect(rows(page).first()).toBeVisible();
 });
 

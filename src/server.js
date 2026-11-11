@@ -27,6 +27,8 @@ async function readJson(req) {
   return JSON.parse(body || '{}');
 }
 
+let client;
+
 async function askRoute(req, res, links) {
   let question;
   try { ({ question } = await readJson(req)); } catch { return send(res, 400, { error: 'invalid JSON body' }); }
@@ -34,9 +36,12 @@ async function askRoute(req, res, links) {
     return send(res, 400, { error: `question must be a non-empty string up to ${MAX_QUESTION} characters` });
   }
   try {
-    return send(res, 200, await ask(question, { links, client: new Anthropic() }));
+    // Created on first use, after .env is loaded, and reused so requests share one connection.
+    client ??= new Anthropic();
+    return send(res, 200, await ask(question, { links, client }));
   } catch (e) {
-    // The SDK reports missing credentials as a plain Error with no typed class, so match its message.
+    // shortcut: the SDK (1.8.0) reports missing credentials as a plain Error with no typed class, so match its
+    // message; switch to a typed check if the SDK adds one. A pre-check on env vars would miss profile-based auth.
     const noCredentials = !(e instanceof Anthropic.APIError) && /resolve authentication method/i.test(e?.message);
     if (noCredentials || e instanceof Anthropic.AuthenticationError || e instanceof Anthropic.PermissionDeniedError) {
       return send(res, 503, { error: 'query agent not configured' });
@@ -66,15 +71,16 @@ export async function handle(req, res) {
 
   let links;
   try { links = await loadLinks(); } catch (e) { return send(res, 500, { error: `links.json unreadable: ${e.message}` }); }
-  const [, a, m, b, c] = parts;
+  // /api/<resource>/<name>/<view>/<component>, e.g. /api/models/Falcon X/chain/motors or /api/cutoff/CN
+  const [, resource, name, view, component] = parts;
   const found = v => (v == null ? send(res, 404, { error: 'not found' }) : send(res, 200, v));
 
-  if (req.method === 'POST' && a === 'ask' && parts.length === 2) return askRoute(req, res, links);
+  if (req.method === 'POST' && resource === 'ask' && parts.length === 2) return askRoute(req, res, links);
   if (req.method !== 'GET') return send(res, 405, { error: 'method not allowed' });
-  if (a === 'models' && parts.length === 2) return send(res, 200, getModels(links));
-  if (a === 'models' && b === 'risk' && parts.length === 4) return found(getModelRisk(links, m));
-  if (a === 'models' && b === 'chain' && parts.length === 5) return found(getChain(links, m, c));
-  if (a === 'cutoff' && parts.length === 3) return send(res, 200, simulateCutoff(links, m));
+  if (resource === 'models' && parts.length === 2) return send(res, 200, getModels(links));
+  if (resource === 'models' && view === 'risk' && parts.length === 4) return found(getModelRisk(links, name));
+  if (resource === 'models' && view === 'chain' && parts.length === 5) return found(getChain(links, name, component));
+  if (resource === 'cutoff' && parts.length === 3) return send(res, 200, simulateCutoff(links, name));
   return send(res, 404, { error: 'not found' });
 }
 

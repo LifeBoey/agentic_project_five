@@ -1,31 +1,46 @@
 // Query agent: answers only from the risk API via tool calls, and code (not the prompt) enforces citations.
-import Anthropic from '@anthropic-ai/sdk';
-import { getModels, getModelRisk, getChain, simulateCutoff } from './risk.js';
+import { getModelRisk, getChain, simulateCutoff } from './risk.js';
 
 export const REFUSAL = 'No mapped data to answer that.';
 const MAX_TURNS = 10;
 
-const obj = (properties = {}) => ({ type: 'object', properties, required: Object.keys(properties), additionalProperties: false });
-const str = { type: 'string' };
+const objectSchema = (properties = {}) => ({ type: 'object', properties, required: Object.keys(properties), additionalProperties: false });
+const STRING = { type: 'string' };
 
-const TOOLS = [
-  { name: 'get_models', description: 'List the drone models in the graph, each with link_id: one of its records, citable as evidence the model is mapped.', input_schema: obj() },
-  { name: 'get_model_risk', description: 'Risk summary for one model: counts, flagged components (with reasons, countries, link_ids) and chokepoint suppliers.', input_schema: obj({ model: str }) },
-  { name: 'get_chain', description: 'Supplier chain for one component of one model, ordered by tier, with each link id, country, source URL and confidence.', input_schema: obj({ model: str, component: str }) },
-  { name: 'simulate_cutoff', description: 'Components and models affected if a country (ISO code, e.g. CN) is cut off.', input_schema: obj({ country: str }) },
-].map(t => ({ ...t, strict: true }));
-
-const RUN = {
-  // Agent-only shape: the public API stays a plain list; one record per model makes "which models exist?" citable.
-  get_models: (links) => getModels(links).map(model => ({ model, link_id: links.find(l => l.model === model).id })),
-  get_model_risk: (links, i) => getModelRisk(links, i.model),
-  get_chain: (links, i) => getChain(links, i.model, i.component),
-  simulate_cutoff: (links, i) => simulateCutoff(links, i.country),
-};
+// One table per tool: what Claude sees, and the risk function that answers it.
+const TOOL_TABLE = [
+  {
+    name: 'get_models',
+    description: 'List the drone models in the graph, each with link_id: one of its records, citable as evidence the model is mapped.',
+    input_schema: objectSchema(),
+    // Agent-only shape: the public API stays a plain list; one record per model makes "which models exist?" citable.
+    run: links => [...Map.groupBy(links, l => l.model)].map(([model, ls]) => ({ model, link_id: ls[0].id })),
+  },
+  {
+    name: 'get_model_risk',
+    description: 'Risk summary for one model: counts, flagged components (with reasons, countries, link_ids) and chokepoint suppliers.',
+    input_schema: objectSchema({ model: STRING }),
+    run: (links, i) => getModelRisk(links, i.model),
+  },
+  {
+    name: 'get_chain',
+    description: 'Supplier chain for one component of one model, ordered by tier, with each link id, country, source URL and confidence.',
+    input_schema: objectSchema({ model: STRING, component: STRING }),
+    run: (links, i) => getChain(links, i.model, i.component),
+  },
+  {
+    name: 'simulate_cutoff',
+    description: 'Components and models affected if a country (ISO code, e.g. CN) is cut off.',
+    input_schema: objectSchema({ country: STRING }),
+    run: (links, i) => simulateCutoff(links, i.country),
+  },
+];
+const TOOLS = TOOL_TABLE.map(({ run, ...tool }) => ({ ...tool, strict: true }));
+const TOOL_HANDLERS = Object.fromEntries(TOOL_TABLE.map(t => [t.name, t.run]));
 
 const ANSWER_FORMAT = {
   type: 'json_schema',
-  schema: obj({ answer: str, cited_link_ids: { type: 'array', items: { type: 'integer' } } }),
+  schema: objectSchema({ answer: STRING, cited_link_ids: { type: 'array', items: { type: 'integer' } } }),
 };
 
 const SYSTEM = `You answer procurement questions about drone supply-chain dependencies.
@@ -51,7 +66,7 @@ function linkIdsIn(value, out = new Set()) {
   return out;
 }
 
-export async function ask(question, { links, client = new Anthropic() }) {
+export async function ask(question, { links, client }) {
   const seen = new Set();
   const messages = [{ role: 'user', content: question }];
 
@@ -68,7 +83,7 @@ export async function ask(question, { links, client = new Anthropic() }) {
 
     if (res.stop_reason === 'tool_use') {
       const results = res.content.filter(b => b.type === 'tool_use').map(b => {
-        const run = RUN[b.name];
+        const run = TOOL_HANDLERS[b.name];
         const out = run ? run(links, b.input ?? {}) : null;
         linkIdsIn(out, seen);
         return { type: 'tool_result', tool_use_id: b.id, content: JSON.stringify(out ?? { error: 'not found' }), is_error: out == null };
@@ -76,7 +91,6 @@ export async function ask(question, { links, client = new Anthropic() }) {
       messages.push({ role: 'user', content: results });
       continue;
     }
-    if (res.stop_reason === 'pause_turn') continue;
     if (res.stop_reason !== 'end_turn') break; // refusal, max_tokens: fall through to the fixed refusal
 
     let parsed;

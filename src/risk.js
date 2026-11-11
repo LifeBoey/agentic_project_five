@@ -1,10 +1,10 @@
 // Risk engine: pure functions over the links.json array. Each link's id is its array index.
 import { readFile } from 'node:fs/promises';
 
-export const LINKS_PATH = new URL('../data/links.json', import.meta.url);
+const LINKS_PATH = new URL('../data/links.json', import.meta.url);
 
-export async function loadLinks(path = LINKS_PATH) {
-  const raw = JSON.parse(await readFile(path, 'utf8'));
+export async function loadLinks() {
+  const raw = JSON.parse(await readFile(LINKS_PATH, 'utf8'));
   if (!Array.isArray(raw)) throw new Error('links.json must be an array');
   return raw.map((l, id) => ({ id, ...l }));
 }
@@ -13,28 +13,21 @@ const isMapped = l => l.confidence !== 'unmapped';
 const norm = s => String(s ?? '').trim().toUpperCase();
 const linkOut = ({ id, supplier, supplier_country, source_url, confidence, conflict }) =>
   ({ id, supplier, supplier_country, source_url, confidence, conflict });
+// Reason names are singular; the README's count keys pluralise only this one.
+const COUNT_KEY = { conflict: 'conflicts' };
 
 // Map of model -> Map of component -> links, in file order.
-function group(links) {
-  const models = new Map();
-  for (const l of links) {
-    if (!models.has(l.model)) models.set(l.model, new Map());
-    const comps = models.get(l.model);
-    if (!comps.has(l.component)) comps.set(l.component, []);
-    comps.get(l.component).push(l);
-  }
-  return models;
-}
+const group = links =>
+  new Map([...Map.groupBy(links, l => l.model)].map(([model, ls]) => [model, Map.groupBy(ls, l => l.component)]));
 
-// Everything the rules need for one component, read from its deepest mapped tier.
-// `cite` holds the ids that back the verdict, including unmapped records, so the agent can cite a gap.
+// The verdict for one component, read from its deepest mapped tier.
 function assess(compLinks) {
   const mapped = compLinks.filter(isMapped);
-  if (mapped.length === 0) return { unknown: true, deep: [], cite: compLinks, countries: [], reasons: ['unknown'], low_confidence: false };
-  const deepest = Math.max(...mapped.map(l => l.tier));
-  // A tier searched below the deepest mapped one with nothing found: the deeper truth is unknown.
-  const unmappedBelow = compLinks.filter(l => !isMapped(l) && l.tier > deepest);
+  const deepest = Math.max(...mapped.map(l => l.tier)); // -Infinity when nothing is mapped
   const deep = mapped.filter(l => l.tier === deepest);
+  // Unmapped records that decide the verdict: all of them when nothing is mapped,
+  // otherwise those searched below the deepest mapped tier (the deeper truth is unknown).
+  const gaps = compLinks.filter(l => !isMapped(l) && l.tier > deepest);
   const rawCountries = new Set(deep.map(l => norm(l.supplier_country)));
   const countries = [...rawCountries].filter(Boolean);
   const reasons = [];
@@ -42,25 +35,21 @@ function assess(compLinks) {
   if (countries.length === 1 && !rawCountries.has('')) reasons.push('single_country');
   if (new Set(deep.map(l => norm(l.supplier))).size === 1) reasons.push('single_source');
   if (mapped.some(l => l.conflict)) reasons.push('conflict');
-  if (unmappedBelow.length) reasons.push('unknown');
+  if (gaps.length) reasons.push('unknown');
   return {
-    unknown: false, unmappedBelow, deep, countries, reasons,
-    low_confidence: deep.every(l => l.confidence === 'low'),
-    cite: [...deep, ...unmappedBelow],
+    mapped, gaps, countries, reasons,
+    low_confidence: deep.length > 0 && deep.every(l => l.confidence === 'low'),
+    cite: [...deep, ...gaps], // ids backing the verdict, so the agent can cite a gap too
   };
 }
 
-export const getModels = links => [...group(links).keys()];
+export const getModels = links => [...new Set(links.map(l => l.model))];
 
 function chokepoints(links) {
-  // Keyed by normalised name so "NdMag Ltd" and "ndmag ltd " count as one supplier; shows the first spelling seen.
-  const bySupplier = new Map();
-  for (const l of links.filter(isMapped)) {
-    const key = norm(l.supplier);
-    if (!bySupplier.has(key)) bySupplier.set(key, { supplier: l.supplier, models: new Set() });
-    bySupplier.get(key).models.add(l.model);
-  }
-  return [...bySupplier.values()].filter(s => s.models.size >= 2).map(s => ({ supplier: s.supplier, models: [...s.models] }));
+  // Grouped by normalised name so "NdMag Ltd" and "ndmag ltd " count as one supplier; shows the first spelling seen.
+  return [...Map.groupBy(links.filter(isMapped), l => norm(l.supplier)).values()]
+    .map(ls => ({ supplier: ls[0].supplier, models: [...new Set(ls.map(l => l.model))] }))
+    .filter(s => s.models.length >= 2);
 }
 
 export function getModelRisk(links, model) {
@@ -69,12 +58,11 @@ export function getModelRisk(links, model) {
   const counts = { single_country: 0, single_source: 0, unknown: 0, low_confidence: 0, conflicts: 0 };
   const flagged = [];
   for (const [component, compLinks] of comps) {
-    const a = assess(compLinks);
-    for (const r of a.reasons) counts[r === 'conflict' ? 'conflicts' : r]++;
-    if (a.reasons.length) {
-      if (a.low_confidence) counts.low_confidence++;
-      flagged.push({ component, reasons: a.reasons, countries: a.countries, low_confidence: !!a.low_confidence, link_ids: a.cite.map(l => l.id) });
-    }
+    const verdict = assess(compLinks);
+    if (!verdict.reasons.length) continue;
+    for (const r of verdict.reasons) counts[COUNT_KEY[r] ?? r]++;
+    if (verdict.low_confidence) counts.low_confidence++;
+    flagged.push({ component, reasons: verdict.reasons, countries: verdict.countries, low_confidence: verdict.low_confidence, link_ids: verdict.cite.map(l => l.id) });
   }
   return { model, counts, flagged, chokepoints: chokepoints(links).filter(c => c.models.includes(model)) };
 }
@@ -82,14 +70,11 @@ export function getModelRisk(links, model) {
 export function getChain(links, model, component) {
   const compLinks = group(links).get(model)?.get(component);
   if (!compLinks) return null;
-  const mapped = compLinks.filter(isMapped);
-  // Unmapped records are shown where they are the verdict (the whole component, or tiers below the deepest
-  // mapped one), so the gap itself has a citable source.
-  const a = assess(compLinks);
-  const shown = a.unknown ? compLinks : [...mapped, ...a.unmappedBelow];
-  const tiers = [...new Set(shown.map(l => l.tier))].sort((a, b) => a - b)
-    .map(tier => ({ tier, links: shown.filter(l => l.tier === tier).map(linkOut) }));
-  return { model, component, status: mapped.length ? 'mapped' : 'unknown', tiers };
+  const verdict = assess(compLinks);
+  // Unmapped records are shown where they decide the verdict, so the gap itself has a citable source.
+  const byTier = Map.groupBy([...verdict.mapped, ...verdict.gaps], l => l.tier);
+  const tiers = [...byTier.keys()].sort((x, y) => x - y).map(tier => ({ tier, links: byTier.get(tier).map(linkOut) }));
+  return { model, component, status: verdict.mapped.length ? 'mapped' : 'unknown', tiers };
 }
 
 export function simulateCutoff(links, country) {
@@ -97,16 +82,15 @@ export function simulateCutoff(links, country) {
   const out = { country: c, affected: [], fully_blocked: [], unknown: [], models_affected: [] };
   for (const [model, comps] of group(links)) {
     for (const [component, compLinks] of comps) {
-      const a = assess(compLinks);
-      if (a.unknown) { out.unknown.push({ model, component, link_ids: a.cite.map(l => l.id) }); continue; }
-      const hit = compLinks.filter(l => isMapped(l) && norm(l.supplier_country) === c);
+      const verdict = assess(compLinks);
+      const hit = verdict.mapped.filter(l => norm(l.supplier_country) === c);
       if (!hit.length) {
-        // Nothing mapped there, but a deeper tier is unknown: it could still be there, so never report it as safe.
-        if (a.unmappedBelow.length) out.unknown.push({ model, component, link_ids: a.cite.map(l => l.id) });
+        // Nothing mapped there, but an unknown tier could be: never report it as safe.
+        if (verdict.gaps.length) out.unknown.push({ model, component, link_ids: verdict.cite.map(l => l.id) });
         continue;
       }
       out.affected.push({ model, component, link_ids: hit.map(l => l.id) });
-      if (a.countries.length === 1 && a.countries[0] === c) out.fully_blocked.push({ model, component });
+      if (verdict.countries.length === 1 && verdict.countries[0] === c) out.fully_blocked.push({ model, component });
     }
   }
   out.models_affected = [...new Set(out.affected.map(x => x.model))];

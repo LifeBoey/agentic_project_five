@@ -1,0 +1,222 @@
+{
+  "model": "Skydio X10",
+  "category": "radio",
+  "component": "Radio",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "Radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Skydio, Inc.",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/2ATQRSMODBV3S",
+          "quote": "FCC ID 2ATQRSMODBV3S\nSkydioLink Third Generation Radio Module\nby Skydio, Inc."
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Skydio, Inc.",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/2ATQRSMODBV3S",
+          "quote": "FCC ID 2ATQRSMODBV3S\nSkydioLink Third Generation Radio Module\nby Skydio, Inc."
+        }
+      ],
+      "notes": "Skydio's FCC filings show the X10's datalink is Skydio's own in-house module, the \"SkydioLink Third Generation Radio Module\" (FCC ID 2ATQRSMODBV3S, single modular approval, 2.4/5 GHz SDR), used across X10, X10 Controller, Dock for X10 and R10. I could not open the internal photos/block diagram/theory-of-operation exhibits (PDFs and metadata-only, Cloudflare-blocked mirrors), so no source identifies the RF/radio chipset inside the module — tier 2 is empty rather than guessed.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 datalink radio module teardown FCC filing"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 FCC ID radio transmitter"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 radio \"Skydio Link\" datalink module supplier"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://support.skydio.com/hc/en-us/articles/40739840785947-Skydio-Product-Radio-Certification-Information"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Doodle Labs Skydio X10 radio"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2ATQRSMODBV3S"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fcc.report/FCC-ID/2ATQRSMODBV3S"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"SkydioLink\" radio module chipset SDR"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://manuals.plus/m/c1ffc91637aae7044ed28ab97b31501c5021912ed426a91000b38a2fa95a1717"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://device.report/m/ab386d00e8b985388d4ee7df368f9df715b4449cc45ab3a35cc938c8241f6d53"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2ATQRSMODBV3S/User-Manual/SkydioLink-Gen-3-Dual-Band-Module-User-Manual-r5-7098542"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 internals teardown radio board Qualcomm chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "fccid.io 2ATQRSMODBV3S SkydioLink Gen 3 user manual internal photos"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.manualslib.com/manual/2345382/Skydio-Skydiolink.html"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2ATQRSMODBV3S/Internal-Photos"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"2ATQRSMODBV3S\" internal photos pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio Doodle Labs partnership radio module press release"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" radio \"Qualcomm\" chipset SkydioLink WiFi 5GHz module"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2ATQRSMODBV3S/Internal-Photos/C18-Internal-Photos-7098538"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio Link\" OR \"SkydioLink\" SDR \"Analog Devices\" OR \"AD9361\" OR \"Xilinx\" datalink"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown internal photos FCC drone aircraft 2ATQR"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://fccid.io/2ATQRSMODBV3S/Internal-Photos/C18-Internal-Photos-7098538.pdf"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio radio module \"SDR\" chipset \"Sidekiq\" OR \"SkydioLink\" wifi chip manufacturer"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Radio",
+          "part": null,
+          "tier": 1,
+          "supplier": "Skydio, Inc.",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://fccid.io/2ATQRSMODBV3S",
+          "quote": "FCC ID 2ATQRSMODBV3S\nSkydioLink Third Generation Radio Module\nby Skydio, Inc.",
+          "confidence": "low",
+          "evidence_quote": "FCC ID 2ATQRSMODBV3S SkydioLink Third Generation Radio Module by Skydio, Inc.",
+          "reason": "The FCC page shows Skydio, Inc. (San Mateo, CA) as grantee of a radio module and X10-related exhibits, but never explicitly states the module supplies the X10 drone.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "Radio",
+      "part": null,
+      "tier": 1,
+      "supplier": "Skydio, Inc.",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://fccid.io/2ATQRSMODBV3S",
+      "quote": "FCC ID 2ATQRSMODBV3S\nSkydioLink Third Generation Radio Module\nby Skydio, Inc.",
+      "confidence": "low",
+      "evidence_quote": "FCC ID 2ATQRSMODBV3S SkydioLink Third Generation Radio Module by Skydio, Inc.",
+      "reason": "The FCC page shows Skydio, Inc. (San Mateo, CA) as grantee of a radio module and X10-related exhibits, but never explicitly states the module supplies the X10 drone.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": false,
+  "notes": "Skydio's FCC filings show the X10's datalink is Skydio's own in-house module, the \"SkydioLink Third Generation Radio Module\" (FCC ID 2ATQRSMODBV3S, single modular approval, 2.4/5 GHz SDR), used across X10, X10 Controller, Dock for X10 and R10. I could not open the internal photos/block diagram/theory-of-operation exhibits (PDFs and metadata-only, Cloudflare-blocked mirrors), so no source identifies the RF/radio chipset inside the module — tier 2 is empty rather than guessed.",
+  "when": "2026-11-11T06:07:28+00:00"
+}

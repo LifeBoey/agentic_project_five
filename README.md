@@ -7,8 +7,9 @@ Shows a procurement officer where a drone model depends on a single country. Ful
 | Path | What lives there |
 |---|---|
 | `docs/` | Brief and other product docs |
-| `research/` | Riskiest-bet test and research notes |
-| `data/links.json` | Supplier links, one flat record each (Role 1 owns). Currently fake data. |
+| `research/` | Riskiest-bet result, coverage note, and `raw/` audit trail of every research and verifier run (Role 1) |
+| `data/links.json` | Supplier links, one flat record each (Role 1 owns). Real data: Skydio X10 so far, more models appended. Conventions: [docs/links-format.md](docs/links-format.md) |
+| `pipeline/` | Research and verifier agents that build `data/links.json` (Role 1). See [pipeline/README.md](pipeline/README.md) |
 | `src/risk.js` | Graph and risk rules (Role 2) |
 | `src/agent.js` | Query agent behind `ask()` (Role 2) |
 | `src/server.js` | Risk API plus the static viewer, on one port |

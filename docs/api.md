@@ -52,7 +52,11 @@ Shortened to the first 2 of 5 flagged components:
     { "component": "camera sensor", "reasons": ["conflict", "unknown"],
       "countries": ["KR", "JP", "US"], "low_confidence": true, "link_ids": [3, 4, 5, 6] }
   ],
-  "chokepoints": [{ "supplier": "Teledyne FLIR", "models": ["Skydio X10", "Teal 2"] }]
+  "chokepoints": [
+    { "supplier": "Dongguan Poweramp Technology Ltd.", "models": ["Skydio X10", "DJI Mavic 3 Enterprise"] },
+    { "supplier": "Sony", "models": ["Skydio X10", "DJI Mavic 3 Enterprise"] },
+    { "supplier": "Teledyne FLIR", "models": ["Skydio X10", "Teal 2", "Parrot Anafi USA"] }
+  ]
 }
 ```
 
@@ -96,17 +100,19 @@ curl -s "localhost:3001/api/models/Skydio%20X10/chain/motors"
 curl -s localhost:3001/api/cutoff/CN
 ```
 
-Shortened to the first 2 of 18 unknown components:
+Shortened to the first 2 of 17 unknown components:
 
 ```json
 {
   "country": "CN",
   "affected": [
     { "model": "Skydio X10", "component": "battery cells", "link_ids": [0] },
-    { "model": "DJI Mavic 3 Enterprise", "component": "radio", "link_ids": [53, 54, 55] }
+    { "model": "DJI Mavic 3 Enterprise", "component": "battery cells", "link_ids": [63] },
+    { "model": "DJI Mavic 3 Enterprise", "component": "radio", "link_ids": [53, 54, 55, 66] }
   ],
   "fully_blocked": [
     { "model": "Skydio X10", "component": "battery cells" },
+    { "model": "DJI Mavic 3 Enterprise", "component": "battery cells" },
     { "model": "DJI Mavic 3 Enterprise", "component": "radio" }
   ],
   "unknown": [
@@ -126,7 +132,7 @@ curl -s -X POST localhost:3001/api/ask -H 'content-type: application/json' \
   -d '{"question":"Which models would be hit if China were cut off?"}'
 ```
 
-Returns `{ "answer": "...", "links": [ full records, each with its id ] }`. The real answer to that question, with `links` shortened:
+Returns `{ "answer": "...", "links": [ full records, each with its id ] }`. A real answer to that question, captured on the 56-record dataset before #10 added DJI's battery cells, with `links` shortened:
 
 > If China (CN) were cut off, two models would be directly hit with a confirmed block: Skydio X10 (battery cells fully blocked, link 0) and DJI Mavic 3 Enterprise (radio fully blocked, links 53-55). Several other component dependencies have unmapped China exposure, so they cannot be confirmed safe: […] Those unknown items should be treated as at risk until their supply chains are mapped.
 

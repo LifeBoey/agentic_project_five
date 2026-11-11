@@ -10,20 +10,20 @@ Procurement officers can see a drone's first-tier suppliers, but not what sits u
 
 ## What the map shows today
 
-Four models, 56 supplier records. Every mapped link was checked by a verifier agent, and 2 more were rejected by hand. These figures come from `data/links.json` as of this commit, read through the risk engine:
+Four models, 67 supplier records. Every mapped link was checked by a verifier agent, and 4 were overruled by hand after reading the evidence. These figures come from `data/links.json` as of this commit, read through the risk engine:
 
 | Model | Components that depend on a single country | Partly or fully unmapped |
 |---|---|---|
 | Skydio X10 | battery cells (China), flight controller chip (US), motors (Japan), radio (US) | 5 of 5 |
-| Parrot Anafi USA | flight controller chip (US), radio (Canada) | 5 of 5 |
-| Teal 2 | camera sensor (US), motors (US), radio (Singapore) | 5 of 5 |
-| DJI Mavic 3 Enterprise | radio (China) | 4 of 5 |
+| Parrot Anafi USA | battery cells (South Korea), camera sensor (US), flight controller chip (US), radio (Canada) | 5 of 5 |
+| Teal 2 | camera sensor (US), flight controller chip (US), motors (US), radio (Singapore) | 5 of 5 |
+| DJI Mavic 3 Enterprise | battery cells (China), camera sensor (Japan), radio (China) | 4 of 5 |
 
 What that means:
 
-- **A China cut-off provably hits 2 components** (Skydio X10 battery cells, DJI Mavic 3 Enterprise radio), and **18 more cannot be ruled out** because a tier is unmapped. The tool shows those as unknown, never as safe.
-- **Teledyne FLIR is a shared supplier**: the same thermal sensor maker sits in Skydio X10 and Teal 2.
-- **Public sources answer "who does the drone maker buy from", not "what is inside the part".** 20 of 56 links are mapped, none at high confidence, and almost every sub-tier (magnets, cell materials, chip fabs) is unmapped. The [riskiest-bet test](research/riskiest-bet.md) failed on sub-tier for this reason. Sub-tier data needs paid teardowns, customs records or vendor questionnaires; the interface says "Ask the vendor" on every gap.
+- **A China cut-off provably hits 3 components** (Skydio X10 battery cells, DJI Mavic 3 Enterprise battery cells and radio), and **17 more cannot be ruled out** because a tier is unmapped. The tool shows those as unknown, never as safe.
+- **Three suppliers are shared across models**: Teledyne FLIR (Skydio X10, Teal 2, Parrot Anafi USA), Sony and Dongguan Poweramp (both Skydio X10 and DJI Mavic 3 Enterprise). One of them failing hits several drones at once.
+- **Public sources answer "who does the drone maker buy from", not "what is inside the part".** 31 of 67 links are mapped, none at high confidence, and almost every sub-tier (magnets, cell materials, chip fabs) is unmapped. The [riskiest-bet test](research/riskiest-bet.md) failed on sub-tier for this reason. Sub-tier data needs paid teardowns, customs records or vendor questionnaires; the interface says "Ask the vendor" on every gap.
 
 Per-model detail and the research notes behind every gap: [research/coverage.md](research/coverage.md).
 

@@ -23,7 +23,7 @@ flowchart LR
 
 1. **Research** (`pipeline/`). For each model and research category (motors, magnets, battery cells, flight controller chip, camera sensor, radio), a research agent searches the web and returns up to 3 sourced candidates per part and tier.
 2. **Verify.** A verifier agent opens every source page and rates each claim `high`, `low` or `unmapped`. Code then checks that the verifier's evidence quote really appears on the page. Claims based only on a supplier's headquarters are capped at `low`. If every source for a tier is rejected, research runs once more with those URLs excluded.
-3. **Hand check.** `research/overrides.json` holds verdicts a person made after reading the evidence; they override the verifier (2 so far).
+3. **Hand check.** `research/overrides.json` holds verdicts a person made after reading the evidence; they override the verifier (4 so far).
 4. **Merge.** Rejected links are dropped, supplier spellings folded into one, conflicts flagged, and an `unmapped` record written for every tier searched with no result. New records are appended; existing ones keep their position, which is their id. The full trail of every job goes to `research/raw/`.
 5. **Validate and assess** (`src/risk.js`). On every API request the server re-reads `links.json`, validates every record, and runs the [risk rules](risk-model.md).
 6. **Serve** (`src/server.js`). The [Risk API](api.md) answers the interface, the query agent and the brief agent, and serves the built interface on the same port.

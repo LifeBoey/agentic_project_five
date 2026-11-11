@@ -10,7 +10,7 @@ Shows a procurement officer where a drone model depends on a single country. Ful
 |---|---|
 | `docs/` | Brief and other product docs |
 | `research/` | Riskiest-bet result, coverage note, and `raw/` audit trail of every research and verifier run (Role 1) |
-| `data/links.json` | Supplier links, one flat record each (Role 1 owns). Real data: Skydio X10 so far, more models appended. Conventions: [docs/links-format.md](docs/links-format.md) |
+| `data/links.json` | Supplier links, one flat record each (Role 1 owns). Real data for 4 models (Skydio X10, Parrot Anafi USA, Teal 2, DJI Mavic 3 Enterprise); new batches are appended. Conventions: [docs/links-format.md](docs/links-format.md) |
 | `pipeline/` | Research and verifier agents that build `data/links.json` (Role 1). See [pipeline/README.md](pipeline/README.md) |
 | `src/risk.js` | Graph and risk rules (Role 2) |
 | `src/agent.js` | Query agent behind `ask()` (Role 2) |

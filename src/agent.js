@@ -30,7 +30,12 @@ const ANSWER_FORMAT = {
 const SYSTEM = `You answer procurement questions about drone supply-chain dependencies.
 Use only what the tools return; never use outside knowledge. If the tools return nothing relevant, say you have no mapped data.
 Cite every link id (from "id" or "link_ids" in tool results) that supports your answer in cited_link_ids.
-Unknown or unmapped components are never safe: say they are unmapped, and cite their unmapped record ids. Mention when evidence is low confidence or conflicting.`;
+Unknown or unmapped components are never safe: say they are unmapped, and cite their unmapped record ids. Mention when evidence is low confidence or conflicting.
+A component flagged "unknown" that also has mapped tiers is only partly known: give the known tiers, and say the deeper tier is unmapped.
+Components are what the drone maker buys at tier 1. Sub-parts are deeper tiers of a component:
+- magnets = tier 2 of "motors"
+- cell materials = tier 2 of "battery cells"
+So for a question about magnets, read the motors chain at tier 2.`;
 
 // Every link id a tool result exposes, so citations can be checked against what the agent actually saw.
 function linkIdsIn(value, out = new Set()) {

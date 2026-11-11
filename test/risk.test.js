@@ -106,12 +106,39 @@ test('cut-off splits affected, fully blocked and unknown', () => {
   const key = xs => xs.map(x => `${x.model}/${x.component}`);
   assert.deepEqual(key(r.affected), ['Falcon X/motors', 'Falcon X/battery cells', 'Hawk 2/motors']);
   assert.deepEqual(key(r.fully_blocked), ['Falcon X/motors', 'Hawk 2/motors']);
-  assert.deepEqual(key(r.unknown), ['Falcon X/camera sensor']);
+  assert.deepEqual(key(r.unknown), ['Falcon X/camera sensor', 'Hawk 2/radio']);
   assert.deepEqual(r.models_affected, ['Falcon X', 'Hawk 2']);
 });
 
 test('cut-off of an unused country affects nothing but still reports unknowns', () => {
   const r = simulateCutoff(links, 'DE');
   assert.equal(r.affected.length, 0);
-  assert.equal(r.unknown.length, 1);
+  assert.equal(r.unknown.length, 2);
+});
+
+test('an unmapped tier below the deepest mapped tier flags the component unknown', () => {
+  const radio = getModelRisk(links, 'Hawk 2').flagged.find(f => f.component === 'radio');
+  // Tier-1 facts stay, but the unknown tier 2 means it must not read as safe.
+  assert.deepEqual(radio.reasons, ['single_country', 'single_source', 'unknown']);
+  assert.deepEqual(radio.link_ids, [8, 9]);
+  assert.equal(getModelRisk(links, 'Hawk 2').counts.unknown, 1);
+  const chain = getChain(links, 'Hawk 2', 'radio');
+  assert.equal(chain.status, 'mapped');
+  assert.deepEqual(chain.tiers.map(t => t.links.map(l => l.confidence)), [['high'], ['unmapped']]);
+});
+
+test('cut-off: a partly unknown component is unknown unless a mapped link is hit', () => {
+  const us = simulateCutoff(links, 'US');
+  assert.ok(us.affected.some(x => x.component === 'radio'));
+  assert.ok(!us.unknown.some(x => x.component === 'radio'));
+  const cn = simulateCutoff(links, 'CN').unknown.find(x => x.component === 'radio');
+  assert.deepEqual(cn.link_ids, [8, 9]);
+});
+
+test('an unmapped tier above the deepest mapped tier does not flag unknown', () => {
+  const data = withIds([
+    L({ tier: 1, confidence: 'unmapped', supplier: '', supplier_country: '' }),
+    L({ tier: 2, supplier: 'A', supplier_country: 'CN' }),
+  ]);
+  assert.ok(!getModelRisk(data, 'M').flagged[0].reasons.includes('unknown'));
 });

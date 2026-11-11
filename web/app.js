@@ -12,8 +12,9 @@ function renderComponent(f, chain) {
   if (chain.status === 'unknown') {
     return `<li class="unmapped">${esc(f.component)}: Unmapped, no reliable source found. Ask the vendor.</li>`;
   }
-  const tiers = chain.tiers.map(t => `<div class="tier">${t.links.map(l =>
-    `<a class="source ${l.confidence === 'low' ? 'low' : ''}" href="${esc(safeUrl(l.source_url))}" target="_blank" rel="noopener">
+  const tiers = chain.tiers.map(t => `<div class="tier">${t.links.map(l => l.confidence === 'unmapped'
+    ? `<span class="source unmapped">T${esc(t.tier)}: Unmapped, no reliable source found</span>`
+    : `<a class="source ${l.confidence === 'low' ? 'low' : ''}" href="${esc(safeUrl(l.source_url))}" target="_blank" rel="noopener">
       T${esc(t.tier)}: ${esc(l.supplier)} (${esc(l.supplier_country)})</a>`).join('')}</div>`).join('');
   const single = f.reasons.includes('single_country');
   return `<li class="${single ? 'single' : ''}">${esc(f.component)} <small>${esc(f.reasons.join(', '))}</small>${tiers}</li>`;

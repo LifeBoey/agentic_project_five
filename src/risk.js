@@ -27,11 +27,13 @@ function group(links) {
 }
 
 // Everything the rules need for one component, read from its deepest mapped tier.
-// Unknown components keep their unmapped records in `deep` so the agent can cite "unmapped" as evidence.
+// `cite` holds the ids that back the verdict, including unmapped records, so the agent can cite a gap.
 function assess(compLinks) {
   const mapped = compLinks.filter(isMapped);
-  if (mapped.length === 0) return { unknown: true, deep: compLinks, countries: [], reasons: ['unknown'], low_confidence: false };
+  if (mapped.length === 0) return { unknown: true, deep: [], cite: compLinks, countries: [], reasons: ['unknown'], low_confidence: false };
   const deepest = Math.max(...mapped.map(l => l.tier));
+  // A tier searched below the deepest mapped one with nothing found: the deeper truth is unknown.
+  const unmappedBelow = compLinks.filter(l => !isMapped(l) && l.tier > deepest);
   const deep = mapped.filter(l => l.tier === deepest);
   const rawCountries = new Set(deep.map(l => norm(l.supplier_country)));
   const countries = [...rawCountries].filter(Boolean);
@@ -40,7 +42,12 @@ function assess(compLinks) {
   if (countries.length === 1 && !rawCountries.has('')) reasons.push('single_country');
   if (new Set(deep.map(l => norm(l.supplier))).size === 1) reasons.push('single_source');
   if (mapped.some(l => l.conflict)) reasons.push('conflict');
-  return { unknown: false, deep, countries, reasons, low_confidence: deep.every(l => l.confidence === 'low') };
+  if (unmappedBelow.length) reasons.push('unknown');
+  return {
+    unknown: false, unmappedBelow, deep, countries, reasons,
+    low_confidence: deep.every(l => l.confidence === 'low'),
+    cite: [...deep, ...unmappedBelow],
+  };
 }
 
 export const getModels = links => [...group(links).keys()];
@@ -66,7 +73,7 @@ export function getModelRisk(links, model) {
     for (const r of a.reasons) counts[r === 'conflict' ? 'conflicts' : r]++;
     if (a.reasons.length) {
       if (a.low_confidence) counts.low_confidence++;
-      flagged.push({ component, reasons: a.reasons, countries: a.countries, low_confidence: !!a.low_confidence, link_ids: a.deep.map(l => l.id) });
+      flagged.push({ component, reasons: a.reasons, countries: a.countries, low_confidence: !!a.low_confidence, link_ids: a.cite.map(l => l.id) });
     }
   }
   return { model, counts, flagged, chokepoints: chokepoints(links).filter(c => c.models.includes(model)) };
@@ -76,8 +83,10 @@ export function getChain(links, model, component) {
   const compLinks = group(links).get(model)?.get(component);
   if (!compLinks) return null;
   const mapped = compLinks.filter(isMapped);
-  // An unknown component shows its unmapped records, so the gap itself has a citable source.
-  const shown = mapped.length ? mapped : compLinks;
+  // Unmapped records are shown where they are the verdict (the whole component, or tiers below the deepest
+  // mapped one), so the gap itself has a citable source.
+  const a = assess(compLinks);
+  const shown = a.unknown ? compLinks : [...mapped, ...a.unmappedBelow];
   const tiers = [...new Set(shown.map(l => l.tier))].sort((a, b) => a - b)
     .map(tier => ({ tier, links: shown.filter(l => l.tier === tier).map(linkOut) }));
   return { model, component, status: mapped.length ? 'mapped' : 'unknown', tiers };
@@ -89,9 +98,13 @@ export function simulateCutoff(links, country) {
   for (const [model, comps] of group(links)) {
     for (const [component, compLinks] of comps) {
       const a = assess(compLinks);
-      if (a.unknown) { out.unknown.push({ model, component, link_ids: a.deep.map(l => l.id) }); continue; }
+      if (a.unknown) { out.unknown.push({ model, component, link_ids: a.cite.map(l => l.id) }); continue; }
       const hit = compLinks.filter(l => isMapped(l) && norm(l.supplier_country) === c);
-      if (!hit.length) continue;
+      if (!hit.length) {
+        // Nothing mapped there, but a deeper tier is unknown: it could still be there, so never report it as safe.
+        if (a.unmappedBelow.length) out.unknown.push({ model, component, link_ids: a.cite.map(l => l.id) });
+        continue;
+      }
       out.affected.push({ model, component, link_ids: hit.map(l => l.id) });
       if (a.countries.length === 1 && a.countries[0] === c) out.fully_blocked.push({ model, component });
     }

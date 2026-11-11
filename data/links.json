@@ -6,5 +6,7 @@
   { "model": "Falcon X", "component": "camera sensor", "supplier": "", "supplier_country": "", "tier": 1, "source_url": "", "confidence": "unmapped", "conflict": false },
   { "model": "Hawk 2", "component": "motors", "supplier": "AeroMotor Inc", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fake/aeromotor-hawk", "confidence": "high", "conflict": false },
   { "model": "Hawk 2", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "source_url": "https://example.com/fake/ndmag-hawk", "confidence": "low", "conflict": false },
-  { "model": "Hawk 2", "component": "flight controller chip", "supplier": "ChipFab", "supplier_country": "TW", "tier": 1, "source_url": "https://example.com/fake/chipfab", "confidence": "high", "conflict": false }
+  { "model": "Hawk 2", "component": "flight controller chip", "supplier": "ChipFab", "supplier_country": "TW", "tier": 1, "source_url": "https://example.com/fake/chipfab", "confidence": "high", "conflict": false },
+  { "model": "Hawk 2", "component": "radio", "supplier": "RadioWorks", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fake/radioworks", "confidence": "high", "conflict": false },
+  { "model": "Hawk 2", "component": "radio", "supplier": "", "supplier_country": "", "tier": 2, "source_url": "", "confidence": "unmapped", "conflict": false }
 ]

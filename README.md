@@ -31,6 +31,8 @@ Then open http://localhost:3001. `npm test` runs the tests, which make no live A
   "conflict": false }
 ```
 
+A **component** is what the drone maker buys at tier 1 (motors, battery cells, flight controller chip, camera sensor, radio). Sub-parts are deeper tiers of it: magnets are tier 2 of `motors`, cell materials are tier 2 of `battery cells`. Write an `unmapped` record for every tier you searched and found nothing, so "searched, not found" differs from "not researched".
+
 A link's `id` in API responses is its position in the array. The file is re-read on every request, so new batches show up without a restart.
 
 ## Risk API
@@ -51,11 +53,11 @@ Every rule reads a component's deepest tier and ignores `unmapped` records.
 
 - **Single-country:** every link at the deepest tier names one country. A link with a blank country blocks the claim. Components whose only evidence is low confidence are still flagged, with `low_confidence: true`.
 - **Single-source:** exactly one distinct supplier at the deepest tier. Supplier names and countries are matched ignoring case and surrounding spaces.
-- **Unknown:** the component has only `unmapped` records. It is never treated as safe.
+- **Unknown:** the component has only `unmapped` records, or has an `unmapped` record at a tier deeper than its deepest mapped tier (partly known: its mapped tiers still show). It is never treated as safe.
 - **Conflict:** any of the component's mapped records has `conflict: true`.
 - **Low confidence (count):** a flagged component whose deepest-tier evidence is all `low`.
 - **Chokepoint:** a supplier that appears in 2 or more models, at any tier.
-- **Cut-off:** `affected` means any mapped link is in that country. `fully_blocked` means the deepest tier is only that country.
+- **Cut-off:** `affected` means any mapped link is in that country. `fully_blocked` means the deepest tier is only that country. `unknown` lists fully unmapped components, plus partly known ones with no mapped link in that country.
 
 ## Query agent
 

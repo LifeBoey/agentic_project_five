@@ -1,5 +1,7 @@
 # Drone dependency map
 
+<img src="web/public/logo.svg" alt="Drone dependency map logo: a drone seen from above with one red rotor" width="72" align="right">
+
 Shows a procurement officer where a drone model depends on a single country. Full brief: [docs/brief.md](docs/brief.md).
 
 ## Layout

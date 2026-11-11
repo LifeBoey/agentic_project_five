@@ -66,7 +66,7 @@ export async function handle(req, res) {
   const url = new URL(req.url, 'http://localhost');
   const parts = url.pathname.split('/').filter(Boolean).map(decodeURIComponent);
   if (parts[0] !== 'api') {
-    if (url.pathname === '/') { res.writeHead(302, { location: '/web/' }); return res.end(); }
+    if (url.pathname === '/') { res.writeHead(302, { location: '/web/dist/' }); return res.end(); }
     return serveStatic(res, url.pathname.replace(/^\/web/, '') || '/');
   }
 

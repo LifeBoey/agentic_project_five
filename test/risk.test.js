@@ -176,3 +176,13 @@ test('the real data/links.json passes validation', async () => {
   const real = await loadLinks();
   assert.ok(getModels(real).length > 0);
 });
+
+test('model risk lists every component, including ones with no flag', () => {
+  const rec = (component, supplier, supplier_country, tier = 1) =>
+    ({ model: 'M', component, supplier, supplier_country, tier, source_url: 'https://example.com/x', confidence: 'high', conflict: false });
+  const data = parseLinks([rec('radio', 'A', 'US'), rec('radio', 'B', 'DE'), rec('motors', 'C', 'JP')]);
+  const r = getModelRisk(data, 'M');
+  assert.deepEqual(r.components, ['radio', 'motors']);
+  // radio has two suppliers in two countries, so nothing flags it, yet it is still listed.
+  assert.deepEqual(r.flagged.map(f => f.component), ['motors']);
+});

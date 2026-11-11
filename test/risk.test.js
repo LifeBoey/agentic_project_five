@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { loadLinks, parseLinks, getModels, getModelRisk, getChain, simulateCutoff } from '../src/risk.js';
 
-const links = await loadLinks();
+const links = await loadLinks(new URL('./fixtures/links.json', import.meta.url));
 
 test('lists models in file order', () => {
   assert.deepEqual(getModels(links), ['Falcon X', 'Hawk 2']);
@@ -163,4 +163,16 @@ test('a mapped link needs a supplier and an http(s) source; an unmapped one does
 test('the error lists at most 10 problems and counts the rest', () => {
   const bad = Array.from({ length: 12 }, () => L({ tier: 0 }));
   assert.throws(() => parseLinks(bad), /\(and 2 more\)$/);
+});
+
+test("Role 1's optional part label passes through the chain", () => {
+  const data = withIds([L({ tier: 1 }), L({ tier: 2, part: 'Magnets', supplier: 'B' })]);
+  const tiers = getChain(data, 'M', 'c').tiers;
+  assert.equal(tiers[1].links[0].part, 'Magnets');
+  assert.ok(!('part' in JSON.parse(JSON.stringify(tiers[0].links[0]))));
+});
+
+test('the real data/links.json passes validation', async () => {
+  const real = await loadLinks();
+  assert.ok(getModels(real).length > 0);
 });

@@ -3,7 +3,8 @@ import { readFile } from 'node:fs/promises';
 
 const LINKS_PATH = new URL('../data/links.json', import.meta.url);
 
-export const loadLinks = async () => parseLinks(JSON.parse(await readFile(LINKS_PATH, 'utf8')));
+// Tests pass their fixture path; the server uses Role 1's real data.
+export const loadLinks = async (path = LINKS_PATH) => parseLinks(JSON.parse(await readFile(path, 'utf8')));
 
 const CONFIDENCE = ['high', 'low', 'unmapped'];
 const MAX_REPORTED = 10;
@@ -40,8 +41,9 @@ function recordProblems(l) {
 
 const isMapped = l => l.confidence !== 'unmapped';
 const norm = s => String(s ?? '').trim().toUpperCase();
-const linkOut = ({ id, supplier, supplier_country, source_url, confidence, conflict }) =>
-  ({ id, supplier, supplier_country, source_url, confidence, conflict });
+// `part` is Role 1's optional sub-tier label (e.g. "Magnets"); undefined drops out of the JSON when absent.
+const linkOut = ({ id, supplier, supplier_country, source_url, confidence, conflict, part }) =>
+  ({ id, supplier, supplier_country, source_url, confidence, conflict, part });
 // Reason names are singular; the README's count keys pluralise only this one.
 const COUNT_KEY = { conflict: 'conflicts' };
 

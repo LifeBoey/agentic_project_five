@@ -21,7 +21,7 @@ npm install
 npm start
 ```
 
-Then open http://localhost:3001. `npm test` runs the tests, which make no live API calls. `ask()` needs Claude credentials. Copy `.env.example` to `.env` and fill in the key; `npm start` loads it. Without credentials, `/api/ask` returns 503 and everything else still works.
+Then open http://localhost:3001. `npm test` runs the tests against `test/fixtures/links.json` (fake data) and also checks that the real `data/links.json` passes validation; no live API calls. `ask()` needs Claude credentials. Copy `.env.example` to `.env` and fill in `OPENCODE_API_KEY` (shared with the research pipeline; `ANTHROPIC_API_KEY` overrides it); `npm start` loads it. Without credentials, `/api/ask` returns 503 and everything else still works.
 
 ## Data format (`data/links.json`, frozen)
 
@@ -43,7 +43,7 @@ A link's `id` in API responses is its position in the array. The file is re-read
 |---|---|
 | `GET /api/models` | `["Falcon X", ...]` |
 | `GET /api/models/:model/risk` | `{ model, counts: { single_country, single_source, unknown, low_confidence, conflicts }, flagged: [{ component, reasons, countries, low_confidence, link_ids }], chokepoints: [{ supplier, models }] }` |
-| `GET /api/models/:model/chain/:component` | `{ model, component, status: "mapped"\|"unknown", tiers: [{ tier, links: [{ id, supplier, supplier_country, source_url, confidence, conflict }] }] }` |
+| `GET /api/models/:model/chain/:component` | `{ model, component, status: "mapped"\|"unknown", tiers: [{ tier, links: [{ id, supplier, supplier_country, source_url, confidence, conflict, part? }] }] }` |
 | `GET /api/cutoff/:country` | `{ country, affected: [{ model, component, link_ids }], fully_blocked: [{ model, component }], unknown: [{ model, component, link_ids }], models_affected }` |
 | `POST /api/ask` `{ question }` | `{ answer, links: [full records] }`, or the fixed refusal "No mapped data to answer that." with `links: []` |
 

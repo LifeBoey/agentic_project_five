@@ -1,12 +1,179 @@
 [
-  { "model": "Falcon X", "component": "motors", "supplier": "AeroMotor Inc", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fake/aeromotor-falcon", "confidence": "high", "conflict": false },
-  { "model": "Falcon X", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "source_url": "https://example.com/fake/ndmag-falcon", "confidence": "high", "conflict": false },
-  { "model": "Falcon X", "component": "battery cells", "supplier": "CellCorp", "supplier_country": "KR", "tier": 1, "source_url": "https://example.com/fake/cellcorp", "confidence": "high", "conflict": true },
-  { "model": "Falcon X", "component": "battery cells", "supplier": "LiPower", "supplier_country": "CN", "tier": 1, "source_url": "https://example.com/fake/lipower", "confidence": "low", "conflict": true },
-  { "model": "Falcon X", "component": "camera sensor", "supplier": "", "supplier_country": "", "tier": 1, "source_url": "", "confidence": "unmapped", "conflict": false },
-  { "model": "Hawk 2", "component": "motors", "supplier": "AeroMotor Inc", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fake/aeromotor-hawk", "confidence": "high", "conflict": false },
-  { "model": "Hawk 2", "component": "motors", "supplier": "NdMag Ltd", "supplier_country": "CN", "tier": 2, "source_url": "https://example.com/fake/ndmag-hawk", "confidence": "low", "conflict": false },
-  { "model": "Hawk 2", "component": "flight controller chip", "supplier": "ChipFab", "supplier_country": "TW", "tier": 1, "source_url": "https://example.com/fake/chipfab", "confidence": "high", "conflict": false },
-  { "model": "Hawk 2", "component": "radio", "supplier": "RadioWorks", "supplier_country": "US", "tier": 1, "source_url": "https://example.com/fake/radioworks", "confidence": "high", "conflict": false },
-  { "model": "Hawk 2", "component": "radio", "supplier": "", "supplier_country": "", "tier": 2, "source_url": "", "confidence": "unmapped", "conflict": false }
+  {
+    "model": "Skydio X10",
+    "component": "battery cells",
+    "supplier": "Dongguan Poweramp Technology Ltd.",
+    "supplier_country": "CN",
+    "tier": 1,
+    "source_url": "https://crucibeljournal.com/the-battery-wars/",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "battery cells",
+    "part": "Cathode material",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 2,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "battery cells",
+    "part": "Battery raw material",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 3,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "camera sensor",
+    "supplier": "Samsung",
+    "supplier_country": "KR",
+    "tier": 1,
+    "source_url": "https://www.skydio.com/x10/technical-specs",
+    "confidence": "low",
+    "conflict": true
+  },
+  {
+    "model": "Skydio X10",
+    "component": "camera sensor",
+    "supplier": "Sony",
+    "supplier_country": "JP",
+    "tier": 1,
+    "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+    "confidence": "low",
+    "conflict": true
+  },
+  {
+    "model": "Skydio X10",
+    "component": "camera sensor",
+    "supplier": "Teledyne FLIR",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10",
+    "confidence": "low",
+    "conflict": true
+  },
+  {
+    "model": "Skydio X10",
+    "component": "camera sensor",
+    "part": "Sensor fabrication",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 2,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "flight controller chip",
+    "supplier": "NVIDIA",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://support.skydio.com/hc/en-us/articles/18919821734683-Skydio-X10-Frequently-Asked-Questions",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "flight controller chip",
+    "supplier": "NVIDIA",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://www.nidec.com/v=1733276366/files/topics/6131_ext_5_en_0.pdf",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "flight controller chip",
+    "supplier": "NVIDIA",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://www.skydio.com/x10",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "flight controller chip",
+    "part": "Chip fabrication",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 2,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "motors",
+    "supplier": "Nidec Corporation",
+    "supplier_country": "JP",
+    "tier": 1,
+    "source_url": "https://en.sekorm.com/news/527741347.html",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "motors",
+    "supplier": "Nidec Corporation",
+    "supplier_country": "JP",
+    "tier": 1,
+    "source_url": "https://www.nidec.com/v=1777635136/files/topics/33851_ext_3_en_0.pdf",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "motors",
+    "part": "Magnets",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 2,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "motors",
+    "part": "Rare-earth material",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 3,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "radio",
+    "supplier": "Skydio, Inc.",
+    "supplier_country": "US",
+    "tier": 1,
+    "source_url": "https://fccid.io/2ATQRSMODBV3S",
+    "confidence": "low",
+    "conflict": false
+  },
+  {
+    "model": "Skydio X10",
+    "component": "radio",
+    "part": "Radio chip",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 2,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  }
 ]

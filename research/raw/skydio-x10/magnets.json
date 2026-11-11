@@ -1,0 +1,172 @@
+{
+  "model": "Skydio X10",
+  "category": "magnets",
+  "component": "Motors",
+  "attempts": [
+    {
+      "candidates": [],
+      "raw_candidates": [],
+      "notes": "I could not identify a magnet maker (tier 2) or rare-earth producer (tier 3) for the Skydio X10's motors: no teardown, filing, trade record, or Skydio statement names the motor or magnet supplier. Skydio's own posts confirm only that batteries remained its last China-sourced component, and general industry sources (CSIS, DroneLife, TNW) say NdFeB magnets and rare-earth processing are ~90% China-based, but none ties a specific magnet or rare-earth supplier to this drone model.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 motor supplier brushless"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 motor part number maintenance manual replace motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio motor supplier Hobbico OR Sunnysky OR \"T-Motor\" OR \"iFlight\" contract"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio supply chain Chinese suppliers motors magnets reliance"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" teardown components analysis Chinese"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.csis.org/analysis/drone-supply-chain-war-identifying-chokepoints-making-drone",
+            "focus": "magnet"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.skydio.com/blog/chinas-sanctions-on-skydio",
+            "focus": "magnet"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio \"magnets\" rare earth supply chain moving out of China motors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" motor manufacturer partner \"brushless\" supplier Taiwan OR Vietnam OR Japan"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Skydio",
+            "url": "https://thenextweb.com/news/us-drone-dji-ban-supply-chain"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Skydio",
+            "url": "https://dronelife.com/2026/06/10/drone-motor-supply-chain-rare-earth-magnets/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio SkyForge suppliers motors magnets"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" \"Unusual Machines\" motors supplier agreement"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Skydio",
+            "url": "https://rareearthexchanges.com/news/us-drone-motor-ndfeb-supply-chain/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" motor replacement part \"motor\" buy spare"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "importyeti Skydio suppliers shipping records"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" import records motor supplier bill of lading"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.importinfo.com/skydio-inc",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.importyeti.com/company/skydio",
+            "focus": "motor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" magnet supplier partnership rare earth 2026 announcement"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio SkyForge motor supplier co-locate \"motors\" announcement 2026 press release"
+          }
+        }
+      ],
+      "verified": []
+    }
+  ],
+  "verified": [],
+  "retried": false,
+  "notes": "I could not identify a magnet maker (tier 2) or rare-earth producer (tier 3) for the Skydio X10's motors: no teardown, filing, trade record, or Skydio statement names the motor or magnet supplier. Skydio's own posts confirm only that batteries remained its last China-sourced component, and general industry sources (CSIS, DroneLife, TNW) say NdFeB magnets and rare-earth processing are ~90% China-based, but none ties a specific magnet or rare-earth supplier to this drone model.",
+  "when": "2026-11-11T06:07:13+00:00"
+}

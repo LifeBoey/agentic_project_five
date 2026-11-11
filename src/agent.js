@@ -51,7 +51,7 @@ A component flagged "unknown" that also has mapped tiers is only partly known: g
 Components are what the drone maker buys at tier 1. Sub-parts are deeper tiers of a component:
 - magnets = tier 2 of "motors"
 - cell materials = tier 2 of "battery cells"
-So for a question about magnets, read the motors chain at tier 2.`;
+So for a question about magnets, read the motors chain at tier 2. Links may carry a "part" label naming the sub-part (e.g. "Magnets").`;
 
 // Every link id a tool result exposes, so citations can be checked against what the agent actually saw.
 function linkIdsIn(value, out = new Set()) {

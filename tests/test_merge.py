@@ -122,3 +122,12 @@ def test_clean_supplier():
 
 def test_norm_supplier():
     assert norm_supplier("Sony Semiconductor Solutions Corp.") == "sony semiconductor solutions"
+
+
+def test_hand_override_rejects_a_verified_link():
+    from pipeline.merge import apply_overrides
+    jobs = [job("motors", cand("Motor Co", "US", "https://1", conf="low"))]
+    n = apply_overrides(jobs, [{"model": "A", "category": "motors", "source_url": "https://1",
+                                "confidence": "unmapped", "reason": "hand check"}])
+    recs, _ = build_links(jobs, CATS)
+    assert n == 1 and mapped(recs) == [] and unmapped(recs) == [("motors", None, 1)]

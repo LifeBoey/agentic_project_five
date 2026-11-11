@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 from . import config
 from .llm import LLM, AllModelsFailed, Budget, BudgetExceeded
-from .merge import build_links, coverage_markdown
+from .merge import apply_overrides, build_links, coverage_markdown
 from .research import research_agent
 from .verify import verify
 
@@ -82,6 +82,10 @@ def rebuild_outputs(runs: list[dict]):
             existing = json.loads(config.LINKS_PATH.read_text(encoding="utf-8"))
         except ValueError:
             log("warning: existing links.json is not valid JSON; starting a fresh file")
+    overrides_path = config.ROOT / "research" / "overrides.json"
+    if overrides_path.exists():
+        n = apply_overrides(jobs, json.loads(overrides_path.read_text(encoding="utf-8")))
+        log(f"applied {n} hand-check override(s) from research/overrides.json")
     records, dropped = build_links(jobs, config.RESEARCH_CATEGORIES, existing,
                                    [m["name"] for m in config.DRONE_MODELS])
     if dropped:

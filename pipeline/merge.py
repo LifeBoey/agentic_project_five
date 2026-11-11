@@ -85,6 +85,21 @@ def record_key(r: dict) -> tuple:
     return (r["model"], r["component"], r.get("part"), r["tier"], who, r["source_url"])
 
 
+def apply_overrides(jobs: list[dict], overrides: list[dict]) -> int:
+    """Hand-check verdicts (research/overrides.json) win over the verifier agent's. Each override
+    matches model + category + source_url (+ supplier if given). Returns how many candidates changed."""
+    n = 0
+    for o in overrides:
+        for job in jobs:
+            if job.get("model") != o["model"] or job.get("category") != o["category"]:
+                continue
+            for c in job.get("verified", []):
+                if c.get("source_url") == o["source_url"] and o.get("supplier", c.get("supplier")) == c.get("supplier"):
+                    c["confidence"], c["reason"] = o["confidence"], o["reason"]
+                    n += 1
+    return n
+
+
 def build_links(jobs: list[dict], categories: list[dict], existing: list[dict] | None = None,
                 model_order: list[str] = ()) -> tuple[list[dict], list[dict]]:
     """jobs: raw job dicts (`model`, `category`, `verified`). categories: config.RESEARCH_CATEGORIES.

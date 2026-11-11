@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { ask, REFUSAL } from '../src/agent.js';
 import { loadLinks } from '../src/risk.js';
 
-const links = await loadLinks();
+const links = await loadLinks(new URL('./fixtures/links.json', import.meta.url));
 
 // Fake client that replays scripted responses and records each request.
 function fakeClient(responses) {

@@ -37,7 +37,8 @@ async function askRoute(req, res, links) {
   }
   try {
     // Created on first use, after .env is loaded, and reused so requests share one connection.
-    client ??= new Anthropic();
+    // One OpenCode key for the whole project: fall back to the pipeline's OPENCODE_API_KEY.
+    client ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY || process.env.OPENCODE_API_KEY || undefined });
     return send(res, 200, await ask(question, { links, client }));
   } catch (e) {
     // shortcut: the SDK (1.8.0) reports missing credentials as a plain Error with no typed class, so match its

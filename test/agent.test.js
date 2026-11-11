@@ -49,6 +49,16 @@ test('can answer about unmapped components by citing the unmapped record', async
   assert.equal(r.links[0].confidence, 'unmapped');
 });
 
+test('can list models, citing one record per model', async () => {
+  const client = fakeClient([toolUse('get_models', {}), final('Falcon X and Hawk 2.', [0, 5])]);
+  const r = await ask('What models exist?', { links, client });
+  assert.equal(r.answer, 'Falcon X and Hawk 2.');
+  assert.deepEqual(r.links.map(l => l.model), ['Falcon X', 'Hawk 2']);
+  // The tool sent the model one link_id per model.
+  assert.deepEqual(JSON.parse(client.requests[1].messages.at(-1).content[0].content),
+    [{ model: 'Falcon X', link_id: 0 }, { model: 'Hawk 2', link_id: 5 }]);
+});
+
 test('refuses when the answer cites nothing it saw', async () => {
   const client = fakeClient([final('From general knowledge, China.', [])]);
   assert.deepEqual(await ask('Where are magnets made?', { links, client }), { answer: REFUSAL, links: [] });

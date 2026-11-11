@@ -9,14 +9,15 @@ const obj = (properties = {}) => ({ type: 'object', properties, required: Object
 const str = { type: 'string' };
 
 const TOOLS = [
-  { name: 'get_models', description: 'List the drone models in the graph.', input_schema: obj() },
+  { name: 'get_models', description: 'List the drone models in the graph, each with link_id: one of its records, citable as evidence the model is mapped.', input_schema: obj() },
   { name: 'get_model_risk', description: 'Risk summary for one model: counts, flagged components (with reasons, countries, link_ids) and chokepoint suppliers.', input_schema: obj({ model: str }) },
   { name: 'get_chain', description: 'Supplier chain for one component of one model, ordered by tier, with each link id, country, source URL and confidence.', input_schema: obj({ model: str, component: str }) },
   { name: 'simulate_cutoff', description: 'Components and models affected if a country (ISO code, e.g. CN) is cut off.', input_schema: obj({ country: str }) },
 ].map(t => ({ ...t, strict: true }));
 
 const RUN = {
-  get_models: (links) => getModels(links),
+  // Agent-only shape: the public API stays a plain list; one record per model makes "which models exist?" citable.
+  get_models: (links) => getModels(links).map(model => ({ model, link_id: links.find(l => l.model === model).id })),
   get_model_risk: (links, i) => getModelRisk(links, i.model),
   get_chain: (links, i) => getChain(links, i.model, i.component),
   simulate_cutoff: (links, i) => simulateCutoff(links, i.country),
@@ -29,7 +30,7 @@ const ANSWER_FORMAT = {
 
 const SYSTEM = `You answer procurement questions about drone supply-chain dependencies.
 Use only what the tools return; never use outside knowledge. If the tools return nothing relevant, say you have no mapped data.
-Cite every link id (from "id" or "link_ids" in tool results) that supports your answer in cited_link_ids.
+Cite every link id (from "id", "link_id" or "link_ids" in tool results) that supports your answer in cited_link_ids.
 Unknown or unmapped components are never safe: say they are unmapped, and cite their unmapped record ids. Mention when evidence is low confidence or conflicting.
 A component flagged "unknown" that also has mapped tiers is only partly known: give the known tiers, and say the deeper tier is unmapped.
 Components are what the drone maker buys at tier 1. Sub-parts are deeper tiers of a component:
@@ -42,7 +43,7 @@ function linkIdsIn(value, out = new Set()) {
   if (Array.isArray(value)) value.forEach(v => linkIdsIn(v, out));
   else if (value && typeof value === 'object') {
     for (const [k, v] of Object.entries(value)) {
-      if (k === 'id' && Number.isInteger(v)) out.add(v);
+      if ((k === 'id' || k === 'link_id') && Number.isInteger(v)) out.add(v);
       else if (k === 'link_ids' && Array.isArray(v)) v.forEach(id => out.add(id));
       else linkIdsIn(v, out);
     }

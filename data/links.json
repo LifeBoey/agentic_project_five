@@ -211,6 +211,16 @@
   {
     "model": "Parrot Anafi USA",
     "component": "camera sensor",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 1,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "Parrot Anafi USA",
+    "component": "camera sensor",
     "part": "Sensor fabrication",
     "supplier": "",
     "supplier_country": "",
@@ -496,6 +506,16 @@
   {
     "model": "DJI Mavic 3 Enterprise",
     "component": "flight controller chip",
+    "supplier": "",
+    "supplier_country": "",
+    "tier": 1,
+    "source_url": "",
+    "confidence": "unmapped",
+    "conflict": false
+  },
+  {
+    "model": "DJI Mavic 3 Enterprise",
+    "component": "flight controller chip",
     "part": "Chip fabrication",
     "supplier": "",
     "supplier_country": "",
@@ -566,26 +586,6 @@
     "tier": 2,
     "source_url": "https://www.suasnews.com/2021/11/the-mavic-3-and-dji-smart-controller/",
     "confidence": "low",
-    "conflict": false
-  },
-  {
-    "model": "Parrot Anafi USA",
-    "component": "camera sensor",
-    "supplier": "",
-    "supplier_country": "",
-    "tier": 1,
-    "source_url": "",
-    "confidence": "unmapped",
-    "conflict": false
-  },
-  {
-    "model": "DJI Mavic 3 Enterprise",
-    "component": "flight controller chip",
-    "supplier": "",
-    "supplier_country": "",
-    "tier": 1,
-    "source_url": "",
-    "confidence": "unmapped",
     "conflict": false
   }
 ]

@@ -5,7 +5,9 @@ import { buildRows, isMapped } from './lib/rows';
 import { AskBox } from './components/AskBox';
 import { Logo } from './components/Logo';
 import { ChainDrawer } from './components/ChainDrawer';
+import { ChainGraph } from './components/ChainGraph';
 import { ComponentList, type CutoffMarks } from './components/ComponentList';
+import { CountryExposure } from './components/CountryExposure';
 import { CutoffToggle } from './components/CutoffToggle';
 import { ModelPicker } from './components/ModelPicker';
 import { RiskBrief } from './components/RiskBrief';
@@ -58,6 +60,11 @@ export default function App() {
   const pickModel = (m: string) => { setModel(m); setSelected(null); };
   const selectedRow = rows?.find(r => r.name === selected) ?? null;
   const notResearched = useMemo(() => (rows ?? []).filter(r => r.state === 'not_researched').map(r => r.name), [rows]);
+  const simulate = (code: string) => {
+    setCountry(code);
+    setCutoffOn(true);
+    document.getElementById('cutoff')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  };
 
   return (
     <main>
@@ -76,12 +83,18 @@ export default function App() {
 
       {model && risk.data && (
         <>
-          <RiskSummary risk={risk.data} notResearched={notResearched} />
-          <RiskBrief model={model} />
+          <div className="hero">
+            <p className="hero-model">{model}</p>
+            <RiskSummary risk={risk.data} notResearched={notResearched} />
+            {rows && <CountryExposure rows={rows} onSimulate={simulate} />}
+          </div>
           <CutoffToggle
             on={cutoffOn} country={country} countries={countriesSeen} model={model} notResearched={notResearched} result={cutoff.data} error={cutoff.error}
             onToggle={setCutoffOn} onCountry={setCountry}
           />
+          {rows && (
+            <ChainGraph model={model} rows={rows} cutoff={marks} cutoffCountry={cutoffOn ? country : null} selected={selected} onSelect={setSelected} />
+          )}
           {rows && (
             <div className="layout">
               <ComponentList rows={rows} selected={selected} onSelect={setSelected} cutoff={marks} />
@@ -94,7 +107,10 @@ export default function App() {
         <p className="note">Loading…</p>
       )}
 
-      <AskBox />
+      <div className="footer-grid">
+        {model && risk.data && <RiskBrief model={model} />}
+        <AskBox />
+      </div>
     </main>
   );
 }

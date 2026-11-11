@@ -17,7 +17,7 @@ type Props = {
 export function CutoffToggle({ on, country, countries, model, notResearched, result, error, onToggle, onCountry }: Props) {
   const codes = [...new Set([...Object.keys(COUNTRIES), ...countries])];
   return (
-    <section aria-label="Country cut-off" className="cutoff">
+    <section id="cutoff" aria-label="Country cut-off" className={`cutoff${on ? ' cutoff-on' : ''}`}>
       <label className="toggle">
         <input type="checkbox" checked={on} onChange={e => onToggle(e.target.checked)} />
         <span>What if {countryName(country)} is cut off?</span>

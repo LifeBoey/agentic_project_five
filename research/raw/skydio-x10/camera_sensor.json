@@ -1,0 +1,666 @@
+{
+  "model": "Skydio X10",
+  "category": "camera_sensor",
+  "component": "Camera sensor",
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX989, 1\", 50.3 MP, CMOS"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions) — IMX686 narrow / IMX586-K telephoto",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX586-K, 1/2\", 48 MP, CMOS"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR (Boson+ thermal imager)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10",
+          "quote": "Thermal: FLIR Boson+ Uncooled VOx Microbolometer, 640x512, 41° FOV"
+        },
+        {
+          "component": "Camera sensor",
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Sony Semiconductor Manufacturing — Nagasaki Technology Center (CMOS image sensors)",
+          "supplier_country": "JP",
+          "country_basis": "made",
+          "source_url": "https://www.sony-semicon.com/en/feature/2021052401.html",
+          "quote": "Nagasaki TEC plays an important role as a main core factory for the production of CMOS image sensors used in smartphones."
+        },
+        {
+          "component": "Camera sensor",
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Teledyne FLIR OEM (in-house microbolometer manufacturing, US)",
+          "supplier_country": "US",
+          "country_basis": "made",
+          "source_url": "https://www.teledyne.com/en-us/news/Pages/teledyne-flir-oem-advances-state-of-the-art-in-infrared-imaging.aspx",
+          "quote": "the company designs and manufactures critical components through its ISO-certified manufacturing facilities-from readout integrated circuits (ROICs) and detectors utilizing advanced InSb and Type-II superlattice (T2SL) focal plane arrays to microbolometers"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX989, 1\", 50.3 MP, CMOS"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions) — IMX686 narrow / IMX586-K telephoto",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX586-K, 1/2\", 48 MP, CMOS"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR (Boson+ thermal imager)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10",
+          "quote": "Thermal: FLIR Boson+ Uncooled VOx Microbolometer, 640x512, 41° FOV"
+        },
+        {
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Sony Semiconductor Manufacturing — Nagasaki Technology Center (CMOS image sensors)",
+          "supplier_country": "JP",
+          "country_basis": "made",
+          "source_url": "https://www.sony-semicon.com/en/feature/2021052401.html",
+          "quote": "Nagasaki TEC plays an important role as a main core factory for the production of CMOS image sensors used in smartphones."
+        },
+        {
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Teledyne FLIR OEM (in-house microbolometer manufacturing, US)",
+          "supplier_country": "US",
+          "country_basis": "made",
+          "source_url": "https://www.teledyne.com/en-us/news/Pages/teledyne-flir-oem-advances-state-of-the-art-in-infrared-imaging.aspx",
+          "quote": "the company designs and manufactures critical components through its ISO-certified manufacturing facilities-from readout integrated circuits (ROICs) and detectors utilizing advanced InSb and Type-II superlattice (T2SL) focal plane arrays to microbolometers"
+        }
+      ],
+      "notes": "Skydio's own X10 datasheet names Sony IMX989 (wide), IMX686 (narrow) and IMX586-K (telephoto) visible sensors plus the Teledyne FLIR Boson+ VOx microbolometer for thermal; Skydio's public specs page lists only generic CMOS sizes. Sony's fabrication site is confirmed only at company level (Nagasaki TEC as CMOS image sensor fab), not per specific IMX part number, and no teardown-level sourcing beyond Skydio/FLIR documentation was found.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 camera sensor teardown image sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 specifications sensor 64MP thermal Boson"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.skydio.com/x10/technical-specs"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" teardown camera module \"IMX\" sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Boson+ microbolometer manufactured wafer fab foundry"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.scribd.com/document/905540056/Skydio-X10D-DataSheet-Digital-2024-06-18-IMX586-IMX686-FLIR-Boson",
+            "focus": "Sony"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+            "focus": "Sony"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Sony semiconductor image sensor fabrication plants Japan Nagasaki Kumamoto CMOS image sensor production site"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Boson microbolometer fab Goleta wafer fabrication VO x detector manufacturing"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.militarysystems-tech.com/sites/militarysystems/files/supplier_docs/Boson++Datasheet+-+Teledyne+FLIR.pdf",
+            "focus": "Made in the USA"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Sony Semiconductor Manufacturing Corporation CMOS image sensor fabrication sites Japan \"Kumamoto\" \"Nagasaki\" \"Yamagata\" official"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Sony Semiconductor Manufacturing image sensor fab Nagasaki Kumamoto Oita Yamagata \"image sensor\" production site"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/en-gb/products/boson/"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Made in the USA",
+            "url": "https://tesscorn-thermalimaging.com/wp-content/uploads/2024/08/Boson-Plus-Engineering-Datasheet-Rev100.pdf"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "CMOS image sensor",
+            "url": "https://www.sony-semicon.com/en/company/base/index.html"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Boson\" Teledyne FLIR \"Goleta\" microbolometer manufacturing facility"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "CMOS image sensors from Nagasaki",
+            "url": "https://www.sony-semicon.com/en/feature/2021052401.html"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Goleta facility wafer fab infrared detector manufacturing expansion news"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Samsung image sensor production line Hwaseong Pyeongtaek CMOS image sensor fab newsroom"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Made in the USA",
+            "url": "https://tesscorn-thermalimaging.com/wp-content/uploads/2024/08/Boson-Plus-Engineering-Datasheet-Rev100.pdf"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.teledyne.com/en-us/news/Pages/teledyne-flir-oem-advances-state-of-the-art-in-infrared-imaging.aspx",
+            "focus": "Goleta"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions)",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX989, 1\", 50.3 MP, CMOS",
+          "confidence": "low",
+          "evidence_quote": "Sony IMX989, 1\", 50.3 MP, CMOS",
+          "reason": "capped at low: country is HQ-based or not on page. The datasheet explicitly lists Sony image sensors (IMX586-K, IMX989, IMX686) in the X10's camera specs, though it never states Sony's country; the only country mention is that the drone is designed and assembled in the USA.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Sony (Sony Semiconductor Solutions) — IMX686 narrow / IMX586-K telephoto",
+          "supplier_country": "JP",
+          "country_basis": "hq",
+          "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+          "quote": "Sony IMX586-K, 1/2\", 48 MP, CMOS",
+          "confidence": "low",
+          "evidence_quote": "Sony IMX686, 1/1.7\", 64 MP, CMOS",
+          "reason": "capped at low: country is HQ-based or not on page. The Skydio X10 datasheet explicitly names Sony IMX686 (narrow) and Sony IMX586-K (telephoto) sensors, though it never states Sony's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR (Boson+ thermal imager)",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10",
+          "quote": "Thermal: FLIR Boson+ Uncooled VOx Microbolometer, 640x512, 41° FOV",
+          "confidence": "low",
+          "evidence_quote": "VT300-Z includes a 64 MP narrow and 48 MP telephoto visual module for maximum zoom distance and a Teledyne FLIR Boson+ radiometric module.",
+          "reason": "capped at low: country is HQ-based or not on page. The page explicitly names Teledyne FLIR Boson+ as the thermal module in Skydio X10 sensor packages, but does not state its country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Camera sensor",
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Sony Semiconductor Manufacturing — Nagasaki Technology Center (CMOS image sensors)",
+          "supplier_country": "JP",
+          "country_basis": "made",
+          "source_url": "https://www.sony-semicon.com/en/feature/2021052401.html",
+          "quote": "Nagasaki TEC plays an important role as a main core factory for the production of CMOS image sensors used in smartphones.",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page describes Sony's Nagasaki fab producing CMOS image sensors for smartphones and never mentions Skydio, the X10, or sensor supply to any drone maker.",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Camera sensor",
+          "part": "Sensor fabrication",
+          "tier": 2,
+          "supplier": "Teledyne FLIR OEM (in-house microbolometer manufacturing, US)",
+          "supplier_country": "US",
+          "country_basis": "made",
+          "source_url": "https://www.teledyne.com/en-us/news/Pages/teledyne-flir-oem-advances-state-of-the-art-in-infrared-imaging.aspx",
+          "quote": "the company designs and manufactures critical components through its ISO-certified manufacturing facilities-from readout integrated circuits (ROICs) and detectors utilizing advanced InSb and Type-II superlattice (T2SL) focal plane arrays to microbolometers",
+          "confidence": "unmapped",
+          "evidence_quote": "",
+          "reason": "The page describes Teledyne FLIR OEM's IR sensor and microbolometer manufacturing and U.S.‑based operations, but never mentions Skydio or the X10.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    },
+    {
+      "candidates": [
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Samsung (navigation/vision cameras)",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS"
+        }
+      ],
+      "raw_candidates": [
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer"
+        },
+        {
+          "part": null,
+          "tier": 1,
+          "supplier": "Samsung (navigation/vision cameras)",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS"
+        }
+      ],
+      "notes": "Skydio's own X10 technical specs name Teledyne FLIR as the thermal imager supplier (Boson+ VOx microbolometer, 12 µm pixel) and Samsung as the maker of the six 32MP navigation camera sensors; the visible payload sensors (1\" 50.3MP, 1/1.7\" 64MP, 1/2\" 48MP) are listed only by format with no sensor vendor named anywhere I could open, and Teledyne FLIR's OEM press page was blocked by Cloudflare. I found no opened source stating where the Boson+ microbolometer is fabricated, so tier 2 is empty.",
+      "models": [
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash"
+      ],
+      "tool_log": [
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 camera sensor Teledyne FLIR Boson+ thermal"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 teardown image sensor Sony IMX"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://oem.flir.com/about/news/innovating-the-most-sensitive-uncooled-thermal-camera-drone-payload-with-skydio/"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 \"64 megapixel\" primary camera sensor Sony"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" Sony sensor IMX specification"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 VT300 sensor package 50MP Sony IMX547 OR IMX"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" OmniVision sensor 64MP"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.skydio.com/resources/guides/selecting-the-right-sensors-for-your-mission-skydio-x10"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" teardown camera module sensor chip"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10 FCC filing internal photos camera board"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio\" \"IMX686\" OR \"IMX989\" sensor"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Boson+ microbolometer fabricated wafer fab Goleta 12 micron"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR Goleta microbolometer wafer fabrication facility 12 micron Boson"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" camera \"Sony\" sensor supplied"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio Sony Semiconductor Solutions partnership image sensors drone"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Teledyne FLIR microbolometer manufacturing Goleta California wafer fab infrared detectors"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"X10\" Skydio camera module \"IMX\" 64MP 1/1.7"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "Skydio X10D camera sensor specifications Sony IMX narrow camera 64MP sensor model"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.skydio.com/x10d/technical-specs",
+            "focus": "Sony"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "url": "https://www.skydio.com/resources/datasheets/skydio-x10d",
+            "focus": "Sony"
+          }
+        },
+        {
+          "tool": "fetch_page",
+          "args": {
+            "focus": "Sony",
+            "url": "https://www.skydio.com/x10/technical-specs"
+          }
+        },
+        {
+          "tool": "web_search",
+          "args": {
+            "query": "\"Skydio X10\" datasheet \"Sony\" \"1/1.7\" CMOS narrow camera"
+          }
+        }
+      ],
+      "verified": [
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Teledyne FLIR",
+          "supplier_country": "US",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer",
+          "confidence": "unmapped",
+          "evidence_quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer",
+          "reason": "evidence quote does not name the supplier (verifier said high: The X10 spec page explicitly lists the FLIR Boson+ microbolometer as the thermal camera sensor, though it does not state FLIR's country.)",
+          "verifier_model": "deepseek-v4.1-flash"
+        },
+        {
+          "component": "Camera sensor",
+          "part": null,
+          "tier": 1,
+          "supplier": "Samsung (navigation/vision cameras)",
+          "supplier_country": "KR",
+          "country_basis": "hq",
+          "source_url": "https://www.skydio.com/x10/technical-specs",
+          "quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS",
+          "confidence": "low",
+          "evidence_quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS",
+          "reason": "capped at low: country is HQ-based or not on page. The X10 spec page explicitly lists a Samsung sensor for the vision/navigation cameras, but does not state Samsung's country.",
+          "verifier_model": "deepseek-v4.1-flash"
+        }
+      ]
+    }
+  ],
+  "verified": [
+    {
+      "component": "Camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony (Sony Semiconductor Solutions)",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+      "quote": "Sony IMX989, 1\", 50.3 MP, CMOS",
+      "confidence": "low",
+      "evidence_quote": "Sony IMX989, 1\", 50.3 MP, CMOS",
+      "reason": "capped at low: country is HQ-based or not on page. The datasheet explicitly lists Sony image sensors (IMX586-K, IMX989, IMX686) in the X10's camera specs, though it never states Sony's country; the only country mention is that the drone is designed and assembled in the USA.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Sony (Sony Semiconductor Solutions) — IMX686 narrow / IMX586-K telephoto",
+      "supplier_country": "JP",
+      "country_basis": "hq",
+      "source_url": "https://thecyberhawk.com/uploads/resource/file/Skydio-X10_Data-Sheet_Print_10_09_2023-1.pdf",
+      "quote": "Sony IMX586-K, 1/2\", 48 MP, CMOS",
+      "confidence": "low",
+      "evidence_quote": "Sony IMX686, 1/1.7\", 64 MP, CMOS",
+      "reason": "capped at low: country is HQ-based or not on page. The Skydio X10 datasheet explicitly names Sony IMX686 (narrow) and Sony IMX586-K (telephoto) sensors, though it never states Sony's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR (Boson+ thermal imager)",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://support.skydio.com/hc/en-us/articles/20370098171291-What-sensor-packages-are-available-for-Skydio-X10",
+      "quote": "Thermal: FLIR Boson+ Uncooled VOx Microbolometer, 640x512, 41° FOV",
+      "confidence": "low",
+      "evidence_quote": "VT300-Z includes a 64 MP narrow and 48 MP telephoto visual module for maximum zoom distance and a Teledyne FLIR Boson+ radiometric module.",
+      "reason": "capped at low: country is HQ-based or not on page. The page explicitly names Teledyne FLIR Boson+ as the thermal module in Skydio X10 sensor packages, but does not state its country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": "Sensor fabrication",
+      "tier": 2,
+      "supplier": "Sony Semiconductor Manufacturing — Nagasaki Technology Center (CMOS image sensors)",
+      "supplier_country": "JP",
+      "country_basis": "made",
+      "source_url": "https://www.sony-semicon.com/en/feature/2021052401.html",
+      "quote": "Nagasaki TEC plays an important role as a main core factory for the production of CMOS image sensors used in smartphones.",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page describes Sony's Nagasaki fab producing CMOS image sensors for smartphones and never mentions Skydio, the X10, or sensor supply to any drone maker.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": "Sensor fabrication",
+      "tier": 2,
+      "supplier": "Teledyne FLIR OEM (in-house microbolometer manufacturing, US)",
+      "supplier_country": "US",
+      "country_basis": "made",
+      "source_url": "https://www.teledyne.com/en-us/news/Pages/teledyne-flir-oem-advances-state-of-the-art-in-infrared-imaging.aspx",
+      "quote": "the company designs and manufactures critical components through its ISO-certified manufacturing facilities-from readout integrated circuits (ROICs) and detectors utilizing advanced InSb and Type-II superlattice (T2SL) focal plane arrays to microbolometers",
+      "confidence": "unmapped",
+      "evidence_quote": "",
+      "reason": "The page describes Teledyne FLIR OEM's IR sensor and microbolometer manufacturing and U.S.‑based operations, but never mentions Skydio or the X10.",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Teledyne FLIR",
+      "supplier_country": "US",
+      "country_basis": "hq",
+      "source_url": "https://www.skydio.com/x10/technical-specs",
+      "quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer",
+      "confidence": "unmapped",
+      "evidence_quote": "Thermal imager\tFlir Boson+ Uncooled VOx Microbolometer",
+      "reason": "evidence quote does not name the supplier (verifier said high: The X10 spec page explicitly lists the FLIR Boson+ microbolometer as the thermal camera sensor, though it does not state FLIR's country.)",
+      "verifier_model": "deepseek-v4.1-flash"
+    },
+    {
+      "component": "Camera sensor",
+      "part": null,
+      "tier": 1,
+      "supplier": "Samsung (navigation/vision cameras)",
+      "supplier_country": "KR",
+      "country_basis": "hq",
+      "source_url": "https://www.skydio.com/x10/technical-specs",
+      "quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS",
+      "confidence": "low",
+      "evidence_quote": "Sensor\tSamsung 1/2.8\" 32MP color CMOS",
+      "reason": "capped at low: country is HQ-based or not on page. The X10 spec page explicitly lists a Samsung sensor for the vision/navigation cameras, but does not state Samsung's country.",
+      "verifier_model": "deepseek-v4.1-flash"
+    }
+  ],
+  "retried": true,
+  "notes": "Skydio's own X10 technical specs name Teledyne FLIR as the thermal imager supplier (Boson+ VOx microbolometer, 12 µm pixel) and Samsung as the maker of the six 32MP navigation camera sensors; the visible payload sensors (1\" 50.3MP, 1/1.7\" 64MP, 1/2\" 48MP) are listed only by format with no sensor vendor named anywhere I could open, and Teledyne FLIR's OEM press page was blocked by Cloudflare. I found no opened source stating where the Boson+ microbolometer is fabricated, so tier 2 is empty.",
+  "when": "2026-11-11T06:11:40+00:00"
+}

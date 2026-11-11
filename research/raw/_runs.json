@@ -1,0 +1,22 @@
+[
+  {
+    "when": "2026-11-11T06:02:31+00:00",
+    "models": [
+      "Skydio X10"
+    ],
+    "spent": 0.015891,
+    "calls": {
+      "deepseek-v4.1-flash": 16
+    }
+  },
+  {
+    "when": "2026-11-11T06:12:26+00:00",
+    "models": [
+      "Skydio X10"
+    ],
+    "spent": 0.138289,
+    "calls": {
+      "deepseek-v4.1-flash": 111
+    }
+  }
+]

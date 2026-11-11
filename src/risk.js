@@ -95,7 +95,8 @@ export function getModelRisk(links, model) {
     if (verdict.low_confidence) counts.low_confidence++;
     flagged.push({ component, reasons: verdict.reasons, countries: verdict.countries, low_confidence: verdict.low_confidence, link_ids: verdict.cite.map(l => l.id) });
   }
-  return { model, counts, flagged, chokepoints: chokepoints(links).filter(c => c.models.includes(model)) };
+  // components lists every component of the model, flagged or not, so a viewer can show unflagged ones too.
+  return { model, counts, components: [...comps.keys()], flagged, chokepoints: chokepoints(links).filter(c => c.models.includes(model)) };
 }
 
 export function getChain(links, model, component) {

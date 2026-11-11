@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Drone dependency map">
+  <style>
+    .ink { stroke: #1a1a1a; }
+    .body { fill: #1a1a1a; }
+    @media (prefers-color-scheme: dark) { .ink { stroke: #f2f2f2; } .body { fill: #f2f2f2; } }
+  </style>
+  <!-- Arms -->
+  <g class="ink" stroke-width="3.5" stroke-linecap="round">
+    <line x1="32" y1="32" x2="20.7" y2="20.7"/>
+    <line x1="32" y1="32" x2="43.3" y2="20.7"/>
+    <line x1="32" y1="32" x2="20.7" y2="43.3"/>
+    <line x1="32" y1="32" x2="43.3" y2="43.3"/>
+  </g>
+  <!-- Three rotors with a known supplier chain -->
+  <g class="ink" fill="none" stroke-width="4">
+    <circle cx="15" cy="15" r="8"/>
+    <circle cx="49" cy="15" r="8"/>
+    <circle cx="15" cy="49" r="8"/>
+  </g>
+  <!-- The rotor that depends on a single country, with the deeper tier behind it -->
+  <circle cx="49" cy="49" r="13" fill="none" stroke="#b3261e" stroke-width="1.75" opacity="0.55"/>
+  <circle cx="49" cy="49" r="8" fill="#b3261e"/>
+  <!-- Body -->
+  <rect class="body" x="26" y="26" width="12" height="12" rx="3" transform="rotate(45 32 32)"/>
+</svg>

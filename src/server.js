@@ -10,7 +10,7 @@ import { loadLinks, getModels, getModelRisk, getChain, simulateCutoff } from './
 import { ask } from './agent.js';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml' };
 const MAX_QUESTION = 500;
 
 const send = (res, status, body) => {

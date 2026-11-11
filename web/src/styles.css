@@ -40,6 +40,13 @@ button:hover:not(:disabled) { background: var(--ink); color: var(--sheet); }
 button:disabled { opacity: 0.5; cursor: default; }
 select, input { border: 1px solid var(--rule); border-radius: 4px; background: var(--sheet); padding: 7px 10px; }
 :focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+/* Logo (from #6), using this sheet's ink colour. */
+.brand { display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em; }
+.logo-mark { flex: none; display: block; }
+.logo-ink { stroke: var(--ink); }
+.logo-body { fill: var(--ink); }
+.logo-risk { fill: var(--risk); }
+.logo-tier { stroke: var(--risk); opacity: 0.55; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 a { color: var(--link); }
 

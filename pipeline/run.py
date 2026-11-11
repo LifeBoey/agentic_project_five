@@ -65,6 +65,44 @@ def run_job(model: dict, cat: dict, llm: LLM) -> dict:
     return job
 
 
+DEEPEN_HINT = """Known tier-1 suppliers for this component (from verified sources):
+{known}
+
+Only find the deeper tiers listed in "Allowed (part, tier) pairs". The first search found nothing on pages
+about the drone, so search for the tier-1 PRODUCT instead (the chip, sensor, motor, radio or battery model
+named above) and set "parent" to it. Useful sources: chip and sensor die-shot or teardown sites (TechInsights,
+iFixit), FCC internal photos (component markings), foundry or magnet-maker announcements, the tier-1
+supplier's own annual report or supplier list, customs and bill-of-lading summaries (ImportYeti, Panjiva)."""
+
+
+def known_tier1(model_name: str, component: str, jobs: list[dict]) -> str:
+    lines = []
+    for j in jobs:
+        if j.get("model") != model_name or j.get("component") != component:
+            continue
+        for v in j.get("verified", []):
+            if v.get("confidence") in ("high", "low") and int(v.get("tier", 1)) == 1:
+                lines.append(f'- {v["supplier"]}: "{(v.get("evidence_quote") or "")[:200]}"')
+    return "\n".join(dict.fromkeys(lines)) or "- none found yet"
+
+
+def deepen_job(model: dict, cat: dict, llm: LLM, job: dict, jobs: list[dict]) -> dict:
+    """Second, sub-tier-only research pass chained from the tier-1 products; appended to the job."""
+    sub = dict(cat, parts=[(p, t) for p, t in cat["parts"] if t >= 2])
+    context = DEEPEN_HINT.format(known=known_tier1(model["name"], cat["component"], jobs))
+    exclude = [v["source_url"] for v in job.get("verified", [])]
+    res = research_agent(model, sub, llm, exclude_urls=exclude, context=context)
+    verified = []
+    for c in res["candidates"]:
+        v = verify(c, model, llm)
+        verified.append({**c, **v, "pass": "deepen"})
+        log(f"  [{model['name']} / {cat['key']} deepen] {c['supplier']} ({c['supplier_country']}) "
+            f"T{c['tier']} via {c.get('parent')} -> {v['confidence']}")
+    job.setdefault("attempts", []).append({**res, "verified": verified, "pass": "deepen"})
+    job["verified"].extend(verified)
+    return job
+
+
 def load_jobs() -> list[dict]:
     jobs = []
     for p in sorted(config.RAW_DIR.glob("*/*.json")):
@@ -115,6 +153,8 @@ def main(argv=None):
     ap.add_argument("--budget", type=float, default=config.DEFAULT_BUDGET_USD)
     ap.add_argument("--force", action="store_true", help="redo jobs that already have raw output")
     ap.add_argument("--rebuild-only", action="store_true", help="only rebuild links.json/coverage from raw")
+    ap.add_argument("--deepen", action="store_true",
+                    help="extra sub-tier pass chained from known tier-1 products, appended to existing jobs")
     args = ap.parse_args(argv)
 
     runs_path = config.RAW_DIR / "_runs.json"
@@ -143,7 +183,14 @@ def main(argv=None):
     for m in models:
         for c in cats:
             p = job_path(m["name"], c["key"])
-            if p.exists() and not args.force and not json.loads(p.read_text(encoding="utf-8")).get("error"):
+            existing = json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+            if args.deepen:
+                if not existing or existing.get("error") or not any(t >= 2 for _, t in c["parts"]):
+                    continue
+                if not args.force and any(a.get("pass") == "deepen" for a in existing.get("attempts", [])):
+                    log(f"skip {m['name']} / {c['key']} (already deepened; --force to redo)")
+                    continue
+            elif existing and not args.force and not existing.get("error"):
                 log(f"skip {m['name']} / {c['key']} (done; --force to redo)")
                 continue
             todo.append((m, c))
@@ -151,13 +198,24 @@ def main(argv=None):
     budget = Budget(args.budget)
     llm = LLM(budget)
     stop = threading.Event()
+    all_jobs = load_jobs()
 
     def work(m, c):
         if stop.is_set():
             return
-        log(f"start {m['name']} / {c['key']}")
+        log(f"start {m['name']} / {c['key']}" + (" (deepen)" if args.deepen else ""))
         try:
-            job = run_job(m, c, llm)
+            if args.deepen:
+                old = json.loads(job_path(m["name"], c["key"]).read_text(encoding="utf-8"))
+                try:
+                    job = deepen_job(m, c, llm, old, all_jobs)
+                except BudgetExceeded:
+                    raise
+                except Exception as err:  # noqa: BLE001 - keep the original job untouched
+                    log(f"deepen failed for {m['name']} / {c['key']}: {err}")
+                    return
+            else:
+                job = run_job(m, c, llm)
         except BudgetExceeded as err:
             stop.set()
             log(f"BUDGET STOP during {m['name']} / {c['key']}: {err} (job not saved; rerun resumes)")

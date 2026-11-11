@@ -10,6 +10,10 @@ For each drone model × category (motors, magnets, battery cells, flight control
 
 LLM calls go through the OpenCode gateway, using deepseek-v4.1-flash, falling back to glm-5.3-flash, then claude-sonnet-5-5. Search uses Tavily, falling back to the `ddgs` package (no key needed). Pages are fetched with Jina Reader, falling back to plain HTTP. A run stops at `--budget` dollars (default $5), and a later run resumes where it stopped.
 
+**Deeper pass** (`--deepen`): a second, sub-tier-only search for jobs that already exist. It starts from the verified tier-1 products (e.g. "NVIDIA Jetson Orin") and may cite pages about that product instead of the drone. These chained links carry `parent` in the raw files and are capped at `low`. They are appended to the job, so existing link ids don't move.
+
+**Transit routes** (`python -m pipeline.routes`): for every mapped cross-border link, a route agent finds which sea chokepoints lie between the supplier country and the assembly country. It writes `data/routes.json`; see [docs/routes-format.md](../docs/routes-format.md).
+
 ## Setup
 
 ```bash
@@ -23,6 +27,8 @@ cp .env.example .env   # fill in OPENCODE_API_KEY; TAVILY_API_KEY and JINA_API_K
 python -m pipeline.run --models "Skydio X10"            # one model
 python -m pipeline.run --models all                      # every model in config.py
 python -m pipeline.run --models "Teal 2" --categories radio --force   # redo one job
+python -m pipeline.run --models all --deepen        # sub-tier pass chained from tier-1 products
+python -m pipeline.routes                                # transit chokepoints -> data/routes.json
 python -m pipeline.run --rebuild-only                    # regenerate outputs from research/raw/
 python -m pytest tests                                   # unit tests, no network
 ```

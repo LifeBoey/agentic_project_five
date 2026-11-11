@@ -1,6 +1,8 @@
 // Risk API + static viewer on one port. links.json is re-read per request so new data batches show without a restart.
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
+import { parseEnv } from 'node:util';
 import { join, normalize, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
@@ -77,6 +79,14 @@ export async function handle(req, res) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  // .env overrides the shell on purpose: some shells (e.g. Claude Code) already set ANTHROPIC_BASE_URL,
+  // and node --env-file would silently keep that one.
+  try {
+    Object.assign(process.env, parseEnv(readFileSync(join(ROOT, '.env'), 'utf8')));
+    console.log('Loaded .env');
+  } catch (e) {
+    if (e.code !== 'ENOENT') throw e;
+  }
   const port = Number(process.env.PORT) || 3001;
   createServer((req, res) => handle(req, res).catch(e => { console.error(e); send(res, 500, { error: 'internal error' }); }))
     .listen(port, () => console.log(`Drone dependency map on http://localhost:${port}`));

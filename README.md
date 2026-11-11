@@ -21,7 +21,7 @@ npm install
 npm start
 ```
 
-Then open http://localhost:3001. `npm test` runs the tests, which make no live API calls. `ask()` needs Claude credentials, such as `ANTHROPIC_API_KEY`; without them, `/api/ask` returns 503 and everything else still works.
+Then open http://localhost:3001. `npm test` runs the tests, which make no live API calls. `ask()` needs Claude credentials. Copy `.env.example` to `.env` and fill in the key; `npm start` loads it. Without credentials, `/api/ask` returns 503 and everything else still works.
 
 ## Data format (`data/links.json`, frozen)
 
@@ -40,22 +40,23 @@ A link's `id` in API responses is its position in the array. The file is re-read
 | `GET /api/models` | `["Falcon X", ...]` |
 | `GET /api/models/:model/risk` | `{ model, counts: { single_country, single_source, unknown, low_confidence, conflicts }, flagged: [{ component, reasons, countries, low_confidence, link_ids }], chokepoints: [{ supplier, models }] }` |
 | `GET /api/models/:model/chain/:component` | `{ model, component, status: "mapped"\|"unknown", tiers: [{ tier, links: [{ id, supplier, supplier_country, source_url, confidence, conflict }] }] }` |
-| `GET /api/cutoff/:country` | `{ country, affected: [{ model, component, link_ids }], fully_blocked: [{ model, component }], unknown: [{ model, component }], models_affected }` |
+| `GET /api/cutoff/:country` | `{ country, affected: [{ model, component, link_ids }], fully_blocked: [{ model, component }], unknown: [{ model, component, link_ids }], models_affected }` |
 | `POST /api/ask` `{ question }` | `{ answer, links: [full records] }`, or the fixed refusal "No mapped data to answer that." with `links: []` |
 
-An unknown model or component returns 404.
+An unknown model or component returns 404. For an unknown component, `link_ids` and the chain's `tiers` hold its `unmapped` records, so the gap itself can be cited.
 
 ## Risk rules
 
 Every rule reads a component's deepest tier and ignores `unmapped` records.
 
-- **Single-country:** every link at the deepest tier names one country. Components whose only evidence is low confidence are still flagged, with `low_confidence: true`.
-- **Single-source:** exactly one distinct supplier at the deepest tier.
+- **Single-country:** every link at the deepest tier names one country. A link with a blank country blocks the claim. Components whose only evidence is low confidence are still flagged, with `low_confidence: true`.
+- **Single-source:** exactly one distinct supplier at the deepest tier. Supplier names and countries are matched ignoring case and surrounding spaces.
 - **Unknown:** the component has only `unmapped` records. It is never treated as safe.
-- **Conflict:** any of the component's records has `conflict: true`.
+- **Conflict:** any of the component's mapped records has `conflict: true`.
+- **Low confidence (count):** a flagged component whose deepest-tier evidence is all `low`.
 - **Chokepoint:** a supplier that appears in 2 or more models, at any tier.
 - **Cut-off:** `affected` means any mapped link is in that country. `fully_blocked` means the deepest tier is only that country.
 
 ## Query agent
 
-`claude-opus-5-5` at effort `low`, with server-side refusal fallbacks. Its only tools are the four risk functions. The code keeps only the cited link ids that appeared in a tool result. If none remain, `ask()` returns the fixed refusal.
+`claude-haiku-5-5` at effort `low`, called through OpenCode (the model enabled on our workspace). Its only tools are the four risk functions. The code keeps only the cited link ids that appeared in a tool result. If none remain, `ask()` returns the fixed refusal.

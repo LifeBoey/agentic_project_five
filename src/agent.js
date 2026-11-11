@@ -30,7 +30,7 @@ const ANSWER_FORMAT = {
 const SYSTEM = `You answer procurement questions about drone supply-chain dependencies.
 Use only what the tools return; never use outside knowledge. If the tools return nothing relevant, say you have no mapped data.
 Cite every link id (from "id" or "link_ids" in tool results) that supports your answer in cited_link_ids.
-Unknown or unmapped components are never safe: say they are unmapped. Mention when evidence is low confidence or conflicting.`;
+Unknown or unmapped components are never safe: say they are unmapped, and cite their unmapped record ids. Mention when evidence is low confidence or conflicting.`;
 
 // Every link id a tool result exposes, so citations can be checked against what the agent actually saw.
 function linkIdsIn(value, out = new Set()) {
@@ -50,11 +50,9 @@ export async function ask(question, { links, client = new Anthropic() }) {
   const messages = [{ role: 'user', content: question }];
 
   for (let turn = 0; turn < MAX_TURNS; turn++) {
-    const res = await client.beta.messages.create({
-      model: 'claude-opus-5-5',
+    const res = await client.messages.create({
+      model: 'claude-haiku-5-5', // enabled on our OpenCode workspace; Haiku has no server-side refusal fallback
       max_tokens: 16000,
-      betas: ['server-side-fallback-2026-07-01'],
-      fallbacks: 'default',
       output_config: { effort: 'low', format: ANSWER_FORMAT },
       system: SYSTEM,
       tools: TOOLS,

@@ -10,7 +10,7 @@ function fakeClient(responses) {
   const requests = [];
   return {
     requests,
-    beta: { messages: { create: async (req) => { requests.push(structuredClone(req)); return responses.shift(); } } },
+    messages: { create: async (req) => { requests.push(structuredClone(req)); return responses.shift(); } },
   };
 }
 const toolUse = (name, input) => ({ stop_reason: 'tool_use', content: [{ type: 'tool_use', id: `t_${name}`, name, input }] });
@@ -37,6 +37,16 @@ test('link_ids in risk summaries count as seen', async () => {
   ]);
   const r = await ask('Hawk 2 single-country?', { links, client });
   assert.deepEqual(r.links.map(l => l.id), [6]);
+});
+
+test('can answer about unmapped components by citing the unmapped record', async () => {
+  const client = fakeClient([
+    toolUse('get_model_risk', { model: 'Falcon X' }),
+    final('The Falcon X camera sensor is unmapped.', [4]),
+  ]);
+  const r = await ask('Which Falcon X components are unmapped?', { links, client });
+  assert.equal(r.answer, 'The Falcon X camera sensor is unmapped.');
+  assert.equal(r.links[0].confidence, 'unmapped');
 });
 
 test('refuses when the answer cites nothing it saw', async () => {
